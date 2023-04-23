@@ -10,10 +10,12 @@ import {
 } from 'react-native';
 import { useNavigation } from "@react-navigation/native";
 import { AntDesign } from "@expo/vector-icons";
+import Icon from "react-native-vector-icons/Ionicons";
 
 const LoginScreen = () => {
   const [email, setEmail] = useState('v');
   const [password, setPassword] = useState();
+  const [isHided, setIsHided] = useState(true);
   const navigation = useNavigation();
   
   
@@ -21,10 +23,10 @@ const LoginScreen = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Image
-        source={require('/Users/lienquan/AppSocial/frontend/assets/icon.png')}
+        source={{uri:'https://davidhubbs.files.wordpress.com/2015/04/viking_text.jpg'}}
         style={styles.logo}
       />
-      <Text style={styles.text}>RN Social App</Text>
+      <Text style={styles.text}>Vikings Social</Text>
 
       
       <View style={{flexDirection:"row",marginTop: 10,
@@ -57,7 +59,7 @@ const LoginScreen = () => {
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 3,}}>
-        <AntDesign name="user" size={25} color="#666" />
+        <AntDesign name="lock" size={25} color="#666" />
       
       <TextInput
         value={password}
@@ -65,8 +67,22 @@ const LoginScreen = () => {
         numberOfLines={1}
         placeholder="Dien mat khau"
         placeholderTextColor="#666"
+        secureTextEntry={isHided}
         
       />
+
+      <TouchableOpacity
+            onPressIn={() => setIsHided(false)}
+            onPressOut={() => setIsHided(true)}
+          >
+            <View>
+              <Icon
+                name={isHided == true ? "eye" : "eye-off"}
+                size={25}
+                color={"#595959"}
+              />
+            </View>
+          </TouchableOpacity>
       </View>
    
 
@@ -107,8 +123,8 @@ const styles = StyleSheet.create({
     paddingTop: 50
   },
   logo: {
-    height: 150,
-    width: 150,
+    height:150,
+    width: "100%",
     resizeMode: 'cover',
   },
   text: {
