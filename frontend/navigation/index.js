@@ -9,8 +9,29 @@ import SignUpScreen from '../screens/SignUp';
 import OTP from '../screens/OTP';
 import ResetPassWord from '../screens/ResetPassWord';
 import InputNumber from '../screens/InputNumber';
-const Stack = createNativeStackNavigator();
+import Search from '../screens/Search';
+import Notification from './../screens/Notification';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
+import Home from '../screens/Home';
 
+const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
+const search = () => {
+  return (
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Search" component={Search} />
+    </Stack.Navigator>
+  );
+};
+
+const notification = () => {
+  return (
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="notification" component={Notification} />
+    </Stack.Navigator>
+  );
+};
 
 const Feed = () => {
     return (
@@ -36,20 +57,27 @@ const Post = () => {
       </Stack.Navigator>
     );
   };
-  
+
 const Navigation = () => {
     return (
         <NavigationContainer>
         <Stack.Navigator initialRouteName= "LognIn" screenOptions={{ headerShown: false }}>
-        
         <Stack.Screen name="LogIn" component={SignIn} />
-            <Stack.Screen name="Home" component={Feed} />
+            <Stack.Screen name="Home" component={Home}  />
             <Stack.Screen name="Post Create" component={Post} />
             <Stack.Screen name="SignUp" component={SignUpScreen} options={{ headerShown: true }}/>
             <Stack.Screen name="Đổi mật khẩu" component={ResetPassWord} options={{ headerShown: true }} />
             <Stack.Screen name="Nhập số điện thoại" component={InputNumber} options={{ headerShown: true }}/>
             <Stack.Screen name="Nhận OTP" component={OTP} options={{ headerShown: true }}/>
+            <Stack.Screen name="Search" component={Search} />
+            <Stack.Screen name="notification" component={Notification}/>
+         
+ 
+ 
         </Stack.Navigator>
+
+
+      
         </NavigationContainer>
     );
 }

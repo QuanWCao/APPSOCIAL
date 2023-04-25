@@ -20,6 +20,12 @@ import { useNavigation } from "@react-navigation/native";
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import RBSheet from "react-native-raw-bottom-sheet";
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Search from "./Search";
+import Notification from "./Notification";
+
+const Tab = createBottomTabNavigator()
+
 const MainContainer = () => {
   const navigation = useNavigation();
   const refRBSheet = useRef();
@@ -71,8 +77,10 @@ const MainContainer = () => {
   const removeLike = () => {
     Alert.Alert("ha");
   };
+
   return (
-    <View
+    <View style = {{flex: 1}}>
+      <View
       style={{
         flex: 1,
         // backgroundColor :"pink",
@@ -101,7 +109,8 @@ const MainContainer = () => {
  alignItems :"center"}}>
         
 
-      <Icon name = "search" size={22}color="#000000"/>
+      <Icon name = "search" size={22}color="#000000"  onPress={() => { navigation.navigate("Search")
+    }}/>
 
         </TouchableOpacity>
         {/* <TouchableOpacity style={{backgroundColor: "#ffffff",
@@ -437,6 +446,8 @@ const MainContainer = () => {
   }}
         onPress={onLike}
       /> */}
+      
+    </View>
     </View>
   );
 };
