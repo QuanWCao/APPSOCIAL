@@ -13,8 +13,8 @@ import { AntDesign } from "@expo/vector-icons";
 import Icon from "react-native-vector-icons/Ionicons";
 
 const LoginScreen = () => {
-  const [email, setEmail] = useState('v');
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState("");
   const [isHided, setIsHided] = useState(true);
   const navigation = useNavigation();
   
@@ -45,7 +45,9 @@ const LoginScreen = () => {
         numberOfLines={1}
         placeholder="Nhap so dien thoai"
         placeholderTextColor="#666"
-        
+        onChange={setEmail}
+        keyboardType={"number-pad"}
+        returnKeyType="done"
       />
       </View>
     
@@ -68,6 +70,9 @@ const LoginScreen = () => {
         placeholder="Dien mat khau"
         placeholderTextColor="#666"
         secureTextEntry={isHided}
+        onChange={setPassword}
+        // keyboardType={"number-pad"}
+        // returnKeyType="done"
         
       />
 

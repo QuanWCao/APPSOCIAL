@@ -7,78 +7,87 @@ import NewTweetScreen from '../screens/CreatPost';
 import LoginScreen from '../screens/Login';
 import SignUpScreen from '../screens/SignUp';
 import OTP from '../screens/OTP';
+import Profile from '../screens/Profile';
 import ResetPassWord from '../screens/ResetPassWord';
 import InputNumber from '../screens/InputNumber';
 import Search from '../screens/Search';
 import Notification from './../screens/Notification';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
-import Home from '../screens/Home';
-
+import { Ionicons, MaterialIcons } from '@expo/vector-icons'
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
-const search = () => {
+
+const Tabs = () => {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Search" component={Search} />
-    </Stack.Navigator>
-  );
-};
+    <Tab.Navigator screenOptions={{ headerShown: false }} >
+      <Tab.Screen
+        name="HomeScreen"
+        component={MainContainer}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="home" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Tìm kiếm"
+        component={Search}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="search" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+      
+        name="Thông báo"
+        component={Notification}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <MaterialIcons name="notifications"  size={size} color={color} />
+          ),
+        }}
+      />
 
-const notification = () => {
-  return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="notification" component={Notification} />
-    </Stack.Navigator>
-  );
-};
+      <Tab.Screen
+          name="Profile"
+          component={Profile}
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name="person" size={size} color={color} />
+            ),
+          }}
+        />
+    </Tab.Navigator>
+  )
+}
 
-const Feed = () => {
-    return (
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Feed Screen" component={MainContainer} />
-      </Stack.Navigator>
-    );
-  };
-const Post = () => {
-    return (
-      <Stack.Navigator 
-      screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="NewTweet" component={NewTweetScreen} />
-      </Stack.Navigator>
-    );
-  };
-
-  const SignIn = () => {
-    return (
-      <Stack.Navigator 
-      screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Login" component={LoginScreen} />
-      </Stack.Navigator>
-    );
-  };
 
 const Navigation = () => {
     return (
-        <NavigationContainer>
+       <NavigationContainer>
         <Stack.Navigator initialRouteName= "LognIn" screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="LogIn" component={SignIn} />
-            <Stack.Screen name="Home" component={Home}  />
-            <Stack.Screen name="Post Create" component={Post} />
+        <Stack.Screen name="LogIn" component={LoginScreen}/>
+            <Stack.Screen name="Home" component={Tabs}  />
+            <Stack.Screen name="Post Create" component={NewTweetScreen} />
             <Stack.Screen name="SignUp" component={SignUpScreen} options={{ headerShown: true }}/>
             <Stack.Screen name="Đổi mật khẩu" component={ResetPassWord} options={{ headerShown: true }} />
             <Stack.Screen name="Nhập số điện thoại" component={InputNumber} options={{ headerShown: true }}/>
             <Stack.Screen name="Nhận OTP" component={OTP} options={{ headerShown: true }}/>
             <Stack.Screen name="Search" component={Search} />
             <Stack.Screen name="notification" component={Notification}/>
+          
          
  
  
         </Stack.Navigator>
 
-
+</NavigationContainer>
       
-        </NavigationContainer>
+      
     );
 }
 export default Navigation;

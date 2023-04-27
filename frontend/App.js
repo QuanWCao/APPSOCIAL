@@ -9,7 +9,7 @@ import NewPostButton from "./components/AddPost";
 import Navigation from "./navigation";
 import { NavigationContainer } from "@react-navigation/native";
 
-
+import CommentScreens from "./screens/CommentScreens";
 import LoginScreen from "./screens/Login";
 import SignupScreen from "./screens/SignUp";
 import ChangePassWord from "./screens/ChangePassWord";
@@ -30,16 +30,8 @@ export default function App() {
     
       
       {/* <Feed /> */}
-      {/* <NavigationContainer> */}
-        {/* <OTP /> */}
-        
-        {/* <MainContainer/> */}
-        
-              {/* <SignupScreen/>  */}
-        <Navigation/> 
-         
-
-       {/* </NavigationContainer> */}
+      
+      <Navigation/>
       {/* <HomeAdmins/> */}
       {/* <NewTweetScreen /> */}
       {/* <StatusBar style="auto" /> */}

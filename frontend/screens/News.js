@@ -10,7 +10,7 @@ import {
   ScrollView,
   Animated,
 } from "react-native";
-import { Feather, EvilIcons, AntDesign, Ionicons,Octicons } from "@expo/vector-icons";
+import { Feather, EvilIcons, AntDesign, Ionicons,Octicons ,MaterialIcons} from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import moment from "moment";
@@ -20,12 +20,6 @@ import { useNavigation } from "@react-navigation/native";
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import RBSheet from "react-native-raw-bottom-sheet";
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Search from "./Search";
-import Notification from "./Notification";
-
-const Tab = createBottomTabNavigator()
-
 const MainContainer = () => {
   const navigation = useNavigation();
   const refRBSheet = useRef();
@@ -77,10 +71,8 @@ const MainContainer = () => {
   const removeLike = () => {
     Alert.Alert("ha");
   };
-
   return (
-    <View style = {{flex: 1}}>
-      <View
+    <View
       style={{
         flex: 1,
         // backgroundColor :"pink",
@@ -100,82 +92,26 @@ const MainContainer = () => {
         </View>
         <View style={{
     flexDirection: 'row'}}>
-        <TouchableOpacity style={{backgroundColor: "#E8E8E8",
+        <TouchableOpacity style={{
     borderRadius: 30,marginRight:10,width: 40 ,
  height:40,
  borderRadius :40,
  flexDirection : "row",
  justifyContent :'center',
- alignItems :"center"}}>
+ alignItems :"center",
+ }}
+ onPress={() => navigation.navigate('Post Create')}>
         
 
-      <Icon name = "search" size={22}color="#000000"  onPress={() => { navigation.navigate("Search")
-    }}/>
+      <Ionicons name = "add-circle" size={40}color="blue"/>
 
         </TouchableOpacity>
-        {/* <TouchableOpacity style={{backgroundColor: "#ffffff",
-    borderRadius: 30}}>
-        <Ionicons name="ios-notifications-outline" size={34}/>
-        </TouchableOpacity> */}
+       
         </View>
       </View>
-      {/* <View style={styles.headerContainer}>
-        <StatusBar
-          backgroundColor="red"
-          barStyle="dark-content"
-          animated={true}
-        />
-        <View
-          style={{
-            flexDirection: "row",
-            paddingHorizontal: 15,
-            alignItems: "flex-end",
-            justifyContent: "space-between",
-            flex: 1,
-            backgroundColor:"red"
-          }}
-        >
-          <Avatar
-            size={26}
-            rounded
-            source={"https://uifaces.co/our-content/donated/6MWH9Xi_.jpg"}
-            containerStyle={{ backgroundColor: "orange" }}
-          />
-
-          <Text
-            style={{
-              fontSize: 25,
-              fontWeight: "400",
-            }}
-          >
-            Vikings
-          </Text>
-          
-          <Entypo name="bell" style={{ fontSize: 24 }} />
-          
-        </View> */}
-      {/* </View> */}
+     
       <ScrollView>
-      {/* <View style={{ flexDirection: 'row',
-    padding: 10,justifyContent:"center",
-    borderBottomColor: "black",
-      borderBottomWidth: 0.5,
-      width: 400,
-    
-      }}>
-      <Avatar 
-          size={50}
-              rounded
-              source={'https://uifaces.co/our-content/donated/6MWH9Xi_.jpg' }
-            containerStyle={{ backgroundColor: "orange" }}
-             />
-        <TouchableOpacity style={{ flex: 2,marginLeft: 10,}} onPress={()=> navigation.navigate("Post Create")}>
-         
-          <Text style={{height: 50,color : "grey",
-    maxHeight: 200,
-    fontSize: 20}}>  What's happening</Text>
-        </TouchableOpacity>
-      </View> */}
+     
         <SafeAreaView style={styles.container}>
           <Avatar
             size={50}
@@ -203,43 +139,43 @@ const MainContainer = () => {
               <RBSheet
                 ref={refRBSheet}
                 height={300}
-
                 closeOnDragDown={true}
-                
                 closeOnPressMask={true}
                 customStyles={{
                   wrapper: {
                     backgroundColor: "transparent",
                   },
-                  draggableIcon: {
-                    backgroundColor: "#000",
-                  },
+                 container:{
+                  backgroundColor :"#F6F1F1"
+                 }
                   
                 }}
               >
-               <View style={{flex: 1 , justifyContent: "center", alignContent :"center",padding:10,margin: 10 }}>
-                <TouchableOpacity style={{backgroundColor:"grey" ,flexDirection : "row",marginBottom:10}}>
-                <Entypo name="bell" style={{ fontSize: 40 }} />
-                  <Text> Xoa</Text>
+               <View style={{ justifyContent: "center", alignContent :"center",margin: 10 }}>
+                <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :50,alignItems :'center',borderRadius:10}}>
+                <Ionicons name="add-circle" style={{flex :1 , fontSize: 35 ,marginLeft :10}} />
+                  <Text style={{flex:5 ,fontSize:15}}>Save Post</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={{backgroundColor:"grey" ,flexDirection : "row",marginBottom:10}}>
-                <Entypo name="bell" style={{ fontSize: 40 }} />
-                  <Text> Sua</Text>
+                <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :50,alignItems :'center',borderRadius:10}}>
+                <Entypo name="edit" style={{flex :1 , fontSize: 35 ,marginLeft :10}} />
+                  <Text style={{flex:5 ,fontSize:15}}>Edit Post</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={{backgroundColor:"grey" ,flexDirection : "row",marginBottom:10}}>
-                <Entypo name="bell" style={{ fontSize: 40 }} />
-                  <Text> Save</Text>
+
+                <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :50,alignItems :'center',borderRadius:10}}>
+                <Ionicons name="trash" style={{flex :1 , fontSize: 35 ,marginLeft :10}} />
+                  <Text style={{flex:5 ,fontSize:15}}>Delete Post</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={{backgroundColor:"grey" ,flexDirection : "row",marginBottom:10}}>
-                <Entypo name="bell" style={{ fontSize: 40 }} />
-                  <Text> Report</Text>
+
+                 <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :55,alignItems :'center',borderRadius:10}}>
+                <MaterialIcons name="report" style={{flex :1 , fontSize: 35 ,marginLeft :10 }} />
+                  <Text style={{flex:5 ,fontSize:15}}>Report Post</Text>
                 </TouchableOpacity>
                 
                </View>
               </RBSheet>
             </View>
-            <View>
+            <TouchableOpacity>
               <Text style={styles.content}>
                 {
                   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
@@ -253,7 +189,7 @@ const MainContainer = () => {
                   }
                 />
               )}
-            </View>
+            </TouchableOpacity>
             {/* <Footer tweet={tweet} /> */}
             <View style={styles.Footercontainer}>
               <View style={styles.FootericonContainer}>
@@ -281,7 +217,7 @@ const MainContainer = () => {
             </View>
           </View>
         </SafeAreaView>
-
+                {/* comment */}
         <SafeAreaView style={styles.container}>
           <Avatar
             size={50}
@@ -296,16 +232,52 @@ const MainContainer = () => {
                 {/* <Text style={styles.name}>{userName}</Text> */}
                 <Text style={styles.username}>@LienQuan</Text>
                 {/* <Text style={styles.name}>@{name}</Text> */}
-                <Text style={styles.createdAt}>
-                  {moment("2020-08-27T12:00:00.000Z").fromNow()}
-                </Text>
+              
               </View>
               <Entypo
                 name={"chevron-down"}
                 size={16}
                 color={"grey"}
-                onPress={removeLike}
+                onPress={() => refRBSheet.current.open()}
               />
+              <RBSheet
+                ref={refRBSheet}
+                height={300}
+                closeOnDragDown={true}
+                closeOnPressMask={true}
+                customStyles={{
+                  wrapper: {
+                    backgroundColor: "transparent",
+                  },
+                 container:{
+                  backgroundColor :"#F6F1F1"
+                 }
+                  
+                }}
+              >
+               <View style={{ justifyContent: "center", alignContent :"center",margin: 10 }}>
+                <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :50,alignItems :'center',borderRadius:10}}>
+                <Ionicons name="add-circle" style={{flex :1 , fontSize: 35 ,marginLeft :10}} />
+                  <Text style={{flex:5 ,fontSize:15}}>Save Post</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :50,alignItems :'center',borderRadius:10}}>
+                <Entypo name="edit" style={{flex :1 , fontSize: 35 ,marginLeft :10}} />
+                  <Text style={{flex:5 ,fontSize:15}}>Edit Post</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :50,alignItems :'center',borderRadius:10}}>
+                <Ionicons name="trash" style={{flex :1 , fontSize: 35 ,marginLeft :10}} />
+                  <Text style={{flex:5 ,fontSize:15}}>Delete Post</Text>
+                </TouchableOpacity>
+
+                 <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :55,alignItems :'center',borderRadius:10}}>
+                <MaterialIcons name="report" style={{flex :1 , fontSize: 35 ,marginLeft :10 }} />
+                  <Text style={{flex:5 ,fontSize:15}}>Report Post</Text>
+                </TouchableOpacity>
+                
+               </View>
+              </RBSheet>
             </View>
             <View>
               <Text style={styles.content}>
@@ -313,38 +285,30 @@ const MainContainer = () => {
                   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
                 }
               </Text>
-              {!!"https://scontent.fkiv3-1.fna.fbcdn.net/v/t31.0-8/s960x960/22256588_1932617800312085_5686197942193420542_o.jpg?_nc_cat=110&_nc_sid=85a577&_nc_ohc=svjjE7DUkc0AX9yjcdC&_nc_ht=scontent.fkiv3-1.fna&tp=7&oh=1df4116c73c45a32ebad070704ca3333&oe=5F6ECD77" && (
-                <Image
-                  style={styles.image}
-                  source={
-                    "https://scontent.fkiv3-1.fna.fbcdn.net/v/t31.0-8/s960x960/22256588_1932617800312085_5686197942193420542_o.jpg?_nc_cat=110&_nc_sid=85a577&_nc_ohc=svjjE7DUkc0AX9yjcdC&_nc_ht=scontent.fkiv3-1.fna&tp=7&oh=1df4116c73c45a32ebad070704ca3333&oe=5F6ECD77"
-                  }
-                />
-              )}
+              
             </View>
             {/* <Footer tweet={tweet} /> */}
             <View style={styles.Footercontainer}>
               <View style={styles.FootericonContainer}>
                 <TouchableOpacity onPress={onLike}>
-                  <AntDesign
+                  
+                </TouchableOpacity>
+                <Text style={styles.Footernumber}>{"10"}m</Text>
+              </View>
+              <View style={styles.FootericonContainer}>
+              <AntDesign
                     name={!myLike ? "hearto" : "heart"}
                     size={20}
                     color={!myLike ? "grey" : "red"}
                   />
-                </TouchableOpacity>
-                <Text style={styles.Footernumber}>{"10"}</Text>
-              </View>
-              <View style={styles.FootericonContainer}>
-                <Feather name={"message-circle"} size={20} color={"grey"} />
+                
                 <Text style={styles.Footernumber}>{"123"}</Text>
               </View>
               <View style={styles.FootericonContainer}>
-                <EvilIcons name={"retweet"} size={28} color={"grey"} />
+              <Feather name={"message-circle"} size={20} color={"grey"} />
                 <Text style={styles.Footernumber}>{"11"}</Text>
               </View>
-              <View style={styles.FootericonContainer}>
-                <EvilIcons name={"share-google"} size={28} color={"grey"} />
-              </View>
+             
             </View>
           </View>
         </SafeAreaView>
@@ -446,8 +410,6 @@ const MainContainer = () => {
   }}
         onPress={onLike}
       /> */}
-      
-    </View>
     </View>
   );
 };
