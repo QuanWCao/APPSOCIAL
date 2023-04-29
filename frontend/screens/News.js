@@ -93,7 +93,7 @@ const MainContainer = () => {
         <View style={{
     flexDirection: 'row'}}>
         <TouchableOpacity style={{
-    borderRadius: 30,marginRight:10,width: 40 ,
+    borderRadius: 30,marginRight: 5,width: 40 ,
  height:40,
  borderRadius :40,
  flexDirection : "row",
@@ -103,7 +103,7 @@ const MainContainer = () => {
  onPress={() => navigation.navigate('Post Create')}>
         
 
-      <Ionicons name = "add-circle" size={40}color="blue"/>
+      <Ionicons name = "add-circle" size={40}color="#4D9FEC"/>
 
         </TouchableOpacity>
        
@@ -193,7 +193,7 @@ const MainContainer = () => {
             {/* <Footer tweet={tweet} /> */}
             <View style={styles.Footercontainer}>
               <View style={styles.FootericonContainer}>
-                <TouchableOpacity onPress={() => navigation.navigate("Post Create")}>
+                <TouchableOpacity>
                   <AntDesign
                     name={!myLike ? "hearto" : "heart"}
                     size={20}
@@ -202,14 +202,14 @@ const MainContainer = () => {
                 </TouchableOpacity>
                 <Text style={styles.Footernumber}>{"10"}</Text>
               </View>
-              <View style={styles.FootericonContainer}>
+              <TouchableOpacity style={styles.FootericonContainer} onPress={() => navigation.navigate("Post Create")}>
                 <Feather name={"message-circle"} size={20} color={"grey"} />
                 <Text style={styles.Footernumber}>{"123"}</Text>
-              </View>
-              <View style={styles.FootericonContainer}>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.FootericonContainer}>
                 <EvilIcons name={"share-apple"} size={28} color={"grey"} />
                 <Text style={styles.Footernumber}>{"11"}</Text>
-              </View>
+              </TouchableOpacity>
               <View style={styles.FootericonContainer}>
                 <EvilIcons name={"eye"} size={28} color={"grey"} />
                 <Text style={styles.Footernumber}>{"400"}</Text>

@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React , { useState}from 'react';
 import {
   View,
@@ -10,7 +11,7 @@ import {
 import Ionic from 'react-native-vector-icons/Ionicons';
 
 const EditProfile = () => {
-    
+  const navigation = useNavigation();
   const TostMessage = () => {
     ToastAndroid.show('Edited Sucessfully !', ToastAndroid.SHORT);
   };
@@ -19,7 +20,7 @@ const EditProfile = () => {
   return (
     <View
       style={{
-        width: '100%',
+        width: "100%",
         height: '100%',
         backgroundColor: 'white',
       }}>
@@ -37,7 +38,7 @@ const EditProfile = () => {
         <TouchableOpacity
           onPress={() => {
             TostMessage();
-            navigation.goBack();
+            navigation.navigate("Profile");
           }}>
           <Ionic name="checkmark" style={{fontSize: 35, color: '#3493D9'}} />
         </TouchableOpacity>

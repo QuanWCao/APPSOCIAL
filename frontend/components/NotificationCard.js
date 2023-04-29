@@ -39,8 +39,9 @@ const styles = StyleSheet.create({
     paddingRight:20,
     paddingTop:10,
     paddingBottom:10,
-    borderBottomColor:"#E1E8ED",
+    borderBottomColor:"#fff",
     borderBottomWidth:1,
+    backgroundColor: '#d5ebfc'
   },
   leftCont:{
     flexDirection:"row",

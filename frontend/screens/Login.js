@@ -91,7 +91,7 @@ const LoginScreen = () => {
       </View>
    
 
-    <TouchableOpacity style={styles.buttonContainer} onPress={() => {if (email != 'vd ') {navigation.navigate("Home")}
+    <TouchableOpacity style={styles.buttonContainer} onPress={() => {if (email != 'vd ') {navigation.navigate("home")}
     else 
     {navigation.navigate("Nhập số điện thoại")
     }

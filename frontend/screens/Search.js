@@ -37,9 +37,6 @@ const Search = ({navigation}) => {
             placeholderTextColor={"#807c7c"}
             onChangeText={searchUser}
         />
-        <TouchableOpacity>
-          <MaterialIcons name='settings' size={35} style={styles.settingIcon} />
-        </TouchableOpacity>
         
       </View>
       <View style={styles.container}>
@@ -81,14 +78,9 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     borderColor: '#807c7f',
     textAlignVertical:"center",
-    
+    marginRight: 10,
+    backgroundColor:'#d5dde4'
 
-  },
-  settingIcon:{
-    marginRight:15,
-    marginLeft: 5,
-    color:"black",
-    
   },
   accIcon:{
     height:40,

@@ -16,6 +16,7 @@ import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 import { Ionicons, MaterialIcons } from '@expo/vector-icons'
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import EditProFile from '../screens/EditProFile';
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -24,7 +25,7 @@ const Tabs = () => {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }} >
       <Tab.Screen
-        name="HomeScreen"
+        name="Home"
         component={MainContainer}
         options={{
           tabBarIcon: ({ color, size }) => (
@@ -42,7 +43,6 @@ const Tabs = () => {
         }}
       />
       <Tab.Screen
-      
         name="Thông báo"
         component={Notification}
         options={{
@@ -61,6 +61,7 @@ const Tabs = () => {
             ),
           }}
         />
+      
     </Tab.Navigator>
   )
 }
@@ -71,15 +72,16 @@ const Navigation = () => {
        <NavigationContainer>
         <Stack.Navigator initialRouteName= "LognIn" screenOptions={{ headerShown: false }}>
         <Stack.Screen name="LogIn" component={LoginScreen}/>
-            <Stack.Screen name="Home" component={Tabs}  />
+            <Stack.Screen name="home" component={Tabs}  />
             <Stack.Screen name="Post Create" component={NewTweetScreen} />
             <Stack.Screen name="SignUp" component={SignUpScreen} options={{ headerShown: true }}/>
             <Stack.Screen name="Đổi mật khẩu" component={ResetPassWord} options={{ headerShown: true }} />
             <Stack.Screen name="Nhập số điện thoại" component={InputNumber} options={{ headerShown: true }}/>
             <Stack.Screen name="Nhận OTP" component={OTP} options={{ headerShown: true }}/>
             <Stack.Screen name="Search" component={Search} />
-            <Stack.Screen name="notification" component={Notification}/>
-          
+            <Stack.Screen name="Notification" component={Notification}/>
+            <Stack.Screen name="Profile" component={Profile}/>
+            <Stack.Screen name="EditProfile" component={EditProFile}/>
          
  
  

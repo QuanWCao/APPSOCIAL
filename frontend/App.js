@@ -15,19 +15,23 @@ import SignupScreen from "./screens/SignUp";
 import ChangePassWord from "./screens/ChangePassWord";
 import ResetPassWord from "./screens/ResetPassWord";
 import OTP from "./screens/OTP";
-import ProfileScreen from "./screens/Profile";
+
+
 
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 
-import EditProfile from "./screens/EditProFile";
 import Search from "./screens/Search";
 import Notification from './screens/Notification';
+import Profile from "./screens/Profile";
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-    
+    {/* <NavigationContainer>
+      <Profile/>
+    </NavigationContainer> */}
+   
       
       {/* <Feed /> */}
       

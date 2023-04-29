@@ -4,22 +4,20 @@ import NotificationCard from '../components/NotificationCard'
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import { NotificationData } from '../components/data/data';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Ionicons } from '@expo/vector-icons';
 
 const Notification = ({navigation}) => {
 
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <TouchableOpacity style= {styles.accIcon}>
-            <Image
-              style={{height:40,width:40,borderRadius:50,}}
-              source={{uri:"https://lh3.googleusercontent.com/ogw/AOh-ky2cWsAILwBTX3_R494N5SH1ZlXSfUd5xOx93gTJNg=s32-c-mo"}}
-          />
-          </TouchableOpacity>
           <Text style = {styles.titleText}>Thông báo</Text>
           <TouchableOpacity style= {styles.settingIcon}>
-              <MaterialIcons name='settings' color={"black"} size={35}  />
+              <Ionicons name='notifications-outline' color={"black"} size={35}  />
           </TouchableOpacity>
+      </View>
+      <View>
+        <Text style = {styles.subTitleText}>Mới</Text>
       </View>
 
       <ScrollView style={{borderTopWidth: 1, borderColor: '#E1E8ED'}}>
@@ -48,15 +46,19 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 10,
-    
    
-
   },
   titleText:{
-    textAlignVertical:'center',
+    marginLeft: 15,
     fontSize: 30,
-    fontWeight: 400,
+    fontWeight: 700,
     color: '#14171A'
+  },
+  subTitleText:{
+    marginLeft: 10,
+    fontSize: 18,
+    fontWeight: 700,
+    marginBottom: 2,
   },
   settingIcon:{
     marginRight:15,
