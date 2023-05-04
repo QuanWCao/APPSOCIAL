@@ -61,7 +61,7 @@ const MainContainer = () => {
       alert(error.message);
     }
   };
-  const submitLike = () => {
+  const HandleLike = () => {
     console.warn("ga lam");
   };
 
@@ -209,7 +209,7 @@ const MainContainer = () => {
                 </TouchableOpacity>
                 <Text style={styles.Footernumber}>{"10"}</Text>
               </View>
-              <TouchableOpacity style={styles.FootericonContainer} onPress={() => navigation.navigate("Post Create")}>
+              <TouchableOpacity style={styles.FootericonContainer} onPress={() => navigation.navigate("CreateComment")}>
                 <Feather name={"message-circle"} size={20} color={"grey"} />
                 <Text style={styles.Footernumber}>{"123"}</Text>
               </TouchableOpacity>

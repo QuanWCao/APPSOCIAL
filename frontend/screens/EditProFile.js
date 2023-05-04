@@ -170,12 +170,10 @@ const EditProfile = () => {
           
             
             data={data}
-            
             maxHeight={300}
             labelField="label"
             valueField="value"
             placeholder="Sex"
-            
             onFocus={() => setIsFocus(true)}
             onBlur={() => setIsFocus(false)}
             value={value}
