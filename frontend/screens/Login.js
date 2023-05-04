@@ -106,7 +106,7 @@ const LoginScreen = () => {
           // height: windowHeight / 15,
 
           padding: 5,
-
+marginBottom:20,
           borderRadius: 3,
         }}
       >
