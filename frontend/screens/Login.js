@@ -118,7 +118,7 @@ const LoginScreen = () => {
             marginLeft: 10,
           }}
         >
-          <View style={{ flex: 1 ,flexDirection: "row",alignItems:"center"}}>
+          <View style={{ flex: 1 ,flexDirection: "row",alignItems:"center",justifyContent:"center"}}>
             <Text
               style={{
                 fontSize: 16,
@@ -138,7 +138,7 @@ const LoginScreen = () => {
             />
           </View>
 
-          <View style={{ flex: 1 ,flexDirection:'row',alignItems:"center"}}>
+          <View style={{ flex: 1 ,flexDirection:'row',alignItems:"center",justifyContent:"center"}}>
             <Text
               style={{
                 fontSize: 16,
