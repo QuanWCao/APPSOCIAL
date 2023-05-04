@@ -13,7 +13,7 @@ const Notification = ({navigation}) => {
       <View style={styles.header}>
           <Text style = {styles.titleText}>Thông báo</Text>
           <TouchableOpacity style= {styles.settingIcon}>
-              <Ionicons name='notifications-outline' color={"black"} size={35}  />
+          <Ionicons name="search" size={30} color={"black"} />
           </TouchableOpacity>
       </View>
       <View>
@@ -45,12 +45,12 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 10,
+    // marginBottom: 10,
    
   },
   titleText:{
     marginLeft: 15,
-    fontSize: 30,
+    fontSize: 25,
     fontWeight: 700,
     color: '#14171A'
   },
@@ -64,6 +64,12 @@ const styles = StyleSheet.create({
     marginRight:15,
     marginLeft: 5,
     color:"black",
+    backgroundColor:"#E1E8ED",
+    borderRadius :"100",
+    height:40,
+    width:40,
+    justifyContent:"center",
+    alignItems:"center"
     
   },
   accIcon:{

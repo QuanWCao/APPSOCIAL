@@ -80,7 +80,7 @@ const Navigation = () => {
             <Stack.Screen name="Nhận OTP" component={OTP} options={{ headerShown: true }}/>
             <Stack.Screen name="Search" component={Search} />
             <Stack.Screen name="Notification" component={Notification}/>
-            <Stack.Screen name="Profile" component={Profile}/>
+            <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }}/>
             <Stack.Screen name="EditProfile" component={EditProFile}/>
          
  

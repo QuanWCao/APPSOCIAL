@@ -82,11 +82,17 @@ const MainContainer = () => {
      <View style={{ width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    backgroundColor:"#ffffff",
     padding: 10}}>
      <View style={{
     flexDirection: 'row'}}>
         <TouchableOpacity style={{marginRight:10,justifyContent: "center"}}>
-          <Octicons name="three-bars" size={30}/>
+        <Avatar
+            size={40}
+            rounded
+            source={"https://uifaces.co/our-content/donated/6MWH9Xi_.jpg"}
+            containerStyle={{ backgroundColor: "orange" }}
+          />
         </TouchableOpacity>
         <Text style={{fontSize : 30,fontWeight: 'bold',justifyContent: "center"}}> Vikings </Text>
         </View>

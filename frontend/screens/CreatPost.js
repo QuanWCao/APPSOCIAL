@@ -91,9 +91,13 @@ export default function NewTweetScreen() {
           {/* <TouchableOpacity onPress={pickImage}>
             <Text style={styles.pickImage}>Pick a image</Text>
           </TouchableOpacity> */}
-          <Image source={{uri :  imageUrl }} style={styles.image} />
+         
         </View>
+
       </View>
+      <View>
+        <Image source={{uri :  imageUrl }} style={styles.image} />
+        </View>
       <TouchableOpacity
       activeOpacity={0.8}
       style={{
@@ -156,7 +160,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   image: {
-    width: 300,
-    height: 500,
+   height :400,
+   width : 400,
   }
 });
