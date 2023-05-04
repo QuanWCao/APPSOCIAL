@@ -2,9 +2,17 @@ import { View, Text, Button, StyleSheet,SafeAreaView,ScrollView,TextInput,Toucha
 import React, { useState} from 'react';
 import { AntDesign } from "@expo/vector-icons";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { useNavigation } from "@react-navigation/native";
 const ChangePassWord = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const navigation = useNavigation();
+
+  const Update = () => {
+    
+    navigation.navigate("home")
+
+  }
   return (
     <SafeAreaView style={{backgroundColor:'#ffffff', flex: 1}}>
       {/* <Loader visible={loading} /> */}
@@ -89,7 +97,7 @@ const ChangePassWord = () => {
 
 
     <TouchableOpacity
-    //   onPress={onPress}
+    onPress={Update}
       activeOpacity={0.7}
       style={{
         height: 55,
