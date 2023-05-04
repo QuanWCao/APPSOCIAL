@@ -23,6 +23,7 @@ const Tab = createBottomTabNavigator();
 import CommentScreens from '../screens/CommentScreens';
 import DashBoardAdmin from '../screens/AdminManager.js/AdminDashBoard';
 import CreateComment from '../screens/CreateComments';
+import ChangePassWord from '../screens/ChangePassWord';
 const Tabs = () => {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }} >
@@ -87,7 +88,7 @@ const Navigation = () => {
             <Stack.Screen name="Comment" component={CommentScreens} options={{ headerShown: true }}/>
             <Stack.Screen name="Admin" component={DashBoardAdmin} options={{ headerShown: true }}/>
             <Stack.Screen name="CreateComment" component={CreateComment} options={{ headerShown: false }}/>
- 
+            <Stack.Screen name='ChangePassWord' component={ChangePassWord} options={{ headerShown: true }} />
         </Stack.Navigator>
 
 </NavigationContainer>

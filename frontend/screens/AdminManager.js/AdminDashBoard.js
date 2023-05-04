@@ -1,5 +1,5 @@
 import React ,{useState}from "react";
-import { Text, ScrollView, View, Alert, TouchableOpacity ,StyleSheet } from "react-native";
+import { Text, ScrollView, Modal,View, Alert, Pressable,TouchableOpacity ,StyleSheet } from "react-native";
 
 
 import Icon from "react-native-vector-icons/AntDesign";
@@ -11,11 +11,16 @@ import { useNavigation } from "@react-navigation/native";
 
 
 const DashBoardAdmin = () => {
+  const navigation = useNavigation();
   const[countUser ,setCountUser] = useState();
     const[countLike ,setCountLike] = useState(0);
     const[countPost ,setCountPost] = useState();
     const[countReportPost ,setCountReportPost] = useState();
     const[countComment ,setCountComment] = useState();
+    const [visible, setVisible] = useState(false);
+    const logoutHandler = () => {
+      navigation.navigate("LogIn");
+    };
     return (
         <View style={styles.container}>
 	      <ScrollView
@@ -102,6 +107,121 @@ const DashBoardAdmin = () => {
               <Text style={{fontSize: 24}} >{countLike}</Text>
               </View>
 	        </TouchableOpacity>
+
+
+
+          <TouchableOpacity
+	          style={{ backgroundColor: "#FFFFFF",
+      borderRadius: 10,
+      marginTop: 50,
+      marginBottom: 5,
+      marginRight: 10,
+      flexDirection: "row",
+      marginLeft: 10,
+      height:40,
+      justifyContent: "center",
+      alignItems: "center",
+      alignContent :'flex-end'
+      }}
+
+      onPress={() => {
+                  setVisible(true);
+                }}
+	          
+	        >
+	         <Text>Dang Xuat</Text>
+	        </TouchableOpacity>
+
+          <Modal
+                  animationType="slide"
+                  transparent={true}
+                  visible={visible}
+                  onRequestClose={() => {
+                    
+                    setVisible(!visible);
+                  }}
+                >
+                  <View
+                    style={{
+                      flex: 1,
+                      justifyContent: "center",
+                      alignItems: "center",
+                      marginTop: 22,
+                    }}
+                  >
+                    <View
+                      style={{
+                        margin: 20,
+                        backgroundColor: "white",
+                        borderRadius: 20,
+                        padding: 35,
+                        alignItems: "center",
+                        shadowColor: "#000",
+                        shadowOffset: {
+                          width: 0,
+                          height: 2,
+                        },
+                        shadowOpacity: 0.25,
+                        shadowRadius: 4,
+                        elevation: 5,
+                      }}
+                    >
+                      <Text
+                        style={{
+                          marginBottom: 15,
+                          textAlign: "center",
+                        }}
+                      >
+                        Ban chac chan dang xuat chu
+                      </Text>
+                      <View style={{ flexDirection: "row" ,justifyContent:'center',alignItems:'center'}}>
+                        <Pressable
+                          style={{
+                            borderRadius: 20,
+                            padding: 10,
+                            elevation: 2,
+                            backgroundColor: "#2196F3",
+                            flex: 1,
+                            height:40,
+                            margin:10
+                          }}
+                          onPress={() => setVisible(!visible)}
+                        >
+                          <Text
+                            style={{
+                              fontWeight: "bold",
+                              textAlign: "center",
+                            }}
+                          >
+                            Huy bo
+                          </Text>
+                        </Pressable>
+                        <Pressable
+                          style={{
+                            borderRadius: 20,
+                            padding: 10,
+                            elevation: 2,
+                            backgroundColor: "#2196F3",
+                            flex: 1,
+                            height:40,
+                            margin:10
+                          }}
+                          onPress={() => logoutHandler() &&
+                          setVisible(!visible)}
+                        >
+                          <Text
+                            style={{
+                              fontWeight: "bold",
+                              textAlign: "center",
+                            }}
+                          >
+                            Dang Xuat
+                          </Text>
+                        </Pressable>
+                      </View>
+                    </View>
+                  </View>
+                </Modal>
 
 	      </ScrollView>
 	      

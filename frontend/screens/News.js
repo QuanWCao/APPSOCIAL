@@ -61,7 +61,7 @@ const MainContainer = () => {
       alert(error.message);
     }
   };
-  const submitLike = () => {
+  const HandleLike = () => {
     console.warn("ga lam");
   };
 

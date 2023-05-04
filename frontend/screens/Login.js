@@ -64,7 +64,6 @@ const LoginScreen = () => {
           marginTop: 10,
           width: "100%",
           // height: windowHeight / 15,
-
           padding: 5,
           alignItems: "center",
           justifyContent: "center",
