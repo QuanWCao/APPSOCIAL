@@ -20,6 +20,8 @@ import EditProFile from '../screens/EditProFile';
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+import CommentScreens from '../screens/CommentScreens';
+import DashBoardAdmin from '../screens/AdminManager.js/AdminDashBoard';
 
 const Tabs = () => {
   return (
@@ -82,7 +84,8 @@ const Navigation = () => {
             <Stack.Screen name="Notification" component={Notification}/>
             <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }}/>
             <Stack.Screen name="EditProfile" component={EditProFile}/>
-         
+            <Stack.Screen name="Comment" component={CommentScreens} options={{ headerShown: true }}/>
+         <Stack.Screen name="Admin" component={DashBoardAdmin} options={{ headerShown: true }}/>
  
  
         </Stack.Navigator>

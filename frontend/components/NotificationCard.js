@@ -51,7 +51,6 @@ const styles = StyleSheet.create({
     paddingRight:15,
     alignItems:"center",
     flex:1,
-    backgroundColor:"red",
     paddingTop: 5
   },
   rightCont:{

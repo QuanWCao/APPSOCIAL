@@ -11,13 +11,14 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import { AntDesign } from "@expo/vector-icons";
 import Icon from "react-native-vector-icons/Ionicons";
+import { CheckBox } from '@rneui/themed';
 
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState("");
   const [isHided, setIsHided] = useState(true);
   const navigation = useNavigation();
-  
+  const [checked, setChecked] = useState(0);
   
 
   return (
@@ -89,11 +90,55 @@ const LoginScreen = () => {
             </View>
           </TouchableOpacity>
       </View>
+
+
+      <View style={{marginTop: 10,
+    width: '100%',
+    // height: windowHeight / 15,
+   
+    padding: 5,
+    
+    borderRadius: 3,}}>
+
+        <Text style={styles.input}>Role</Text>
+        <View style={{flexDirection :"row",justifyContent:'center',marginLeft:10}}>
+        <View style={{flex:1}}>
+        <Text style={{ fontSize: 16,
+    // fontFamily: 'Lato-Regular',
+    color: '#333',
+    justifyContent: 'center',
+    alignItems: 'center',}}>Admin :</Text>
+        <CheckBox
+           checked={checked === 0}
+           onPress={() => setChecked(0)}
+           checkedIcon="dot-circle-o"
+           uncheckedIcon="circle-o"
+           
+         />
+         </View>
+
+         <View style={{flex:1}}>
+          <Text style={{ fontSize: 16,
+    
+    color: '#333',
+    justifyContent: 'center',
+    alignItems: 'center',}}>User :</Text>
+         <CheckBox
+           checked={checked === 1}
+           onPress={() => setChecked(1)}
+           checkedIcon="dot-circle-o"
+           uncheckedIcon="circle-o"
+         />
+        </View>
+        </View>
+      
+      
+      </View>
    
 
-    <TouchableOpacity style={styles.buttonContainer} onPress={() => {if (email != 'vd ') {navigation.navigate("home")}
+    <TouchableOpacity style={styles.buttonContainer} onPress={() => {if (checked ==1) {navigation.navigate("home")}
     else 
-    {navigation.navigate("Nhập số điện thoại")
+    {navigation.navigate("Admin")
     }
 
     }}>
