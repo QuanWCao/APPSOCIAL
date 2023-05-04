@@ -186,11 +186,12 @@ const SignUpScreen = () => {
             )}
           />
     </View>
+    <View style={{flexDirection :'row',justifyContent:"space-between"}}>
 
     <View style={{marginBottom: 20}}>
           <Text style={styles.label}>Sex</Text>
           <Dropdown
-            style={styles.inputContainer_1}
+            style={styles.inputContainer_2}
             placeholderStyle={styles.placeholderStyle}
             selectedTextStyle={styles.selectedTextStyle}
             inputSearchStyle={styles.inputSearchStyle}
@@ -221,7 +222,7 @@ const SignUpScreen = () => {
     </View>
 
 
-    <View style={{marginBottom: 20}}>
+    <View style={{marginBottom: 20,}}>
           <Text style={styles.label}>Birth</Text>
       <View
         style={styles.inputContainer}>
@@ -234,7 +235,7 @@ const SignUpScreen = () => {
             <Text>{date.format("DD/MM/YYYY")}</Text>
             {show && (
               <DateTimePicker
-                value={new Date(date.format("YYYY/MM/DD"))}
+                value={new Date()}
                 mode={"date"}
                 display="default"
                 onChange={(event, selectedDate) => {
@@ -247,7 +248,7 @@ const SignUpScreen = () => {
 
           
         </Pressable>
-        
+        </View>
       </View>
     </View>
 
@@ -309,9 +310,16 @@ const styles = StyleSheet.create({
   inputContainer_1: {
     height: 55,
     backgroundColor: '#F3F4FB',
-    
     paddingHorizontal: 15,
     borderWidth: 0.5,
+    alignItems: 'center',
+  },
+  inputContainer_2: {
+    height: 55,
+    backgroundColor: '#F3F4FB',
+    paddingHorizontal: 15,
+    borderWidth: 0.5,
+    width :120,
     alignItems: 'center',
   },
   dropdown: {

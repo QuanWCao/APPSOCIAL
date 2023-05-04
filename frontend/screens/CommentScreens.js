@@ -75,124 +75,10 @@ const CommentScreens = () => {
     <View
       style={{
         flex: 1,
-        // backgroundColor :"pink",
-        // marginTop : 10
       }}
     >
      
-     
       <ScrollView>
-     
-        <SafeAreaView style={styles.container}>
-          <Avatar
-            size={50}
-            rounded
-            source={"https://uifaces.co/our-content/donated/6MWH9Xi_.jpg"}
-            containerStyle={{ backgroundColor: "orange" }}
-          />
-          <View style={styles.Rightcontainer}>
-            <View style={styles.tweetHeaderContainer}>
-              <View style={styles.tweetHeaderNames}>
-                <Text style={styles.name}>Quan</Text>
-                {/* <Text style={styles.name}>{userName}</Text> */}
-                <Text style={styles.username}>@LienQuan</Text>
-                {/* <Text style={styles.name}>@{name}</Text> */}
-                <Text style={styles.createdAt}>
-                  {moment("2020-08-27T12:00:00.000Z").fromNow()}
-                </Text>
-              </View>
-              <EvilIcons
-                name={"navicon"}
-                size={16}
-                color={"grey"}
-                onPress={() => refRBSheet.current.open()}
-              />
-              <RBSheet
-                ref={refRBSheet}
-                height={300}
-                closeOnDragDown={true}
-                closeOnPressMask={true}
-                customStyles={{
-                  wrapper: {
-                    backgroundColor: "transparent",
-                  },
-                 container:{
-                  backgroundColor :"#F6F1F1"
-                 }
-                  
-                }}
-              >
-               <View style={{ justifyContent: "center", alignContent :"center",margin: 10 }}>
-                <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :50,alignItems :'center',borderRadius:10}}>
-                <Ionicons name="add-circle" style={{flex :1 , fontSize: 35 ,marginLeft :10}} />
-                  <Text style={{flex:5 ,fontSize:15}}>Save Post</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :50,alignItems :'center',borderRadius:10}}>
-                <Entypo name="edit" style={{flex :1 , fontSize: 35 ,marginLeft :10}} />
-                  <Text style={{flex:5 ,fontSize:15}}>Edit Post</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :50,alignItems :'center',borderRadius:10}}>
-                <Ionicons name="trash" style={{flex :1 , fontSize: 35 ,marginLeft :10}} />
-                  <Text style={{flex:5 ,fontSize:15}}>Delete Post</Text>
-                </TouchableOpacity>
-
-                 <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :55,alignItems :'center',borderRadius:10}}>
-                <MaterialIcons name="report" style={{flex :1 , fontSize: 35 ,marginLeft :10 }} />
-                  <Text style={{flex:5 ,fontSize:15}}>Report Post</Text>
-                </TouchableOpacity>
-                
-               </View>
-              </RBSheet>
-            </View>
-            <View>
-              <Text style={styles.content}>
-                {
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-                }
-              </Text>
-              {!!"https://scontent.fkiv3-1.fna.fbcdn.net/v/t31.0-8/s960x960/22256588_1932617800312085_5686197942193420542_o.jpg?_nc_cat=110&_nc_sid=85a577&_nc_ohc=svjjE7DUkc0AX9yjcdC&_nc_ht=scontent.fkiv3-1.fna&tp=7&oh=1df4116c73c45a32ebad070704ca3333&oe=5F6ECD77" && (
-                <Image
-                  style={styles.image}
-                  source={
-                    "https://scontent.fkiv3-1.fna.fbcdn.net/v/t31.0-8/s960x960/22256588_1932617800312085_5686197942193420542_o.jpg?_nc_cat=110&_nc_sid=85a577&_nc_ohc=svjjE7DUkc0AX9yjcdC&_nc_ht=scontent.fkiv3-1.fna&tp=7&oh=1df4116c73c45a32ebad070704ca3333&oe=5F6ECD77"
-                  }
-                />
-              )}
-            </View>
-            
-            <View style={styles.Footercontainer}>
-            
-              <View style={styles.FootericonContainer}>
-           
-                <TouchableOpacity onPress={() => navigation.navigate("Post Create")}>
-                  <AntDesign
-                    name={!myLike ? "hearto" : "heart"}
-                    size={20}
-                    color={!myLike ? "grey" : "red"}
-                  />
-                </TouchableOpacity>
-                <Text style={styles.Footernumber}>{"10"}</Text>
-              </View>
-              <View style={styles.FootericonContainer}>
-                <Feather name={"message-circle"} size={20} color={"grey"} />
-                <Text style={styles.Footernumber}>{"123"}</Text>
-              </View>
-              <View style={styles.FootericonContainer}>
-                <EvilIcons name={"share-apple"} size={28} color={"grey"} />
-                <Text style={styles.Footernumber}>{"11"}</Text>
-              </View>
-              <View style={styles.FootericonContainer}>
-                <EvilIcons name={"eye"} size={28} color={"grey"} />
-                <Text style={styles.Footernumber}>{"400"}</Text>
-              </View>
-            </View>
-          </View>
-        </SafeAreaView>
-                {/* comment */}
-       
-
         <SafeAreaView style={styles.container}>
           <Avatar
             size={50}
@@ -217,7 +103,7 @@ const CommentScreens = () => {
               />
               <RBSheet
                 ref={refRBSheet}
-                height={300}
+                height={200}
                 closeOnDragDown={true}
                 closeOnPressMask={true}
                 customStyles={{
@@ -231,25 +117,19 @@ const CommentScreens = () => {
                 }}
               >
                <View style={{ justifyContent: "center", alignContent :"center",margin: 10 }}>
-                <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :50,alignItems :'center',borderRadius:10}}>
-                <Ionicons name="add-circle" style={{flex :1 , fontSize: 35 ,marginLeft :10}} />
-                  <Text style={{flex:5 ,fontSize:15}}>Save Post</Text>
-                </TouchableOpacity>
+        
 
                 <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :50,alignItems :'center',borderRadius:10}}>
                 <Entypo name="edit" style={{flex :1 , fontSize: 35 ,marginLeft :10}} />
-                  <Text style={{flex:5 ,fontSize:15}}>Edit Post</Text>
+                  <Text style={{flex:5 ,fontSize:15}}>Edit</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :50,alignItems :'center',borderRadius:10}}>
                 <Ionicons name="trash" style={{flex :1 , fontSize: 35 ,marginLeft :10}} />
-                  <Text style={{flex:5 ,fontSize:15}}>Delete Post</Text>
+                  <Text style={{flex:5 ,fontSize:15}}>Delete</Text>
                 </TouchableOpacity>
 
-                 <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :55,alignItems :'center',borderRadius:10,}}>
-                <MaterialIcons name="report" style={{flex :1 , fontSize: 35 ,marginLeft :10 }} />
-                  <Text style={{flex:5 ,fontSize:15}}>Report Post</Text>
-                </TouchableOpacity>
+                
                 
                </View>
               </RBSheet>

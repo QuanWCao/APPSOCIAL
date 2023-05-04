@@ -15,12 +15,12 @@ const Profile = ({
     <View style = {styles.container}>
       <View>
         <View style={styles.titleBar}>
-          <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+          {/* <TouchableOpacity onPress={() => navigation.navigate('Home')}>
             <Ionicons name='ios-arrow-back' size={30} color={'black'} ></Ionicons>
           </TouchableOpacity>
-          
-          <TouchableOpacity onPress={() => navigation.navigate('EditProfile')}>
-            <Ionicons name='create-outline' size={30} color={'black'} ></Ionicons>
+           */}
+          <TouchableOpacity style={{justifyContent:"center"}} onPress={() => navigation.navigate('EditProfile')} >
+            <Ionicons name='create-outline' size={30} color={'black'}  ></Ionicons>
           </TouchableOpacity>
           
         </View>
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
   },
   titleBar:{
     flexDirection: 'row',
-    justifyContent:'space-between',
+    justifyContent:'flex-end',
     marginHorizontal: 16,
   },
   profileImage:{

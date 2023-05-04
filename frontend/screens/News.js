@@ -20,6 +20,7 @@ import { useNavigation } from "@react-navigation/native";
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import RBSheet from "react-native-raw-bottom-sheet";
+
 const MainContainer = () => {
   const navigation = useNavigation();
   const refRBSheet = useRef();
@@ -82,11 +83,17 @@ const MainContainer = () => {
      <View style={{ width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    backgroundColor:"#ffffff",
     padding: 10}}>
      <View style={{
     flexDirection: 'row'}}>
         <TouchableOpacity style={{marginRight:10,justifyContent: "center"}}>
-          <Octicons name="three-bars" size={30}/>
+        <Avatar
+            size={40}
+            rounded
+            source={"https://uifaces.co/our-content/donated/6MWH9Xi_.jpg"}
+            containerStyle={{ backgroundColor: "orange" }}
+          />
         </TouchableOpacity>
         <Text style={{fontSize : 30,fontWeight: 'bold',justifyContent: "center"}}> Vikings </Text>
         </View>
@@ -175,7 +182,7 @@ const MainContainer = () => {
                </View>
               </RBSheet>
             </View>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=> navigation.navigate('Comment') }>
               <Text style={styles.content}>
                 {
                   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."

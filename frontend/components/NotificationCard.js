@@ -1,8 +1,10 @@
 import { StyleSheet, Text,Image, View, TouchableOpacity } from 'react-native'
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
 import React from 'react'
+import { Ionicons } from '@expo/vector-icons'
 
 const NotificationCard = ({type,pic,title,desc,color}) => {
+  const[onPress , setOnPress] = React.useState(false);
   return (
     <TouchableOpacity style={styles.container}>
 
@@ -22,9 +24,9 @@ const NotificationCard = ({type,pic,title,desc,color}) => {
       <View style={styles.titleCont}>
         <Text style={styles.text}>{title}</Text>
       </View>
-      <View>
+      {/* <View>
         <Text style={styles.desctext}>{desc}</Text>
-      </View>
+      </View> */}
       
       </View>
     </TouchableOpacity>
@@ -45,8 +47,9 @@ const styles = StyleSheet.create({
   },
   leftCont:{
     flexDirection:"row",
-    justifyContent:"flex-end",
+    justifyContent:"center",
     paddingRight:15,
+    alignItems:"center",
     flex:1,
     paddingTop: 5
   },
