@@ -81,8 +81,6 @@ const LoginScreen = () => {
           placeholderTextColor="#666"
           secureTextEntry={isHided}
           onChange={setPassword}
-          // keyboardType={"number-pad"}
-          // returnKeyType="done"
         />
 
         <TouchableOpacity
