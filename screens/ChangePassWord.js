@@ -28,7 +28,7 @@ const ChangePassWord = () => {
         />
         <TextInput
           onChangeText={email}
-          placeholder="Nhap mat khau cu"
+          placeholder="Nhập mật khẩu cũ"
           // onFocus={() => {
           //   onFocus();
           //   setIsFocused(true);
@@ -50,7 +50,7 @@ const ChangePassWord = () => {
             />
             <TextInput
               onChangeText={password}
-              placeholder="Nhap mat khau moi"
+              placeholder="Nhập mật khẩu mới"
               // onFocus={() => {
               //   onFocus();
               //   setIsFocused(true);
@@ -72,7 +72,7 @@ const ChangePassWord = () => {
             />
             <TextInput
               onChangeText={password}
-              placeholder="Xac nhan mat khau"
+              placeholder="Xác nhận mật khẩu"
               // onFocus={() => {
               //   onFocus();
               //   setIsFocused(true);
