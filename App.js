@@ -30,14 +30,14 @@ import ListAccount from "./screens/AdminManager.js/ListAccount";
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-    {/* <NavigationContainer>
-      <Profile/>
-    </NavigationContainer> */}
+    <NavigationContainer>
+      <CommentScreens/>
+    </NavigationContainer>
    
       
       {/* <Feed /> */}
       {/* <ListAccount/> */}
-      <Navigation/>
+      {/* <Navigation/> */}
       {/* <HomeAdmins/> */}
       {/* <NewTweetScreen /> */}
       {/* <StatusBar style="auto" /> */}

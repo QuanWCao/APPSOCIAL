@@ -233,17 +233,17 @@ const CommentScreens = () => {
                <View style={{ justifyContent: "center", alignContent :"center",margin: 10 }}>
                 <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :50,alignItems :'center',borderRadius:10}}>
                 <Ionicons name="add-circle" style={{flex :1 , fontSize: 35 ,marginLeft :10}} />
-                  <Text style={{flex:5 ,fontSize:15}}>Save Post</Text>
+                  <Text style={{flex:5 ,fontSize:15}}>Lưu Post</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :50,alignItems :'center',borderRadius:10}}>
                 <Entypo name="edit" style={{flex :1 , fontSize: 35 ,marginLeft :10}} />
-                  <Text style={{flex:5 ,fontSize:15}}>Edit Post</Text>
+                  <Text style={{flex:5 ,fontSize:15}}>Sửa Post</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :50,alignItems :'center',borderRadius:10}}>
                 <Ionicons name="trash" style={{flex :1 , fontSize: 35 ,marginLeft :10}} />
-                  <Text style={{flex:5 ,fontSize:15}}>Delete Post</Text>
+                  <Text style={{flex:5 ,fontSize:15}}>Xóa Post</Text>
                 </TouchableOpacity>
 
                  <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :55,alignItems :'center',borderRadius:10,}}>
