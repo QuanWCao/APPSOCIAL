@@ -14,7 +14,7 @@ import { Feather, EvilIcons, AntDesign, Ionicons,Octicons ,MaterialIcons} from "
 import { Entypo } from "@expo/vector-icons";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import moment from "moment";
-
+import InputBox from "../components/InputBox";
 import { Avatar } from "@rneui/themed";
 import { useNavigation } from "@react-navigation/native";
 import Icon from 'react-native-vector-icons/FontAwesome5';
@@ -65,11 +65,12 @@ const CommentScreens = () => {
   };
 
   const onLike = () => {
-    Alert.Alert("ha");
+    
+    setMyLike(!myLike)
   };
 
   const removeLike = () => {
-    Alert.Alert("ha");
+   
   };
   return (
     <View
@@ -145,9 +146,7 @@ const CommentScreens = () => {
             {/* <Footer tweet={tweet} /> */}
             <View style={styles.Footercontainer2}>
               <View style={styles.FootericonContainer}>
-                <TouchableOpacity onPress={onLike}>
-                  
-                </TouchableOpacity>
+               
                 <Text style={styles.Footernumber}>{"10"}m</Text>
               </View>
               <View style={styles.FootericonContainer}>
@@ -156,6 +155,7 @@ const CommentScreens = () => {
                     size={20}
                     color={!myLike ? "grey" : "red"}
                     style={{marginLeft : 20}}
+                    onPress={onLike}
                   />
                 
                 <Text style={styles.Footernumber}>Like</Text>
@@ -171,7 +171,7 @@ const CommentScreens = () => {
 
         
       </ScrollView>
-     
+     <InputBox/>
     </View>
   );
 };
