@@ -37,7 +37,7 @@ const Tabs = () => {
         }}
       />
       <Tab.Screen
-        name="Tìm kiếm"
+        name="Search"
         component={Search}
         options={{
           tabBarIcon: ({ color, size }) => (
@@ -46,7 +46,7 @@ const Tabs = () => {
         }}
       />
       <Tab.Screen
-        name="Thông báo"
+        name="Notification"
         component={Notification}
         options={{
           tabBarIcon: ({ color, size }) => (
@@ -78,9 +78,9 @@ const Navigation = () => {
             <Stack.Screen name="home" component={Tabs}  />
             <Stack.Screen name="Post Create" component={NewTweetScreen} />
             <Stack.Screen name="SignUp" component={SignUpScreen} options={{ headerShown: true }}/>
-            <Stack.Screen name="Đổi mật khẩu" component={ResetPassWord} options={{ headerShown: true }} />
-            <Stack.Screen name="Nhập số điện thoại" component={InputNumber} options={{ headerShown: true }}/>
-            <Stack.Screen name="Nhận OTP" component={OTP} options={{ headerShown: true }}/>
+            <Stack.Screen name="ResetPassword" component={ResetPassWord} options={{ headerShown: true }} />
+            <Stack.Screen name="EnterNumber" component={InputNumber} options={{ headerShown: true }}/>
+            <Stack.Screen name="SendOTP" component={OTP} options={{ headerShown: true }}/>
             <Stack.Screen name="Search" component={Search} />
             <Stack.Screen name="Notification" component={Notification}/>
             <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }}/>

@@ -14,7 +14,7 @@ const OTP = () => {
       <ScrollView
         style={{paddingTop: 50, paddingHorizontal: 20}}>
         <Text style={{color: 'black', fontSize: 20, fontWeight: 'bold'}}>
-          Nhập OTP
+          Enter OTP
         </Text>
         
         <View style={{marginVertical: 10 ,paddingTop :10}}>
@@ -32,7 +32,7 @@ const OTP = () => {
             /> */}
             <TextInput
               onChangeText={password}
-              placeholder="Nhap ma OTP"
+              placeholder="OTP"
               // onFocus={() => {
               //   onFocus();
               //   setIsFocused(true);
@@ -51,7 +51,7 @@ const OTP = () => {
 
 
     <TouchableOpacity
-       onPress={()=> navigation.navigate("Đổi mật khẩu")}
+       onPress={()=> navigation.navigate("ResetPassword")}
       activeOpacity={0.7}
       style={{
         height: 55,

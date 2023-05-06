@@ -24,9 +24,6 @@ const NotificationCard = ({type,pic,title,desc,color}) => {
       <View style={styles.titleCont}>
         <Text style={styles.text}>{title}</Text>
       </View>
-      {/* <View>
-        <Text style={styles.desctext}>{desc}</Text>
-      </View> */}
       
       </View>
     </TouchableOpacity>

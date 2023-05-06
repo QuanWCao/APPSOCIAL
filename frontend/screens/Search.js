@@ -33,7 +33,7 @@ const Search = ({navigation}) => {
         </TouchableOpacity>
         
         <TextInput style={styles.inputText}
-            placeholder='Tìm kiếm' 
+            placeholder='Search' 
             placeholderTextColor={"#807c7c"}
             onChangeText={searchUser}
         />

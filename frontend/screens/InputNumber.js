@@ -15,7 +15,7 @@ const InputNumber = () => {
         style={{paddingTop: 50, paddingHorizontal: 20}}>
        
         <Text style={{color: 'black', fontSize: 20, fontWeight: 'bold'}}>
-        Nhập số điện thoại
+        Enter your email
         </Text>
         
         
@@ -34,7 +34,7 @@ const InputNumber = () => {
             /> */}
             <TextInput
               onChangeText={password}
-              placeholder="Nhap mat khau moi"
+              placeholder="email"
               // onFocus={() => {
               //   onFocus();
               //   setIsFocused(true);
@@ -53,7 +53,7 @@ const InputNumber = () => {
 
 
     <TouchableOpacity
-       onPress={() => {navigation.navigate("Nhận OTP")}}
+       onPress={() => {navigation.navigate("SendOTP")}}
       activeOpacity={0.7}
       style={{
         height: 55,

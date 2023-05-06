@@ -129,7 +129,7 @@ const DashBoardAdmin = () => {
                 }}
 	          
 	        >
-	         <Text>Dang Xuat</Text>
+	         <Text>Log out</Text>
 	        </TouchableOpacity>
 
           <Modal
@@ -172,7 +172,7 @@ const DashBoardAdmin = () => {
                           textAlign: "center",
                         }}
                       >
-                        Ban chac chan dang xuat chu
+                        Log out of your account?
                       </Text>
                       <View style={{ flexDirection: "row" ,justifyContent:'center',alignItems:'center'}}>
                         <Pressable
@@ -193,7 +193,7 @@ const DashBoardAdmin = () => {
                               textAlign: "center",
                             }}
                           >
-                            Huy bo
+                            Cancel
                           </Text>
                         </Pressable>
                         <Pressable
@@ -215,7 +215,7 @@ const DashBoardAdmin = () => {
                               textAlign: "center",
                             }}
                           >
-                            Dang Xuat
+                            Log out
                           </Text>
                         </Pressable>
                       </View>
