@@ -50,7 +50,7 @@ const LoginScreen = () => {
           value={email}
           style={styles.input}
           numberOfLines={1}
-          placeholder="Nhap so dien thoai"
+          placeholder="Email"
           placeholderTextColor="#666"
           onChange={setEmail}
           keyboardType={"number-pad"}
@@ -76,7 +76,7 @@ const LoginScreen = () => {
           value={password}
           style={styles.input}
           numberOfLines={1}
-          placeholder="Dien mat khau"
+          placeholder="Password"
           placeholderTextColor="#666"
           secureTextEntry={isHided}
           onChange={setPassword}
@@ -165,13 +165,13 @@ marginBottom:20,
           }
         }}
       >
-        <Text style={styles.buttonText}>Dang Nhap</Text>
+        <Text style={styles.buttonText}>Log In</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
         style={styles.forgotButton}
         onPress={() => {
-          navigation.navigate("Nhập số điện thoại");
+          navigation.navigate("EnterNumber");
         }}
       >
         <Text style={styles.navButtonText}>Forgot Password?</Text>

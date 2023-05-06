@@ -91,8 +91,8 @@ const MainContainer = () => {
         <Avatar
             size={40}
             rounded
-            source={"https://uifaces.co/our-content/donated/6MWH9Xi_.jpg"}
-            containerStyle={{ backgroundColor: "orange" }}
+            source={{uri :"https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/280727990_1379564759214526_3554061026221242893_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=iW4oZbsxYTQAX8Y3Rum&_nc_ht=scontent.fhan14-3.fna&oh=00_AfA9B_wSXNu5vEu9hKDcY63_J37IO0Wsd3xHUryCdqMC8A&oe=645A85A0"}}
+            
           />
         </TouchableOpacity>
         <Text style={{fontSize : 30,fontWeight: 'bold',justifyContent: "center"}}> Vikings </Text>
@@ -123,7 +123,7 @@ const MainContainer = () => {
           <Avatar
             size={50}
             rounded
-            source={"https://uifaces.co/our-content/donated/6MWH9Xi_.jpg"}
+            source={{uri :"https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/280727990_1379564759214526_3554061026221242893_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=iW4oZbsxYTQAX8Y3Rum&_nc_ht=scontent.fhan14-3.fna&oh=00_AfA9B_wSXNu5vEu9hKDcY63_J37IO0Wsd3xHUryCdqMC8A&oe=645A85A0"}}
             containerStyle={{ backgroundColor: "orange" }}
           />
           <View style={styles.Rightcontainer}>
@@ -134,7 +134,7 @@ const MainContainer = () => {
                 <Text style={styles.username}>@LienQuan</Text>
                 {/* <Text style={styles.name}>@{name}</Text> */}
                 <Text style={styles.createdAt}>
-                  {moment("2020-08-27T12:00:00.000Z").fromNow()}
+                  {moment("2023-04-30T12:00:00.000Z").fromNow()}
                 </Text>
               </View>
               <EvilIcons
@@ -185,15 +185,15 @@ const MainContainer = () => {
             <TouchableOpacity onPress={()=> navigation.navigate('Comment') }>
               <Text style={styles.content}>
                 {
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                 "30/4 va 1/5 nghi 5 ngay nhe cac my friends"
                 }
               </Text>
               {!!"https://scontent.fkiv3-1.fna.fbcdn.net/v/t31.0-8/s960x960/22256588_1932617800312085_5686197942193420542_o.jpg?_nc_cat=110&_nc_sid=85a577&_nc_ohc=svjjE7DUkc0AX9yjcdC&_nc_ht=scontent.fkiv3-1.fna&tp=7&oh=1df4116c73c45a32ebad070704ca3333&oe=5F6ECD77" && (
                 <Image
                   style={styles.image}
-                  source={
-                    "https://scontent.fkiv3-1.fna.fbcdn.net/v/t31.0-8/s960x960/22256588_1932617800312085_5686197942193420542_o.jpg?_nc_cat=110&_nc_sid=85a577&_nc_ohc=svjjE7DUkc0AX9yjcdC&_nc_ht=scontent.fkiv3-1.fna&tp=7&oh=1df4116c73c45a32ebad070704ca3333&oe=5F6ECD77"
-                  }
+                  source={{uri :
+                    "https://ktmt.vnmediacdn.com/images/2022/03/19/13-1647657678-nghi-le-1.jpg"
+                  }}
                 />
               )}
             </TouchableOpacity>
@@ -209,7 +209,7 @@ const MainContainer = () => {
                 </TouchableOpacity>
                 <Text style={styles.Footernumber}>{"10"}</Text>
               </View>
-              <TouchableOpacity style={styles.FootericonContainer} onPress={() => navigation.navigate("CreateComment")}>
+              <TouchableOpacity style={styles.FootericonContainer} onPress={()=> navigation.navigate('Comment')}>
                 <Feather name={"message-circle"} size={20} color={"grey"} />
                 <Text style={styles.Footernumber}>{"123"}</Text>
               </TouchableOpacity>
@@ -219,7 +219,7 @@ const MainContainer = () => {
               </TouchableOpacity>
               <View style={styles.FootericonContainer}>
                 <EvilIcons name={"eye"} size={28} color={"grey"} />
-                <Text style={styles.Footernumber}>{"400"}</Text>
+                <Text style={styles.Footernumber}>{}</Text>
               </View>
             </View>
           </View>

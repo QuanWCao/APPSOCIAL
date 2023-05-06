@@ -11,13 +11,13 @@ const Notification = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-          <Text style = {styles.titleText}>Thông báo</Text>
+          <Text style = {styles.titleText}>Notification</Text>
           <TouchableOpacity style= {styles.settingIcon}>
           <Ionicons name="search" size={30} color={"black"} />
           </TouchableOpacity>
       </View>
       <View>
-        <Text style = {styles.subTitleText}>Mới</Text>
+        <Text style = {styles.subTitleText}>Recent</Text>
       </View>
 
       <ScrollView style={{borderTopWidth: 1, borderColor: '#E1E8ED'}}>

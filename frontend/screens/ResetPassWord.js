@@ -31,7 +31,7 @@ const ResetPassWord = () => {
             /> */}
             <TextInput
               onChangeText={password}
-              placeholder="Nhap mat khau moi"
+              placeholder="Enter new password"
               // onFocus={() => {
               //   onFocus();
               //   setIsFocused(true);
@@ -53,7 +53,7 @@ const ResetPassWord = () => {
             /> */}
             <TextInput
               onChangeText={password}
-              placeholder="Xac nhan mat khau"
+              placeholder="Confirm password"
               // onFocus={() => {
               //   onFocus();
               //   setIsFocused(true);

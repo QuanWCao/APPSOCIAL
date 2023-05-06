@@ -29,10 +29,7 @@ export default function NewTweetScreen() {
   const [imageUrl, setImageUrl] = useState("");
 
 
-  const getPermissionAsync = () => {
-    console.warn('ga lam');
-  };
-
+ 
   
 
   const pickImage = async () => {
@@ -43,11 +40,11 @@ export default function NewTweetScreen() {
         aspect: [4, 3],
         quality: 1,
       });
-      if (!result.cancelled) {
+      if (!result.canceled) {
         setImageUrl(result.uri);
       }
 
-      console.log(result);
+      
     } catch (E) {
       console.log(E);
     }
@@ -96,7 +93,7 @@ export default function NewTweetScreen() {
 
       </View>
       <View>
-        <Image source={{uri :  imageUrl }} style={styles.image} />
+        <Image source={{uri :imageUrl }} style={styles.image} />
         </View>
       <TouchableOpacity
       activeOpacity={0.8}
