@@ -1,4 +1,4 @@
-import * as React from 'react';
+import  React, {useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import "react-native-gesture-handler";
@@ -24,6 +24,9 @@ import CommentScreens from '../screens/CommentScreens';
 import DashBoardAdmin from '../screens/AdminManager.js/AdminDashBoard';
 import CreateComment from '../screens/CreateComments';
 import ChangePassWord from '../screens/ChangePassWord';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUser } from '../redux/action';
+import Loader from '../components/Loader';
 const Tabs = () => {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }} >
@@ -71,9 +74,23 @@ const Tabs = () => {
 
 
 const Navigation = () => {
+
+
+  const dispatch  = useDispatch() 
+
+  useEffect(() => {
+
+    dispatch(getUser());
+
+    
+  }, [dispatch])
+
+  const {isAuthenticated , loading} = useSelector(state => state.auth)
     return (
+      loading ? <Loader /> :
+      // 1 la quay 2 la vao
        <NavigationContainer>
-        <Stack.Navigator initialRouteName= "LognIn" screenOptions={{ headerShown: false }}>
+        <Stack.Navigator initialRouteName= { isAuthenticated ? "home":"LogIn" }screenOptions={{ headerShown: false }}>
         <Stack.Screen name="LogIn" component={LoginScreen}/>
             <Stack.Screen name="home" component={Tabs}  />
             <Stack.Screen name="Post Create" component={NewTweetScreen} />
