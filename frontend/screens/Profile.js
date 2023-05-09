@@ -209,7 +209,7 @@ const Profile = ({ name, id, prof, website, bio }) => {
           <View style={styles.profileImage}>
             <Image
               source={{
-                uri: "https://image.cnbcfm.com/api/v1/image/107083077-1656593419933-gettyimages-1395062617-t_w16437_4934a878-972d-4bea-b6ef-b61f4ceeb787.jpeg?v=1682101376",
+                uri: "https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/280727990_1379564759214526_3554061026221242893_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFfynfrejHHJNPpkIQ49N1sISRcgeGi-NMhJFyB4aL40_kp2nPl2fOw8munXp_Oeg2QI_ybyaeyBjH_lgXrYRBW&_nc_ohc=CSmkVXjnbcYAX8PUdAl&_nc_ht=scontent.fhan2-4.fna&oh=00_AfAP_5cm7wUknuOe2xfS1ursOHZw0rmNZj-9sigsBp2UzQ&oe=645E7A20",
               }}
               style={styles.image}
               resizeMode="center"
@@ -229,16 +229,16 @@ const Profile = ({ name, id, prof, website, bio }) => {
 
         <View style={styles.infoContainer}>
           <Text style={[styles.text, { fontWeight: "200", fontSize: 35 }]}>
-            MrRiche
+            Liên Quân
           </Text>
           <Text style={[styles.text, { color: "grey", fontSize: 14 }]}>
-            @MrRichee_
+            @LienQuan
           </Text>
         </View>
         <View style={styles.bioContainer}>
           <Ionicons style={styles.bioIcon} name="mail-outline" size={20} />
           <Text style={{ color: "black", fontSize: 14, fontWeight: 600 }}>
-            abc@gmail.com
+          lienquanhus@gmail.com
           </Text>
         </View>
         <View style={styles.bioContainer}>
@@ -250,7 +250,7 @@ const Profile = ({ name, id, prof, website, bio }) => {
 
         <View style={styles.startsContainer}>
           <View style={styles.startsBox}>
-            <Text style={[styles.text, { fontSize: 20 }]}>483</Text>
+            <Text style={[styles.text, { fontSize: 20 }]}>3</Text>
             <Text style={[styles.text, styles.subtext]}>Post</Text>
           </View>
 
@@ -269,7 +269,7 @@ const Profile = ({ name, id, prof, website, bio }) => {
           </View>
 
           <View style={styles.startsBox}>
-            <Text style={[styles.text, { fontSize: 20 }]}>302</Text>
+            <Text style={[styles.text, { fontSize: 20 }]}>136</Text>
             <Text style={[styles.text, styles.subtext]}>Following</Text>
           </View>
         </View>
@@ -279,7 +279,7 @@ const Profile = ({ name, id, prof, website, bio }) => {
             <View style={styles.mediaImage}>
               <Image
                 source={{
-                  uri: "https://image.cnbcfm.com/api/v1/image/107083077-1656593419933-gettyimages-1395062617-t_w16437_4934a878-972d-4bea-b6ef-b61f4ceeb787.jpeg?v=1682101376",
+                  uri: "https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/280727990_1379564759214526_3554061026221242893_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFfynfrejHHJNPpkIQ49N1sISRcgeGi-NMhJFyB4aL40_kp2nPl2fOw8munXp_Oeg2QI_ybyaeyBjH_lgXrYRBW&_nc_ohc=CSmkVXjnbcYAX8PUdAl&_nc_ht=scontent.fhan2-4.fna&oh=00_AfAP_5cm7wUknuOe2xfS1ursOHZw0rmNZj-9sigsBp2UzQ&oe=645E7A20",
                 }}
                 style={styles.image}
                 resizeMode="cover"
@@ -288,7 +288,7 @@ const Profile = ({ name, id, prof, website, bio }) => {
             <View style={styles.mediaImage}>
               <Image
                 source={{
-                  uri: "https://image.cnbcfm.com/api/v1/image/107083077-1656593419933-gettyimages-1395062617-t_w16437_4934a878-972d-4bea-b6ef-b61f4ceeb787.jpeg?v=1682101376",
+                  uri: "https://scontent.fhan2-5.fna.fbcdn.net/v/t1.18169-9/13920586_146071192497189_1052931166933130879_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=174925&_nc_eui2=AeFx2AEIQQhmAhyJmRnsStiHPBjFVeYP7is8GMVV5g_uK95_sxgnCi7Noei_Q3f38hW6zxjGns_Hc-hWlSHJfU2Q&_nc_ohc=5KtK2YRs_9UAX_TWVWe&_nc_ht=scontent.fhan2-5.fna&oh=00_AfDK2JHhtQSXWLoXiaHJf-fFkjXqt9icyQCT7GJ83GvDXw&oe=6481A29C",
                 }}
                 style={styles.image}
                 resizeMode="cover"
@@ -297,7 +297,7 @@ const Profile = ({ name, id, prof, website, bio }) => {
             <View style={styles.mediaImage}>
               <Image
                 source={{
-                  uri: "https://image.cnbcfm.com/api/v1/image/107083077-1656593419933-gettyimages-1395062617-t_w16437_4934a878-972d-4bea-b6ef-b61f4ceeb787.jpeg?v=1682101376",
+                  uri: "https://scontent.fhan2-3.fna.fbcdn.net/v/t1.18169-9/15871747_120119681825713_18654077379873397_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=174925&_nc_eui2=AeE0d1NxJFGFP6E-4B49LXW3chQTRaUGkipyFBNFpQaSKstY68LdKQ-DyQsqDZQCKOEILVzCssPfXpTaFwieMrY4&_nc_ohc=0gG7ysJbPVAAX-VXosy&_nc_ht=scontent.fhan2-3.fna&oh=00_AfBNfTqfNYYUcznL7391ru2si9zc3lhagXkB4bsraar9rQ&oe=6481B45C",
                 }}
                 style={styles.image}
                 resizeMode="cover"
@@ -362,8 +362,8 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
-    width: 300,
-    height: 300,
+    width: 200,
+    height: 200,
   },
   titleBar: {
     flexDirection: "row",

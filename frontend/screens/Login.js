@@ -188,7 +188,7 @@ marginBottom:20,
 
         onPress={loginHandler}
       >
-        <Text style={styles.buttonText}>Dang Nhap</Text>
+        <Text style={styles.buttonText}>Log In</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
