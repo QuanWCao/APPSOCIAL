@@ -11,8 +11,8 @@ export const login =
       // dung me r
      
       let form_data = new FormData();
-      form_data.append("emailAddress",emailAddress );
-      form_data.append("password", password);
+      form_data.append("emailAddress","caolienquan_t64@hus.edu.vn");
+      form_data.append("password", "123456aA@");
 
       const data = await axios
         .post(`${serverUrl}/api/login`, form_data)

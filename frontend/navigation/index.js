@@ -2,6 +2,7 @@ import  React, {useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import "react-native-gesture-handler";
+import Post from '../components/Post';
 import MainContainer from '../screens/News';
 import NewTweetScreen from '../screens/CreatPost';
 import LoginScreen from '../screens/Login';
@@ -106,6 +107,7 @@ const Navigation = () => {
             <Stack.Screen name="Admin" component={DashBoardAdmin} options={{ headerShown: true }}/>
             <Stack.Screen name="CreateComment" component={CreateComment} options={{ headerShown: false }}/>
             <Stack.Screen name='ChangePassWord' component={ChangePassWord} options={{ headerShown: true }} />
+            <Stack.Screen name="Post" component={Post} options={{ headerShown: false}}/>
         </Stack.Navigator>
 
 </NavigationContainer>

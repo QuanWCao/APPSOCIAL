@@ -17,8 +17,8 @@ import { useDispatch , useSelector } from "react-redux";
 import { useEffect } from "react";
 import { login ,login_admin } from "../redux/action";
 const LoginScreen = () => {
-  const [emailAddress, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [emailAddress, setEmail] = useState("caolienquan_t64@hus.edu.vn");
+  const [password, setPassword] = useState("123456aA@");
   const [isHided, setIsHided] = useState(true);
   const navigation = useNavigation();
   const [checked, setChecked] = useState(0);
@@ -28,7 +28,7 @@ const LoginScreen = () => {
  
   const loginHandler = () => {
     
-    dispatch(login_admin(emailAddress,password));// no tra ve mess thi dung con loi thi quay den chet
+    dispatch(login(emailAddress,password));// no tra ve mess thi dung con loi thi quay den chet
     
    
    

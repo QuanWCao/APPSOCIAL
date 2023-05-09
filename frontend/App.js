@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, ScrollView, SafeAreaView } from "react-native";
 
-
+import Te from "./screens/Te";
 import NewTweetScreen from "./screens/CreatPost";
 import MainContainer from "./screens/News";
 import NewPostButton from "./components/AddPost";
@@ -29,16 +29,15 @@ import Search from "./screens/Search";
 import Notification from './screens/Notification';
 import Profile from "./screens/Profile";
 import { Input } from "react-native-elements";
+import Post from "./components/Post";
+
 export default function App() {
   return (
     <Provider store={store}>
     <SafeAreaView style={styles.container}>
-   
-   
-      
-   
-      
       <Navigation/>
+     
+     
      
     </SafeAreaView>
     </Provider>
