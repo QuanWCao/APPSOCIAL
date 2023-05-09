@@ -145,7 +145,7 @@ const Profile = ({ name, id, prof, website, bio }) => {
                           textAlign: "center",
                         }}
                       >
-                        Ban chac chan dang xuat chu
+                        Are you sure you want to sign out?
                       </Text>
                       <View style={{ flexDirection: "row" ,justifyContent:'center',alignItems:'center'}}>
                         <Pressable
@@ -188,7 +188,7 @@ const Profile = ({ name, id, prof, website, bio }) => {
                               textAlign: "center",
                             }}
                           >
-                            Dang Xuat
+                            Log Out
                           </Text>
                         </Pressable>
                       </View>
