@@ -6,6 +6,8 @@ import { useNavigation } from '@react-navigation/native';
 import { Dropdown } from "react-native-element-dropdown";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import moment from "moment";
+import { useDispatch ,useSelector} from 'react-redux';
+import { register,registerAdmin } from '../redux/action';
 const data_2 = [
   { label: "Male", value: "Male" },
   
@@ -20,8 +22,11 @@ const data_1 = [
 
 
 const SignUpScreen = () => {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [emailAddress, setEmailAddress] = useState("");
+  const [fullname , setFullName] = useState("")
+  const [phoneNumber, setphoneNumber] = useState("")
+  const [password, setPassword] = useState("");
+  
   const [value_1, setValue_1] = useState(null);
     const [isFocus_1, setIsFocus_1] = useState(false);
     const [value_2, setValue_2] = useState(null);
@@ -29,6 +34,24 @@ const SignUpScreen = () => {
     const [date, setDate] = useState(moment());
     const [show, setShow] = useState(false);
   const navigation = useNavigation();
+  const dispatch = useDispatch();
+  const { err} = useSelector(state => state.msg);
+  const handleAdd = () => {
+    const FormData = new FormData();
+    FormData.append("fullname", fullname);
+    FormData.append("emailAddress", emailAddress);
+    FormData.append("phoneNumber", phoneNumber);
+    FormData.append("password", password);
+
+
+    if(value_1 == "Admin") {
+      registerAdmin(FormData);
+    }
+    else {
+      register(FormData);
+    }
+
+  }
   return (
     <SafeAreaView style={{backgroundColor:'#ffffff', flex: 1}}>
       {/* <Loader visible={loading} /> */}
@@ -51,8 +74,9 @@ const SignUpScreen = () => {
           style={{color: '#7978B5', fontSize: 22, marginRight: 10,}}
         />
         <TextInput
-          onChangeText={email}
-          placeholder="Nhap FullName"
+
+         value={fullname}
+          placeholder="FullName"
           // onFocus={() => {
           //   onFocus();
           //   setIsFocused(true);
@@ -60,6 +84,7 @@ const SignUpScreen = () => {
           // onBlur={() => setIsFocused(false)}
           // secureTextEntry={true}
           style={{color: '#7978B5', flex: 1}}
+          onChangeText={setFullName}
           
         />
 
@@ -68,29 +93,7 @@ const SignUpScreen = () => {
       </View>
     </View>
 
-    <View style={{marginBottom: 10}}>
-          <Text style={styles.label}>UserName</Text>
-      <View
-        style={styles.inputContainer}>
-        <Icon
-          name="account-outline"
-          style={{color: '#7978B5', fontSize: 22, marginRight: 10,}}
-        />
-        <TextInput
-          onChangeText={email}
-          placeholder="Nhap UserName"
-          // onFocus={() => {
-          //   onFocus();
-          //   setIsFocused(true);
-          // }}
-          // onBlur={() => setIsFocused(false)}
-          // secureTextEntry={true}
-          style={{color: '#7978B5', flex: 1}}
-          
-        />
-        
-      </View>
-    </View>
+    
 
     <View style={{marginBottom: 10}}>
           <Text style={styles.label}>Email</Text>
@@ -100,17 +103,35 @@ const SignUpScreen = () => {
           name="account-outline"
           style={{color: '#7978B5', fontSize: 22, marginRight: 10,}}
         />
-        <TextInput
-          onChangeText={email}
-          placeholder="Nhap Email"
-          // onFocus={() => {
-          //   onFocus();
-          //   setIsFocused(true);
-          // }}
-          // onBlur={() => setIsFocused(false)}
-          // secureTextEntry={true}
+         <TextInput
+          value={emailAddress}
           style={{color: '#7978B5', flex: 1}}
-          
+          numberOfLines={1}
+          placeholder="Address"
+          // placeholderTextColor="#666"
+          onChangeText={setEmailAddress}
+          // keyboardType={"number-pad"}
+          // returnKeyType="done"
+        />
+        
+      </View>
+    </View>
+
+    <View style={{marginBottom: 20}}>
+          <Text style={styles.label}>Number</Text>
+      <View
+        style={styles.inputContainer}>
+        <Icon
+          name="account-outline"
+          style={{color: '#7978B5', fontSize: 22, marginRight: 10,}}
+        />
+        <TextInput
+          value={phoneNumber}
+
+          numberOfLines={1}
+          placeholder="PhoneNumber"
+          style={{color: '#7978B5', flex: 1}}
+          onChangeText={setphoneNumber}
         />
         
       </View>
@@ -125,30 +146,11 @@ const SignUpScreen = () => {
           style={{color: '#7978B5', fontSize: 22, marginRight: 10,}}
         />
         <TextInput
-          onChangeText={email}
-          placeholder="Nhap Password"
-        
+          value={password}
+          placeholder="Password"
           style={{color: '#7978B5', flex: 1}}
-          
-        />
-        
-      </View>
-    </View>
-
-    <View style={{marginBottom: 20}}>
-          <Text style={styles.label}>Confirm Password</Text>
-      <View
-        style={styles.inputContainer}>
-        <Icon
-          name="account-outline"
-          style={{color: '#7978B5', fontSize: 22, marginRight: 10,}}
-        />
-        <TextInput
-          onChangeText={email}
-          placeholder="Confirm Password"
-        
-          style={{color: '#7978B5', flex: 1}}
-          
+          numberOfLines={1}
+          onChangeText={setPassword}
         />
         
       </View>

@@ -13,14 +13,35 @@ import { useNavigation } from "@react-navigation/native";
 import { AntDesign } from "@expo/vector-icons";
 import Icon from "react-native-vector-icons/Ionicons";
 import { CheckBox } from "@rneui/themed";
-
+import { useDispatch , useSelector } from "react-redux";
+import { useEffect } from "react";
+import { login ,login_admin } from "../redux/action";
 const LoginScreen = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [emailAddress, setEmail] = useState("caolienquan_t64@hus.edu.vn");
+  const [password, setPassword] = useState("123456aA@");
   const [isHided, setIsHided] = useState(true);
   const navigation = useNavigation();
   const [checked, setChecked] = useState(0);
+  const dispatch = useDispatch();
 
+  const { err} = useSelector(state => state.auth);
+ 
+  const loginHandler = () => {
+    
+    dispatch(login(emailAddress,password));// no tra ve mess thi dung con loi thi quay den chet
+    
+   
+   
+  };
+
+  useEffect(() => {
+    console.log(err ,emailAddress, password)
+    if(err) {
+      alert(err)
+      dispatch({type : "clearError"})
+    }
+ 
+  }, [err , dispatch ,alert,])
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Image
@@ -47,12 +68,12 @@ const LoginScreen = () => {
         <AntDesign name="user" size={25} color="#666" />
 
         <TextInput
-          value={email}
+          value={emailAddress}
           style={styles.input}
           numberOfLines={1}
-          placeholder="Email"
+          placeholder="Nhap so dien thoai"
           placeholderTextColor="#666"
-          onChange={setEmail}
+          onChangeText={setEmail}
           keyboardType={"number-pad"}
           returnKeyType="done"
         />
@@ -76,10 +97,10 @@ const LoginScreen = () => {
           value={password}
           style={styles.input}
           numberOfLines={1}
-          placeholder="Password"
+          placeholder="Dien mat khau"
           placeholderTextColor="#666"
           secureTextEntry={isHided}
-          onChange={setPassword}
+          onChangeText={setPassword}
         />
 
         <TouchableOpacity
@@ -157,15 +178,17 @@ marginBottom:20,
 
       <TouchableOpacity
         style={styles.buttonContainer}
-        onPress={() => {
-          if (checked == 1) {
-            navigation.navigate("home");
-          } else {
-            navigation.navigate("Admin");
-          }
-        }}
+        // onPress={() => {
+        //   if (checked == 1) {
+        //     navigation.navigate("home");
+        //   } else {
+        //     navigation.navigate("Admin");
+        //   }
+        // }}
+
+        onPress={loginHandler}
       >
-        <Text style={styles.buttonText}>Log In</Text>
+        <Text style={styles.buttonText}>Dang Nhap</Text>
       </TouchableOpacity>
 
       <TouchableOpacity

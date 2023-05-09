@@ -1,7 +1,8 @@
-import * as React from 'react';
+import  React, {useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import "react-native-gesture-handler";
+import Post from '../components/Post';
 import MainContainer from '../screens/News';
 import NewTweetScreen from '../screens/CreatPost';
 import LoginScreen from '../screens/Login';
@@ -24,6 +25,9 @@ import CommentScreens from '../screens/CommentScreens';
 import DashBoardAdmin from '../screens/AdminManager.js/AdminDashBoard';
 import CreateComment from '../screens/CreateComments';
 import ChangePassWord from '../screens/ChangePassWord';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUser } from '../redux/action';
+import Loader from '../components/Loader';
 const Tabs = () => {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }} >
@@ -71,9 +75,23 @@ const Tabs = () => {
 
 
 const Navigation = () => {
+
+
+  const dispatch  = useDispatch() 
+
+  useEffect(() => {
+
+    dispatch(getUser());
+
+    
+  }, [dispatch])
+
+  const {isAuthenticated , loading} = useSelector(state => state.auth)
     return (
+      loading ? <Loader /> :
+      // 1 la quay 2 la vao
        <NavigationContainer>
-        <Stack.Navigator initialRouteName= "LognIn" screenOptions={{ headerShown: false }}>
+        <Stack.Navigator initialRouteName= { isAuthenticated ? "home":"LogIn" }screenOptions={{ headerShown: false }}>
         <Stack.Screen name="LogIn" component={LoginScreen}/>
             <Stack.Screen name="home" component={Tabs}  />
             <Stack.Screen name="Post Create" component={NewTweetScreen} />
@@ -89,6 +107,7 @@ const Navigation = () => {
             <Stack.Screen name="Admin" component={DashBoardAdmin} options={{ headerShown: true }}/>
             <Stack.Screen name="CreateComment" component={CreateComment} options={{ headerShown: false }}/>
             <Stack.Screen name='ChangePassWord' component={ChangePassWord} options={{ headerShown: true }} />
+            <Stack.Screen name="Post" component={Post} options={{ headerShown: false}}/>
         </Stack.Navigator>
 
 </NavigationContainer>
