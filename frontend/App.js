@@ -26,6 +26,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 const Stack = createStackNavigator();
 
 import Search from "./screens/Search";
+import ListAccount from "./screens/AdminManager.js/ListAccount";
 import Notification from './screens/Notification';
 import Profile from "./screens/Profile";
 import { Input } from "react-native-elements";
@@ -41,6 +42,10 @@ export default function App() {
      
     </SafeAreaView>
     </Provider>
+
+    // <SafeAreaView style={styles.container}>
+    // <ListAccount />
+    // </SafeAreaView>
   );
 }
 
