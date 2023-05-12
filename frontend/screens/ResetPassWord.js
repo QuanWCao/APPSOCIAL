@@ -13,7 +13,7 @@ const ResetPassWord = () => {
       <ScrollView
         style={{paddingTop: 50, paddingHorizontal: 20}}>
         <Text style={{color: 'black', fontSize: 20, fontWeight: 'bold'}}>
-          Reset PassWord
+          Reset Password
         </Text>
         
         <View style={{marginVertical: 10}}>

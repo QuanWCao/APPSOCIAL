@@ -89,7 +89,7 @@ const Profile = ({ name, id, prof, website, bio }) => {
                   name="lock-closed"
                   style={{ flex: 1, fontSize: 35, marginLeft: 10 }}
                 />
-                <Text style={{ flex: 5, fontSize: 15 }}>Change PassWord</Text>
+                <Text style={{ flex: 5, fontSize: 15 }}>Change Password</Text>
               </TouchableOpacity>
 
               <TouchableOpacity
@@ -166,7 +166,7 @@ const Profile = ({ name, id, prof, website, bio }) => {
                               textAlign: "center",
                             }}
                           >
-                            Huy bo
+                            Cancel
                           </Text>
                         </Pressable>
                         <Pressable
@@ -199,7 +199,7 @@ const Profile = ({ name, id, prof, website, bio }) => {
                   name="report"
                   style={{ flex: 1, fontSize: 35, marginLeft: 10 }}
                 />
-                <Text style={{ flex: 5, fontSize: 15 }}>Log out</Text>
+                <Text style={{ flex: 5, fontSize: 15 }}>Log Out</Text>
               </TouchableOpacity>
             </View>
           </RBSheet>
@@ -211,8 +211,8 @@ const Profile = ({ name, id, prof, website, bio }) => {
               source={{
                 uri: "https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/280727990_1379564759214526_3554061026221242893_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFfynfrejHHJNPpkIQ49N1sISRcgeGi-NMhJFyB4aL40_kp2nPl2fOw8munXp_Oeg2QI_ybyaeyBjH_lgXrYRBW&_nc_ohc=CSmkVXjnbcYAX8PUdAl&_nc_ht=scontent.fhan2-4.fna&oh=00_AfAP_5cm7wUknuOe2xfS1ursOHZw0rmNZj-9sigsBp2UzQ&oe=645E7A20",
               }}
-              style={styles.image}
-              resizeMode="center"
+              style={{with: 200, height: 200}}
+              resizeMode="cover"
             />
           </View>
           <TouchableOpacity
@@ -375,6 +375,7 @@ const styles = StyleSheet.create({
     height: 200,
     borderRadius: 100,
     overflow: "hidden",
+    backgroundColor:'blue'
   },
   dm: {
     backgroundColor: "#41444b",

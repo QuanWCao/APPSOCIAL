@@ -35,7 +35,7 @@ const SignUpScreen = () => {
     const [show, setShow] = useState(false);
   const navigation = useNavigation();
   const dispatch = useDispatch();
-  const { err} = useSelector(state => state.msg);
+  // const { err} = useSelector(state => state.msg);
   const handleAdd = () => {
     const FormData = new FormData();
     FormData.append("fullname", fullname);
@@ -66,7 +66,7 @@ const SignUpScreen = () => {
         <View style={{marginVertical: 20}}>
       
           <View style={{marginBottom: 10}}>
-          <Text style={styles.label}>FullName</Text>
+          <Text style={styles.label}>Full Name</Text>
       <View
         style={styles.inputContainer}>
         <Icon
@@ -191,7 +191,7 @@ const SignUpScreen = () => {
     <View style={{flexDirection :'row',justifyContent:"space-between"}}>
 
     <View style={{marginBottom: 20}}>
-          <Text style={styles.label}>Sex</Text>
+          <Text style={styles.label}>Gender</Text>
           <Dropdown
             style={styles.inputContainer_2}
             placeholderStyle={styles.placeholderStyle}
@@ -203,7 +203,7 @@ const SignUpScreen = () => {
             maxHeight={300}
             labelField="label"
             valueField="value"
-            placeholder="Sex"
+            placeholder="Gender"
             
             onFocus={() => setIsFocus_2(true)}
             onBlur={() => setIsFocus_2(false)}
@@ -299,7 +299,9 @@ const styles = StyleSheet.create({
   label: {
     marginVertical: 5,
     fontSize: 14,
-    color: '#BABBC3',
+    color: 'grey',
+    fontWeight: 500
+
   },
   inputContainer: {
     height: 55,
