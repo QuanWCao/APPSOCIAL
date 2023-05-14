@@ -86,12 +86,13 @@ const Navigation = () => {
     
   }, [dispatch])
 
-  const {isAuthenticated , loading} = useSelector(state => state.auth)
+  const {isAuthenticated , loading, role} = useSelector(state => state.auth)
+  // console.log(user.role)
     return (
       loading ? <Loader /> :
       // 1 la quay 2 la vao
        <NavigationContainer>
-        <Stack.Navigator initialRouteName= { isAuthenticated ? "home":"LogIn" }screenOptions={{ headerShown: false }}>
+        <Stack.Navigator initialRouteName= { role==="user" ? isAuthenticated ? "home":"LogIn" : isAuthenticated ? "Admin":"LogIn" }screenOptions={{ headerShown: false }}>
         <Stack.Screen name="LogIn" component={LoginScreen}/>
             <Stack.Screen name="home" component={Tabs}  />
             <Stack.Screen name="Post Create" component={NewTweetScreen} />

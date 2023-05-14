@@ -241,12 +241,12 @@ const Profile = ({ name, id, prof, website, bio }) => {
           lienquanhus@gmail.com
           </Text>
         </View>
-        <View style={styles.bioContainer}>
+        {/* <View style={styles.bioContainer}>
           <Ionicons style={styles.bioIcon} name="clipboard-outline" size={20} />
           <Text style={{ color: "black", fontSize: 14 }}>
             Lorem Ipsum is simply dummy text simply dummy text.
           </Text>
-        </View>
+        </View> */}
 
         <View style={styles.startsContainer}>
           <View style={styles.startsBox}>
@@ -265,12 +265,12 @@ const Profile = ({ name, id, prof, website, bio }) => {
             ]}
           >
             <Text style={[styles.text, { fontSize: 20 }]}>302</Text>
-            <Text style={[styles.text, styles.subtext]}>Followers</Text>
+            <Text style={[styles.text, styles.subtext]}>Likes</Text>
           </View>
 
           <View style={styles.startsBox}>
             <Text style={[styles.text, { fontSize: 20 }]}>136</Text>
-            <Text style={[styles.text, styles.subtext]}>Following</Text>
+            <Text style={[styles.text, styles.subtext]}>Comments</Text>
           </View>
         </View>
 

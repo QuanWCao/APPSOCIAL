@@ -6,26 +6,23 @@ export const login =
   (emailAddress, password) => async (dispatch) => {
     try {
       dispatch({ type: "loginRequest" });
-      console.log(emailAddress, password);
-      //no dang bi set ve rong r
-      // dung me r
-     
+      
       let form_data = new FormData();
-      form_data.append("emailAddress","caolienquan_t64@hus.edu.vn");
-      form_data.append("password", "123456aA@");
+      form_data.append("emailAddress",emailAddress);
+      form_data.append("password", password);
 
       const data = await axios
         .post(`${serverUrl}/api/login`, form_data)
         .then(function (response) {
-          console.log(response.data)
+          
           dispatch({ type: "loginSuccess", payload: response.data });
+        
         })
         .catch(function (err) {
           dispatch({type: "loginFailure", payload: err.response.data.msg });
         });
     } catch (err) {
       console.log(err);
-      
     }
   };
 
@@ -33,10 +30,7 @@ export const login_admin =
 (emailAddress, password) => async (dispatch) => {
   try {
     dispatch({ type: "loginAdminRequest" });
-    console.log(emailAddress, password);
-    //no dang bi set ve rong r
-    // dung me r
-   
+  
     let form_data = new FormData();
     form_data.append("emailAddress",emailAddress );
     form_data.append("password", password);
@@ -44,7 +38,7 @@ export const login_admin =
     const data = await axios
       .post(`${serverUrl}/api/login_admin`, form_data)
       .then(function (response) {
-        console.log(response.data)
+        
         dispatch({ type: "loginAdminSuccess", payload: response.data });
       })
       .catch(function (err) {
@@ -52,27 +46,11 @@ export const login_admin =
       });
   } catch (err) {
     console.log(err);
-    
   }
 };
 
 export const register = (formData) => async (dispatch) => {
-//   try {
-//     dispatch({ type: "registerRequest" });
 
-//     const { data } = await axios.post(`${serverUrl}/api/register`, formData, {
-//       headers: {
-//         "Content-Type": "multipart/form-data",
-//       },
-//     });
-//     dispatch({ type: "registerSuccess", payload: data.msg });
-//   } catch (err) {
-//     dispatch({
-//       type: "registerFailure",
-//       payload: err.response.data.msg,
-//     });
-//   }
-// };
 
 try {
   dispatch({ type: "registerRequest" });
