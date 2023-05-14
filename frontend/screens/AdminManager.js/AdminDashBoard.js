@@ -12,11 +12,11 @@ import { useNavigation } from "@react-navigation/native";
 
 const DashBoardAdmin = () => {
   const navigation = useNavigation();
-  const[countUser ,setCountUser] = useState();
-    const[countLike ,setCountLike] = useState(0);
-    const[countPost ,setCountPost] = useState();
-    const[countReportPost ,setCountReportPost] = useState();
-    const[countComment ,setCountComment] = useState();
+  const[countUser ,setCountUser] = useState(20);
+    const[countLike ,setCountLike] = useState(11);
+    const[countPost ,setCountPost] = useState(6);
+    const[countReportPost ,setCountReportPost] = useState(0);
+    const[countComment ,setCountComment] = useState(6);
     const [visible, setVisible] = useState(false);
     const logoutHandler = () => {
       navigation.navigate("LogIn") 
@@ -38,7 +38,7 @@ const DashBoardAdmin = () => {
 	          
               </View>
               <View style={{alignSelf: "center"}}>
-              <Text style={{fontSize: 24}} >{countLike}</Text>
+              <Text style={{fontSize: 24}} >{countUser}</Text>
               </View>
 	        </TouchableOpacity>
 	        <TouchableOpacity
@@ -53,7 +53,7 @@ const DashBoardAdmin = () => {
 	          
               </View>
               <View style={{alignSelf: "center"}}>
-              <Text style={{fontSize: 24}} >{countLike}</Text>
+              <Text style={{fontSize: 24}} >{countComment}</Text>
               </View>
 	        </TouchableOpacity>
 	
@@ -70,7 +70,7 @@ const DashBoardAdmin = () => {
 	          
               </View>
               <View style={{alignSelf: "center"}}>
-              <Text style={{fontSize: 24}} >{countLike}</Text>
+              <Text style={{fontSize: 24}} >{countPost}</Text>
               </View>
 	        </TouchableOpacity>
 	
@@ -87,7 +87,7 @@ const DashBoardAdmin = () => {
 	          
               </View>
               <View style={{alignSelf: "center"}}>
-              <Text style={{fontSize: 24}} >{countLike}</Text>
+              <Text style={{fontSize: 24}} >{countReportPost}</Text>
               </View>
 	        </TouchableOpacity>
 	
