@@ -29,17 +29,7 @@ const CommentScreens = () => {
   const [myLike, setMyLike] = useState(null);
   const [likesCount, setLikesCount] = useState(10);
   
-  // const [id , setId] = useState(tweet.id);
-  // const [userName, setUserName] = useState(tweet.user.username);
-  //  const [name, setname] = useState(tweet.user.name);
-  //  const [userId, setUserId] = useState(tweet.user.id);
-  //  const [userImage, setUserImage] = useState(tweet.user.image);
-  //  const [createAt, setCreateAt] = useState(tweet.createdAt);
-  //  const [content , setContent] = useState(tweet.content);
-  //  const [image, setImage] = useState(tweet.image);
-  //  const [comment, setComment] = useState(tweet.numberOfComments);
-  //  const [reweets, setReweets] = useState(numberOfRetweets);
-  //  const [like, setLike] = useState(numberOfLikes)
+  
 
   const onShare = async () => {
     try {
@@ -90,12 +80,13 @@ const CommentScreens = () => {
           <View style={styles.Rightcontainer}>
             <View style={styles.tweetHeaderContainer}>
               <View style={styles.tweetHeaderNames}>
-                <Text style={styles.name}>Quan</Text>
+                <Text style={styles.name}>Liên Quân</Text>
                 {/* <Text style={styles.name}>{userName}</Text> */}
-                <Text style={styles.username}>@LienQuan</Text>
+               
                 {/* <Text style={styles.name}>@{name}</Text> */}
               
               </View>
+              
               <Entypo
                 name={"chevron-down"}
                 size={16}
@@ -134,11 +125,13 @@ const CommentScreens = () => {
                 
                </View>
               </RBSheet>
+              
             </View>
+            <Text style={styles.username}>@caoquan2k1@gmail.com</Text>
             <View>
               <Text style={styles.content}>
                 {
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                  "<3 oke bạn thân yêu"
                 }
               </Text>
               
@@ -147,7 +140,8 @@ const CommentScreens = () => {
             <View style={styles.Footercontainer2}>
               <View style={styles.FootericonContainer}>
                
-                <Text style={styles.Footernumber}>{"10"}m</Text>
+                <Text style={styles.Footernumber}>{moment("2023-04-30T12:00:00.000Z").fromNow()}</Text>
+                
               </View>
               <View style={styles.FootericonContainer}>
               <AntDesign

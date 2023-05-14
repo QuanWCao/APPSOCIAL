@@ -30,13 +30,10 @@ const ChangePassWord = () => {
           
       <View
         style={styles.inputContainer}>
-        <Icon
-          name="account-outline"
-          style={{color: '#7978B5', fontSize: 22, marginRight: 10,}}
-        />
+      
         <TextInput
           onChangeText={email}
-          placeholder="Nhap mat khau cu"
+          placeholder="Enter your old password"
           // onFocus={() => {
           //   onFocus();
           //   setIsFocused(true);
@@ -52,13 +49,10 @@ const ChangePassWord = () => {
           
           <View
             style={styles.inputContainer}>
-            <Icon
-              name="account-outline"
-              style={{color: '#7978B5', fontSize: 22, marginRight: 10,}}
-            />
+            
             <TextInput
               onChangeText={password}
-              placeholder="Nhap mat khau moi"
+              placeholder="Enter your new password"
               // onFocus={() => {
               //   onFocus();
               //   setIsFocused(true);
@@ -74,13 +68,10 @@ const ChangePassWord = () => {
           
           <View
             style={styles.inputContainer}>
-            <Icon
-              name="account-outline"
-              style={{color: '#7978B5', fontSize: 22, marginRight: 10,}}
-            />
+          
             <TextInput
               onChangeText={password}
-              placeholder="Xac nhan mat khau"
+              placeholder="Confirm your new password"
               // onFocus={() => {
               //   onFocus();
               //   setIsFocused(true);

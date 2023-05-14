@@ -18,7 +18,7 @@ import { useEffect } from "react";
 import { login ,login_admin } from "../redux/action";
 import { getUser } from "../redux/action";
 const LoginScreen = () => {
-  const [emailAddress, setEmail] = useState("caoquan2k1@gmail.com");
+  const [emailAddress, setEmail] = useState("caolienquan_t64@hus.edu.vn");
   const [password, setPassword] = useState("123456aA@");
   const [isHided, setIsHided] = useState(true);
   const navigation = useNavigation();

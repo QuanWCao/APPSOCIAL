@@ -200,7 +200,6 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     borderBottomColor: "black",
       borderBottomWidth: 0.5,
-  
     borderColor: "lightgrey",
     marginTop: 10,
   },

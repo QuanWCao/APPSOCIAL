@@ -26,42 +26,54 @@ const Post = () => {
     const postInfo = [
         {
           id :1,
-            useName :'LienQuan',
-          postTitle: '30/4 1/5 thang 5 nghi neh cac my fiends',
-          email : "caoquan2k1@gmail.com",
-        //   postPersonImage: require('../../storage/images/userProfile.png'),
-        //   postImage: require('../../storage/images/post1.jpg'),
-          likes: 765,
+            useName :'Liên Quân',
+          postTitle: '30/4 - 1/5 công ty mình nghỉ 5 ngày nhé! \nChúc các bạn có kì nghỉ vui vẻ'
+          ,email : "caoquan2k1@gmail.com",
+          time : "2023-04-30T12:00:00.000Z",
+        postPersonImage: "https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/280727990_1379564759214526_3554061026221242893_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=iW4oZbsxYTQAX8Y3Rum&_nc_ht=scontent.fhan14-3.fna&oh=00_AfA9B_wSXNu5vEu9hKDcY63_J37IO0Wsd3xHUryCdqMC8A&oe=645A85A0",
+         postImage:"https://cdn.tgdd.vn/Files/2022/02/12/1415152/lich-nghi-le-30-4-1-5-nam-2023-nghi-5-ngay-lien-tiep-202304180830209689.jpg",
+        
+          likes: 3,
           isLiked: false,
+          comments: 1,
         },
         {
           id :2,
-            useName :'LienQuan',
-          postTitle: '30/4 1/5 thang 5 nghi neh cac my fiends',
-          email : "caoquan2k1@gmail.com",
+            useName :'Khánh Dũng',
+          postTitle: 'Hello ae',
+          email : "nguyenngocdung_t64@hus.edu.vn",
+          time : "2023-04-25T12:00:00.000Z",
+          postPersonImage: "https://scontent.fhan2-3.fna.fbcdn.net/v/t1.6435-9/102466134_1111446205894337_6336430928374779099_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHQBPxzBQwgrJn3xhNuQyPwKgllFcLXBqgqCWUVwtcGqGYfHNGvlHGF6_O2a_k74SGMsRObi5n4eQFpCwTjPkWr&_nc_ohc=tDCpofSq_dEAX_Mxyk7&_nc_ht=scontent.fhan2-3.fna&oh=00_AfDDrGIP5XpOzo1YuZ1OrC4ipuu-9G9BIOd2CZfbek7dfg&oe=6481CBC6",
         //   postPersonImage: require('../../storage/images/userProfile.png'),
-        //   postImage: require('../../storage/images/post1.jpg'),
-          likes: 765,
+          postImage: "https://i.pinimg.com/originals/9e/a7/2e/9ea72ef078139ced289852e8a4ea0c5c.gif",
+          likes: 5,
           isLiked: false,
+          comments: 5,
         },
         {
           id :3,
-            useName :'LienQuan',
-          postTitle: '30/4 1/5 thang 5 nghi neh cac my fiends',
+            useName :'Liên Quân',
+          postTitle: 'Đây là app mà đầu tiên mà chúng ta cùng viết nhé',
           email : "caoquan2k1@gmail.com",
+          time : "2023-04-25T12:00:00.000Z",
+          postPersonImage: "https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/280727990_1379564759214526_3554061026221242893_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=iW4oZbsxYTQAX8Y3Rum&_nc_ht=scontent.fhan14-3.fna&oh=00_AfA9B_wSXNu5vEu9hKDcY63_J37IO0Wsd3xHUryCdqMC8A&oe=645A85A0",
         //   postPersonImage: require('../../storage/images/userProfile.png'),
-        //   postImage: require('../../storage/images/post1.jpg'),
-          likes: 765,
+        postImage: "https://images.theconversation.com/files/156529/original/image-20170213-23331-vsydk4.jpg?ixlib=rb-1.1.0&rect=0%2C498%2C4896%2C2374&q=45&auto=format&w=1356&h=668&fit=crop",
+          likes: 3,
           isLiked: false,
+          comments: 5,
         },
         {id :4,
-        useName :'LienQuan',
-        postTitle: '30/4 1/5 thang 5 nghi neh cac my fiends',
+        useName :'Liên Quân',
+        postTitle: 'Test App',
         email : "caoquan2k1@gmail.com",
+        time : "2023-04-22T12:00:00.000Z",
+        postPersonImage: "https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/280727990_1379564759214526_3554061026221242893_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=iW4oZbsxYTQAX8Y3Rum&_nc_ht=scontent.fhan14-3.fna&oh=00_AfA9B_wSXNu5vEu9hKDcY63_J37IO0Wsd3xHUryCdqMC8A&oe=645A85A0",
         //   postPersonImage: require('../../storage/images/userProfile.png'),
-        //   postImage: require('../../storage/images/post1.jpg'),
-          likes: 765,
+        postImage: "https://davidhubbs.files.wordpress.com/2015/04/viking_text.jpg",
+          likes: 1,
           isLiked: false,
+          comments: 2,
         },
 
       ];
@@ -138,7 +150,7 @@ const Post = () => {
           <Avatar
             size={50}
             rounded
-            source={{uri :"https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/280727990_1379564759214526_3554061026221242893_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=iW4oZbsxYTQAX8Y3Rum&_nc_ht=scontent.fhan14-3.fna&oh=00_AfA9B_wSXNu5vEu9hKDcY63_J37IO0Wsd3xHUryCdqMC8A&oe=645A85A0"}}
+            source={{uri : data.postPersonImage}}
             containerStyle={{ backgroundColor: "orange" }}
           />
           <View style={styles.Rightcontainer}>
@@ -149,7 +161,7 @@ const Post = () => {
                 
                 {/* <Text style={styles.name}>@{name}</Text> */}
                 <Text style={styles.createdAt}>
-                  {moment("2023-04-30T12:00:00.000Z").fromNow()}
+                  {moment(data.time).fromNow()}
                 </Text>
                 
               </View>
@@ -200,6 +212,9 @@ const Post = () => {
                </View>
               </RBSheet>
             </View>
+            <Text style={styles.createdAt}>
+                  @{data.email}
+                </Text>
             <TouchableOpacity onPress={()=> navigation.navigate('Comment') }>
               <Text style={styles.content}>
                 {
@@ -210,7 +225,7 @@ const Post = () => {
                 <Image
                   style={styles.image}
                   source={{uri :
-                    "https://ktmt.vnmediacdn.com/images/2022/03/19/13-1647657678-nghi-le-1.jpg"
+                   data.postImage
                   }}
                 />
               )}
@@ -228,15 +243,15 @@ const Post = () => {
                     }}
                   />
                 </TouchableOpacity>
-                <Text style={styles.Footernumber}>{"10"}</Text>
+                <Text style={styles.Footernumber}>{myLike ? data.likes +1 :data.likes }</Text>
               </View>
               <TouchableOpacity style={styles.FootericonContainer} onPress={()=> navigation.navigate('Comment')}>
                 <Feather name={"message-circle"} size={20} color={"grey"} />
-                <Text style={styles.Footernumber}>{"123"}</Text>
+                <Text style={styles.Footernumber}>{data.comments}</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.FootericonContainer}>
                 <EvilIcons name={"share-apple"} size={28} color={"grey"} />
-                <Text style={styles.Footernumber}>{"11"}</Text>
+                <Text style={styles.Footernumber}>{}</Text>
               </TouchableOpacity>
               <View style={styles.FootericonContainer}>
                 <EvilIcons name={"eye"} size={28} color={"grey"} onPress={onLike}/>
@@ -344,7 +359,7 @@ const styles = StyleSheet.create({
     color: "grey",
   },
   content: {
-    marginTop: 5,
+    marginTop: 10,
     lineHeight: 18,
   },
   image: {
