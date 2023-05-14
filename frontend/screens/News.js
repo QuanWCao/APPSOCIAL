@@ -21,9 +21,10 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import RBSheet from "react-native-raw-bottom-sheet";
 import Post from "../components/Post";
-
+import { useDispatch, useSelector } from 'react-redux'
 const MainContainer = () => {
   const navigation = useNavigation();
+  const {user} = useSelector((state)=>state.auth)
   // const refRBSheet = useRef();
   // // const [tweets, setTweets] = useState([]);
   // const [loading, setLoading] = useState(false);
@@ -67,7 +68,7 @@ const MainContainer = () => {
   };
 
   const onLike = () => {
-    Alert.Alert("ha");
+    console.log(user);
   };
 
   const removeLike = () => {
@@ -88,7 +89,7 @@ const MainContainer = () => {
     padding: 10}}>
      <View style={{
     flexDirection: 'row'}}>
-        <TouchableOpacity style={{marginRight:10,justifyContent: "center"}}>
+        <TouchableOpacity style={{marginRight:10,justifyContent: "center"}} onPress={onLike}>
         <Avatar
             size={40}
             rounded

@@ -66,6 +66,7 @@ export default function NewTweetScreen() {
           <AntDesign name="close" size={30} color='#4D9FEC' />
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate("Home")}>
+        
           <Text style={styles.buttonText}>Post</Text>
         </TouchableOpacity>
       </View>

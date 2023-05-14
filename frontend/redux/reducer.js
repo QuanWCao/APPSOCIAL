@@ -11,6 +11,7 @@ export const authReducer = createReducer(
       state.isAuthenticated = true;
       state.user = action.payload.user;
       state.access_token = action.payload.access_token;
+      state.role = action.payload.user.role
       state.msg = action.payload.msg;
     },
     loginFailure: (state, action) => {
@@ -41,6 +42,7 @@ export const authReducer = createReducer(
       state.loading = false;
       state.isAuthenticated = action.payload;
       state.user = action.payload.user;
+
       state.msg = action.payload.msg;
 
     },
@@ -67,7 +69,7 @@ export const authReducer = createReducer(
     getUserSuccess: (state, action) => {
       state.loading = false;
       state.isAuthenticated = true;
-      state.user = action.payload.user;
+      state.user = action.payload;
     },
     getUserFailure: (state, action) => {
       state.loading = false;

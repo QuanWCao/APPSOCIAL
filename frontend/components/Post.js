@@ -10,6 +10,7 @@ import {
   ScrollView,
   Animated,
 } from "react-native";
+import axios from "axios";
 import { Feather, EvilIcons, AntDesign, Ionicons,Octicons ,MaterialIcons} from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
@@ -24,32 +25,39 @@ import RBSheet from "react-native-raw-bottom-sheet";
 const Post = () => {
     const postInfo = [
         {
+          id :1,
             useName :'LienQuan',
           postTitle: '30/4 1/5 thang 5 nghi neh cac my fiends',
+          email : "caoquan2k1@gmail.com",
         //   postPersonImage: require('../../storage/images/userProfile.png'),
         //   postImage: require('../../storage/images/post1.jpg'),
           likes: 765,
           isLiked: false,
         },
         {
+          id :2,
             useName :'LienQuan',
           postTitle: '30/4 1/5 thang 5 nghi neh cac my fiends',
+          email : "caoquan2k1@gmail.com",
         //   postPersonImage: require('../../storage/images/userProfile.png'),
         //   postImage: require('../../storage/images/post1.jpg'),
           likes: 765,
           isLiked: false,
         },
         {
+          id :3,
             useName :'LienQuan',
           postTitle: '30/4 1/5 thang 5 nghi neh cac my fiends',
+          email : "caoquan2k1@gmail.com",
         //   postPersonImage: require('../../storage/images/userProfile.png'),
         //   postImage: require('../../storage/images/post1.jpg'),
           likes: 765,
           isLiked: false,
         },
-        {
+        {id :4,
         useName :'LienQuan',
         postTitle: '30/4 1/5 thang 5 nghi neh cac my fiends',
+        email : "caoquan2k1@gmail.com",
         //   postPersonImage: require('../../storage/images/userProfile.png'),
         //   postImage: require('../../storage/images/post1.jpg'),
           likes: 765,
@@ -101,8 +109,17 @@ const Post = () => {
     console.warn("ga lam");
   };
 
-  const onLike = () => {
-    Alert.Alert("ha");
+  const onLike = async () => {
+    try {
+      const response = await fetch(
+        'https://backendappsocial.onrender.com/api/user/:id',
+      );
+      const json = await response.json();
+      console.log(json);
+      return json;
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const removeLike = () => {
@@ -117,7 +134,7 @@ const Post = () => {
             const refRBSheet = useRef();
         return (
    
-        <SafeAreaView key={index} style={styles.container}>
+        <SafeAreaView key={data.id} style={styles.container}>
           <Avatar
             size={50}
             rounded
@@ -129,12 +146,14 @@ const Post = () => {
               <View style={styles.tweetHeaderNames}>
                 <Text style={styles.name}>{data.useName}</Text>
                 {/* <Text style={styles.name}>{userName}</Text> */}
-                <Text style={styles.username}>@LienQuan</Text>
+                
                 {/* <Text style={styles.name}>@{name}</Text> */}
                 <Text style={styles.createdAt}>
                   {moment("2023-04-30T12:00:00.000Z").fromNow()}
                 </Text>
+                
               </View>
+              
               <EvilIcons
                 name={"navicon"}
                 size={16}
@@ -220,7 +239,7 @@ const Post = () => {
                 <Text style={styles.Footernumber}>{"11"}</Text>
               </TouchableOpacity>
               <View style={styles.FootericonContainer}>
-                <EvilIcons name={"eye"} size={28} color={"grey"} />
+                <EvilIcons name={"eye"} size={28} color={"grey"} onPress={onLike}/>
                 <Text style={styles.Footernumber}>{}</Text>
               </View>
             </View>

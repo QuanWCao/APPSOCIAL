@@ -19,7 +19,7 @@ const DashBoardAdmin = () => {
     const[countComment ,setCountComment] = useState();
     const [visible, setVisible] = useState(false);
     const logoutHandler = () => {
-      navigation.navigate("LogIn");
+      navigation.navigate("LogIn") 
     };
     return (
         <View style={styles.container}>
@@ -206,9 +206,9 @@ const DashBoardAdmin = () => {
                             height:40,
                             margin:10
                           }}
-                          onPress={() => logoutHandler() &&
-                          setVisible(!visible)}
-                        >
+                          onPress={() => {logoutHandler() ; setVisible(false) 
+                          }
+                          }>
                           <Text
                             style={{
                               fontWeight: "bold",

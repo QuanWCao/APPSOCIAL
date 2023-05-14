@@ -16,8 +16,9 @@ import { CheckBox } from "@rneui/themed";
 import { useDispatch , useSelector } from "react-redux";
 import { useEffect } from "react";
 import { login ,login_admin } from "../redux/action";
+import { getUser } from "../redux/action";
 const LoginScreen = () => {
-  const [emailAddress, setEmail] = useState("caolienquan_t64@hus.edu.vn");
+  const [emailAddress, setEmail] = useState("caoquan2k1@gmail.com");
   const [password, setPassword] = useState("123456aA@");
   const [isHided, setIsHided] = useState(true);
   const navigation = useNavigation();
@@ -25,23 +26,24 @@ const LoginScreen = () => {
   const dispatch = useDispatch();
 
   const { err} = useSelector(state => state.auth);
+  
  
   const loginHandler = () => {
-    
-    dispatch(login(emailAddress,password));// no tra ve mess thi dung con loi thi quay den chet
-    
-   
-   
-  };
+    if (checked==1) {
+      dispatch(login(emailAddress,password));
+    } else {
+      dispatch(login_admin(emailAddress,password));
+    }
+  }
 
   useEffect(() => {
-    console.log(err ,emailAddress, password)
+
     if(err) {
-      alert(err)
+      
       dispatch({type : "clearError"})
     }
  
-  }, [err , dispatch ,alert,])
+  }, [err , dispatch ])
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Image

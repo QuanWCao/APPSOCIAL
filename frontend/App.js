@@ -42,10 +42,15 @@ export default function App() {
      
     </SafeAreaView>
     </Provider>
-
+    // <Provider store={store}>
     // <SafeAreaView style={styles.container}>
-    // <ListAccount />
+   
+    // <NavigationContainer>
+    //   <MainContainer/>
+    // </NavigationContainer>
+   
     // </SafeAreaView>
+    //  </Provider>
   );
 }
 
