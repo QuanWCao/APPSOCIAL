@@ -50,7 +50,7 @@ const EditProfile = () => {
         <TouchableOpacity
           onPress={() => {
             TostMessage();
-            navigation.goBack();
+            navigation.navigate("Profile");
           }}
         >
           <Ionic name="checkmark" style={{ fontSize: 35, color: "#3493D9" }} />
@@ -83,7 +83,7 @@ const EditProfile = () => {
           }}
         >
           <View style={{ marginRight: 20 }}>
-            <Text>FullName</Text>
+            <Text>Full Name</Text>
           </View>
           <View>
             <TextInput
@@ -160,10 +160,9 @@ const EditProfile = () => {
           <View>
           <Dropdown
             style={{
-    height: 20,
+    height: 25,
     backgroundColor: '#F3F4FB',
     paddingHorizontal: 15,
-    
     width :120,
     alignItems: 'center',
   }}

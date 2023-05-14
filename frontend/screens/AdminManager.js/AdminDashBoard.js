@@ -26,7 +26,7 @@ const DashBoardAdmin = () => {
 	      <ScrollView
 	        style={{ backgroundColor: "#f2f2f2", margin: 10, borderRadius: 20 }}
 	      >
-	        <TouchableOpacity
+	        <TouchableOpacity  onPress={() => navigation.navigate("ListAccount")}
 	          style={styles.Touch1}
 	          
 	        >

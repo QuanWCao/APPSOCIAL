@@ -180,7 +180,7 @@ const Profile = ({ name, id, prof, website, bio }) => {
                             margin:10
                           }}
                           onPress={() => logoutHandler() &&
-                          setVisible(!visible) && navigation.navigate('login')}
+                          setVisible(!visible) && navigation.navigate("EditProfile")}
                         >
                           <Text
                             style={{
@@ -232,7 +232,7 @@ const Profile = ({ name, id, prof, website, bio }) => {
             Liên Quân
           </Text>
           <Text style={[styles.text, { color: "grey", fontSize: 14 }]}>
-            @LienQuan
+            @caoquan2k1@gmail.com
           </Text>
         </View>
         <View style={styles.bioContainer}>

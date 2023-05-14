@@ -28,6 +28,8 @@ import ChangePassWord from '../screens/ChangePassWord';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUser } from '../redux/action';
 import Loader from '../components/Loader';
+import ListAccount from '../screens/AdminManager.js/ListAccount';
+
 const Tabs = () => {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }} >
@@ -109,6 +111,7 @@ const Navigation = () => {
             <Stack.Screen name="CreateComment" component={CreateComment} options={{ headerShown: false }}/>
             <Stack.Screen name='ChangePassWord' component={ChangePassWord} options={{ headerShown: true }} />
             <Stack.Screen name="Post" component={Post} options={{ headerShown: false}}/>
+            <Stack.Screen name="ListAccount" component={ListAccount} options={{ headerShown: false}}/>
         </Stack.Navigator>
 
 </NavigationContainer>

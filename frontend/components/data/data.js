@@ -48,6 +48,19 @@ export const Data = [
         reply:"20.3K",
         time:"6d",
     },
+    {
+        id:"@caoquan2k1@gmail.com",
+        name:"Liên Quân",
+        post:
+        "Good always triumphs over evil.",
+        image:"https://pbs.twimg.com/media/FiLTcPmXgAMlTeB?format=jpg&name=small",
+        verified:false,
+        prof:"https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/280727990_1379564759214526_3554061026221242893_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFfynfrejHHJNPpkIQ49N1sISRcgeGi-NMhJFyB4aL40_kp2nPl2fOw8munXp_Oeg2QI_ybyaeyBjH_lgXrYRBW&_nc_ohc=CSmkVXjnbcYAX8PUdAl&_nc_ht=scontent.fhan2-4.fna&oh=00_AfAP_5cm7wUknuOe2xfS1ursOHZw0rmNZj-9sigsBp2UzQ&oe=645E7A20",
+        like:"2M",
+        rt:"121.4K",
+        reply:"20.3K",
+        time:"6d",
+    },
 ]
 
 export const TrendingData = [
@@ -67,13 +80,13 @@ export const TrendingData = [
         topic:"Quyết định tuyển nhân sự",
         hashtag:"Shameless",
         count:"26",
-        id:1,
+        id:3,
     },
     {
         topic:"Quyết định tăng lương",
         hashtag:"Shameless",
         count:"12",
-        id:1,
+        id:4,
     },
     
     

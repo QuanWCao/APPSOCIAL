@@ -43,6 +43,7 @@ const account = [
 
 ];
 const [search, setSearch] = useState("");
+const navigation = useNavigation();
   return (
   
     <View>
@@ -57,9 +58,9 @@ const [search, setSearch] = useState("");
     backgroundColor: "#f2f2f2",
   }}>
         <Icon
-          name="bars"
+          name="chevron-left"
           size={20}
-          onPress={{}}
+          onPress={() => navigation.goBack()}
         />
       </View>
       <View style={ {
