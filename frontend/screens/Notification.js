@@ -12,8 +12,10 @@ const Notification = ({navigation}) => {
     <View style={styles.container}>
       <View style={styles.header}>
           <Text style = {styles.titleText}>Notification</Text>
-          <TouchableOpacity style= {styles.settingIcon}>
-          <Ionicons name="search" size={30} color={"black"} />
+          <TouchableOpacity style= {styles.settingIcon} onPress={() => {
+            navigation.navigate("Search");
+          }}>
+            <Ionicons name="search" size={30} color={"black"} />
           </TouchableOpacity>
       </View>
       <View>

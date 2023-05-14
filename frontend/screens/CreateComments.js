@@ -69,7 +69,7 @@ export default function CreateComment() {
           <Text style={styles.buttonText1}>Huy bo</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate("Comment")}>
-          <Text style={styles.buttonText}>Tweet</Text>
+          <Text style={styles.buttonText}>Post</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.newTweetContainer}>

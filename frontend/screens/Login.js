@@ -73,10 +73,9 @@ const LoginScreen = () => {
           value={emailAddress}
           style={styles.input}
           numberOfLines={1}
-          placeholder="Nhap so dien thoai"
+          placeholder="Enter your email"
           placeholderTextColor="#666"
           onChangeText={setEmail}
-          keyboardType={"number-pad"}
           returnKeyType="done"
         />
       </View>
@@ -99,7 +98,7 @@ const LoginScreen = () => {
           value={password}
           style={styles.input}
           numberOfLines={1}
-          placeholder="Dien mat khau"
+          placeholder="Enter your password"
           placeholderTextColor="#666"
           secureTextEntry={isHided}
           onChangeText={setPassword}

@@ -180,7 +180,7 @@ const Profile = ({ name, id, prof, website, bio }) => {
                             margin:10
                           }}
                           onPress={() => logoutHandler() &&
-                          setVisible(!visible)}
+                          setVisible(!visible) && navigation.navigate('login')}
                         >
                           <Text
                             style={{
