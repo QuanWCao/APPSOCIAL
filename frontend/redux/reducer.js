@@ -84,3 +84,38 @@ export const authReducer = createReducer(
     },
   }
 );
+export const postReducer = createReducer
+({}, 
+  {
+    getPostRequest: (state) => {
+      state.loading = true;
+    },
+    getPostSuccess: (state, action) => {
+      state.loading =  false;
+      state.post = action.payload;
+    },
+    getPostFailure: (state, action) => {
+      state.loading =  false;
+      state.err = action.payload;
+    },
+    createPostRequest: (state) => {
+      state.loading = true;
+    },
+    createPostSuccess: (state, action) => {
+      state.loading =  false;
+      state.msg = action.payload.msg;
+    },
+    createPostFailure: (state, action) => {
+      state.loading =  false;
+      state.err = action.payload;
+    },
+    clearError: (state) => {
+      state.err = null;
+    },
+    clearMessage: (state) => {
+      state.msg = null;
+    },
+
+
+}
+);

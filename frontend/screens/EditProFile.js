@@ -50,7 +50,7 @@ const EditProfile = () => {
         <TouchableOpacity
           onPress={() => {
             TostMessage();
-            navigation.navigate("Profile");
+            navigation.navigate("home");
           }}
         >
           <Ionic name="checkmark" style={{ fontSize: 35, color: "#3493D9" }} />
@@ -59,7 +59,7 @@ const EditProfile = () => {
       <View style={{ padding: 20, alignItems: "center" }}>
         <Image
           source={{
-            uri: "https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/280727990_1379564759214526_3554061026221242893_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFfynfrejHHJNPpkIQ49N1sISRcgeGi-NMhJFyB4aL40_kp2nPl2fOw8munXp_Oeg2QI_ybyaeyBjH_lgXrYRBW&_nc_ohc=CSmkVXjnbcYAX8PUdAl&_nc_ht=scontent.fhan2-4.fna&oh=00_AfAP_5cm7wUknuOe2xfS1ursOHZw0rmNZj-9sigsBp2UzQ&oe=645E7A20",
+            uri: "https://upload.wikimedia.org/wikipedia/vi/thumb/5/5c/Chelsea_crest.svg/380px-Chelsea_crest.svg.png",
           }}
           style={{ width: 80, height: 80, borderRadius: 100, marginBottom: 20 }}
         />
@@ -83,7 +83,7 @@ const EditProfile = () => {
           }}
         >
           <View style={{ marginRight: 20 }}>
-            <Text>Full Name</Text>
+            <Text>FullName</Text>
           </View>
           <View>
             <TextInput
@@ -155,14 +155,15 @@ const EditProfile = () => {
           }}
         >
           <View style={{ marginRight: 20 }}>
-            <Text>Gender</Text>
+            <Text>Sex</Text>
           </View>
           <View>
           <Dropdown
             style={{
-    height: 25,
+    height: 20,
     backgroundColor: '#F3F4FB',
     paddingHorizontal: 15,
+    
     width :120,
     alignItems: 'center',
   }}
@@ -172,7 +173,7 @@ const EditProfile = () => {
             maxHeight={300}
             labelField="label"
             valueField="value"
-            placeholder="Gender"
+            placeholder="Sex"
             onFocus={() => setIsFocus(true)}
             onBlur={() => setIsFocus(false)}
             value={value}

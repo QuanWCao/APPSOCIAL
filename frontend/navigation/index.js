@@ -28,8 +28,7 @@ import ChangePassWord from '../screens/ChangePassWord';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUser } from '../redux/action';
 import Loader from '../components/Loader';
-import ListAccount from '../screens/AdminManager.js/ListAccount';
-
+import EditPost from '../screens/EditPost';
 const Tabs = () => {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }} >
@@ -100,7 +99,7 @@ const Navigation = () => {
             <Stack.Screen name="Post Create" component={NewTweetScreen} />
             <Stack.Screen name="SignUp" component={SignUpScreen} options={{ headerShown: true }}/>
             <Stack.Screen name="ResetPassword" component={ResetPassWord} options={{ headerShown: true }} />
-            <Stack.Screen name="EnterEmail" component={InputNumber} options={{ headerShown: true }}/>
+            <Stack.Screen name="EnterNumber" component={InputNumber} options={{ headerShown: true }}/>
             <Stack.Screen name="SendOTP" component={OTP} options={{ headerShown: true }}/>
             <Stack.Screen name="Search" component={Search} />
             <Stack.Screen name="Notification" component={Notification}/>
@@ -111,7 +110,7 @@ const Navigation = () => {
             <Stack.Screen name="CreateComment" component={CreateComment} options={{ headerShown: false }}/>
             <Stack.Screen name='ChangePassWord' component={ChangePassWord} options={{ headerShown: true }} />
             <Stack.Screen name="Post" component={Post} options={{ headerShown: false}}/>
-            <Stack.Screen name="ListAccount" component={ListAccount} options={{ headerShown: false}}/>
+            <Stack.Screen name = "Edit" component={EditPost} />
         </Stack.Navigator>
 
 </NavigationContainer>

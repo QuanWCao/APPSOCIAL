@@ -101,3 +101,26 @@ export const getUser = () => async (dispatch) => {
     dispatch({ type: "getUserFailure", payload: err.response.data.msg });
   }
 };
+
+export const getPost =
+(emailAddress, password) => async (dispatch) => {
+  try {
+    dispatch({ type: "loginAdminRequest" });
+  
+    let form_data = new FormData();
+    form_data.append("emailAddress",emailAddress );
+    form_data.append("password", password);
+
+    const data = await axios
+      .post(`${serverUrl}/api/login_admin`, form_data)
+      .then(function (response) {
+        
+        dispatch({ type: "loginAdminSuccess", payload: response.data });
+      })
+      .catch(function (err) {
+        dispatch({type: "loginAdminFailure", payload: err.response.data.msg });
+      });
+  } catch (err) {
+    console.log(err);
+  }
+};
