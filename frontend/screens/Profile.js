@@ -40,6 +40,7 @@ const Profile = ({ name, id, prof, website, bio }) => {
             ref={refRBSheet}
             height={250}
             closeOnDragDown={true}
+            closeOnPressBack={true}
             closeOnPressMask={true}
             customStyles={{
               wrapper: {
@@ -83,13 +84,13 @@ const Profile = ({ name, id, prof, website, bio }) => {
                   alignItems: "center",
                   borderRadius: 10,
                 }}
-                onPress={() => navigation.navigate("ChangePassWord")}
+                onPress={() => {navigation.navigate("ChangePassWord");refRBSheet.current.close()}}
               >
                 <Ionicons
                   name="lock-closed"
                   style={{ flex: 1, fontSize: 35, marginLeft: 10 }}
                 />
-                <Text style={{ flex: 5, fontSize: 15 }}>Change Password</Text>
+                <Text style={{ flex: 5, fontSize: 15 }}>Change PassWord</Text>
               </TouchableOpacity>
 
               <TouchableOpacity
@@ -101,9 +102,9 @@ const Profile = ({ name, id, prof, website, bio }) => {
                   alignItems: "center",
                   borderRadius: 10,
                 }}
-                onPress={() => {
-                  setVisible(true);
-                }}
+                onPress={() => {{
+                   setVisible(!visible)
+                }}}
               >
                 <Modal
                   animationType="slide"
@@ -166,7 +167,7 @@ const Profile = ({ name, id, prof, website, bio }) => {
                               textAlign: "center",
                             }}
                           >
-                            Cancel
+                            Huy bo
                           </Text>
                         </Pressable>
                         <Pressable
@@ -179,8 +180,8 @@ const Profile = ({ name, id, prof, website, bio }) => {
                             height:40,
                             margin:10
                           }}
-                          onPress={() => logoutHandler() &&
-                          setVisible(!visible) && navigation.navigate("EditProfile")}
+                          onPress={() => {  refRBSheet.current.close();
+                          setVisible(!visible);logoutHandler()}}
                         >
                           <Text
                             style={{
@@ -199,7 +200,7 @@ const Profile = ({ name, id, prof, website, bio }) => {
                   name="report"
                   style={{ flex: 1, fontSize: 35, marginLeft: 10 }}
                 />
-                <Text style={{ flex: 5, fontSize: 15 }}>Log Out</Text>
+                <Text style={{ flex: 5, fontSize: 15 }}>Log out</Text>
               </TouchableOpacity>
             </View>
           </RBSheet>
@@ -211,8 +212,8 @@ const Profile = ({ name, id, prof, website, bio }) => {
               source={{
                 uri: "https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/280727990_1379564759214526_3554061026221242893_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFfynfrejHHJNPpkIQ49N1sISRcgeGi-NMhJFyB4aL40_kp2nPl2fOw8munXp_Oeg2QI_ybyaeyBjH_lgXrYRBW&_nc_ohc=CSmkVXjnbcYAX8PUdAl&_nc_ht=scontent.fhan2-4.fna&oh=00_AfAP_5cm7wUknuOe2xfS1ursOHZw0rmNZj-9sigsBp2UzQ&oe=645E7A20",
               }}
-              style={{with: 200, height: 200}}
-              resizeMode="cover"
+              style={styles.image}
+              resizeMode="center"
             />
           </View>
           <TouchableOpacity
@@ -232,7 +233,7 @@ const Profile = ({ name, id, prof, website, bio }) => {
             Liên Quân
           </Text>
           <Text style={[styles.text, { color: "grey", fontSize: 14 }]}>
-            @caoquan2k1@gmail.com
+            @LienQuan
           </Text>
         </View>
         <View style={styles.bioContainer}>
@@ -375,7 +376,6 @@ const styles = StyleSheet.create({
     height: 200,
     borderRadius: 100,
     overflow: "hidden",
-    backgroundColor:'blue'
   },
   dm: {
     backgroundColor: "#41444b",

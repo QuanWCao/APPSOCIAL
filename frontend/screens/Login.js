@@ -27,11 +27,14 @@ const LoginScreen = () => {
 
   const { err} = useSelector(state => state.auth);
   
+  
  
   const loginHandler = () => {
     if (checked==1) {
+      
       dispatch(login(emailAddress,password));
     } else {
+      
       dispatch(login_admin(emailAddress,password));
     }
   }
@@ -73,9 +76,10 @@ const LoginScreen = () => {
           value={emailAddress}
           style={styles.input}
           numberOfLines={1}
-          placeholder="Enter your email"
+          placeholder="Nhap so dien thoai"
           placeholderTextColor="#666"
           onChangeText={setEmail}
+          keyboardType={"number-pad"}
           returnKeyType="done"
         />
       </View>
@@ -98,7 +102,7 @@ const LoginScreen = () => {
           value={password}
           style={styles.input}
           numberOfLines={1}
-          placeholder="Enter your password"
+          placeholder="Dien mat khau"
           placeholderTextColor="#666"
           secureTextEntry={isHided}
           onChangeText={setPassword}
@@ -122,7 +126,7 @@ const LoginScreen = () => {
         style={{
           marginTop: 10,
           width: "100%",
-          // height: windowHeight / 15,
+         
 
           padding: 5,
 marginBottom:20,
@@ -150,7 +154,7 @@ marginBottom:20,
               Admin :
             </Text>
             <CheckBox
-              checked={checked === 0}
+              checked={checked == 0}
               onPress={() => setChecked(0)}
               checkedIcon="dot-circle-o"
               uncheckedIcon="circle-o"
@@ -168,7 +172,7 @@ marginBottom:20,
               User :
             </Text>
             <CheckBox
-              checked={checked === 1}
+              checked={checked == 1}
               onPress={() => setChecked(1)}
               checkedIcon="dot-circle-o"
               uncheckedIcon="circle-o"
@@ -195,7 +199,7 @@ marginBottom:20,
       <TouchableOpacity
         style={styles.forgotButton}
         onPress={() => {
-          navigation.navigate("EnterEmail");
+          navigation.navigate("EnterNumber");
         }}
       >
         <Text style={styles.navButtonText}>Forgot Password?</Text>

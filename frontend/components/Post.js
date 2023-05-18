@@ -8,6 +8,8 @@ import {
   SafeAreaView,
   TouchableOpacity,
   ScrollView,
+  Modal,
+  Pressable,
   Animated,
 } from "react-native";
 import axios from "axios";
@@ -30,7 +32,7 @@ const Post = () => {
           postTitle: '30/4 - 1/5 công ty mình nghỉ 5 ngày nhé! \nChúc các bạn có kì nghỉ vui vẻ'
           ,email : "caoquan2k1@gmail.com",
           time : "2023-04-30T12:00:00.000Z",
-        postPersonImage: "https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/280727990_1379564759214526_3554061026221242893_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFfynfrejHHJNPpkIQ49N1sISRcgeGi-NMhJFyB4aL40_kp2nPl2fOw8munXp_Oeg2QI_ybyaeyBjH_lgXrYRBW&_nc_ohc=CSmkVXjnbcYAX8PUdAl&_nc_ht=scontent.fhan2-4.fna&oh=00_AfAP_5cm7wUknuOe2xfS1ursOHZw0rmNZj-9sigsBp2UzQ&oe=645E7A20",
+        postPersonImage: "https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/280727990_1379564759214526_3554061026221242893_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=iW4oZbsxYTQAX8Y3Rum&_nc_ht=scontent.fhan14-3.fna&oh=00_AfA9B_wSXNu5vEu9hKDcY63_J37IO0Wsd3xHUryCdqMC8A&oe=645A85A0",
          postImage:"https://cdn.tgdd.vn/Files/2022/02/12/1415152/lich-nghi-le-30-4-1-5-nam-2023-nghi-5-ngay-lien-tiep-202304180830209689.jpg",
         
           likes: 3,
@@ -56,7 +58,7 @@ const Post = () => {
           postTitle: 'Đây là app mà đầu tiên mà chúng ta cùng viết nhé',
           email : "caoquan2k1@gmail.com",
           time : "2023-04-25T12:00:00.000Z",
-          postPersonImage: "https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/280727990_1379564759214526_3554061026221242893_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFfynfrejHHJNPpkIQ49N1sISRcgeGi-NMhJFyB4aL40_kp2nPl2fOw8munXp_Oeg2QI_ybyaeyBjH_lgXrYRBW&_nc_ohc=CSmkVXjnbcYAX8PUdAl&_nc_ht=scontent.fhan2-4.fna&oh=00_AfAP_5cm7wUknuOe2xfS1ursOHZw0rmNZj-9sigsBp2UzQ&oe=645E7A20",
+          postPersonImage: "https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/280727990_1379564759214526_3554061026221242893_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=iW4oZbsxYTQAX8Y3Rum&_nc_ht=scontent.fhan14-3.fna&oh=00_AfA9B_wSXNu5vEu9hKDcY63_J37IO0Wsd3xHUryCdqMC8A&oe=645A85A0",
         //   postPersonImage: require('../../storage/images/userProfile.png'),
         postImage: "https://images.theconversation.com/files/156529/original/image-20170213-23331-vsydk4.jpg?ixlib=rb-1.1.0&rect=0%2C498%2C4896%2C2374&q=45&auto=format&w=1356&h=668&fit=crop",
           likes: 3,
@@ -68,7 +70,7 @@ const Post = () => {
         postTitle: 'Test App',
         email : "caoquan2k1@gmail.com",
         time : "2023-04-22T12:00:00.000Z",
-        postPersonImage: "https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/280727990_1379564759214526_3554061026221242893_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFfynfrejHHJNPpkIQ49N1sISRcgeGi-NMhJFyB4aL40_kp2nPl2fOw8munXp_Oeg2QI_ybyaeyBjH_lgXrYRBW&_nc_ohc=CSmkVXjnbcYAX8PUdAl&_nc_ht=scontent.fhan2-4.fna&oh=00_AfAP_5cm7wUknuOe2xfS1ursOHZw0rmNZj-9sigsBp2UzQ&oe=645E7A20",
+        postPersonImage: "https://scontent.fhan14-3.fna.fbcdn.net/v/t39.30808-6/280727990_1379564759214526_3554061026221242893_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=iW4oZbsxYTQAX8Y3Rum&_nc_ht=scontent.fhan14-3.fna&oh=00_AfA9B_wSXNu5vEu9hKDcY63_J37IO0Wsd3xHUryCdqMC8A&oe=645A85A0",
         //   postPersonImage: require('../../storage/images/userProfile.png'),
         postImage: "https://davidhubbs.files.wordpress.com/2015/04/viking_text.jpg",
           likes: 1,
@@ -84,6 +86,7 @@ const Post = () => {
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState(null);
 //   const [myLike, setMyLike] = useState(null);
+
   const [likesCount, setLikesCount] = useState(10);
   
   // const [id , setId] = useState(tweet.id);
@@ -144,6 +147,16 @@ const Post = () => {
         {postInfo.map((data, index) => {
             const [myLike, setMyLike] = useState(data.isLiked);
             const refRBSheet = useRef();
+            const Edit = async (
+                postImage ,
+                postTitle ,
+                postPersonImage,
+            
+                ) => {
+      navigation.navigate("Edit", { postImage ,
+                postTitle ,postPersonImage })
+    };
+    const [visible, setVisible] = useState(false);
         return (
    
         <SafeAreaView key={data.id} style={styles.container}>
@@ -189,22 +202,119 @@ const Post = () => {
                 }}
               >
                <View style={{ justifyContent: "center", alignContent :"center",margin: 10 }}>
-                <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :50,alignItems :'center',borderRadius:10}}>
+               <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :55,alignItems :'center',borderRadius:10}} onPress={() => {setVisible(!visible)}}>
                 <Ionicons name="add-circle" style={{flex :1 , fontSize: 35 ,marginLeft :10}} />
                   <Text style={{flex:5 ,fontSize:15}}>Save Post</Text>
                 </TouchableOpacity>
+                
 
-                <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :50,alignItems :'center',borderRadius:10}}>
+                <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :50,alignItems :'center',borderRadius:10}} onPress={() => {refRBSheet.current.close();
+                Edit(
+                  data.postImage ,
+                data.postTitle ,
+                data.postPersonImage,
+                )
+               }}>
                 <Entypo name="edit" style={{flex :1 , fontSize: 35 ,marginLeft :10}} />
                   <Text style={{flex:5 ,fontSize:15}}>Edit Post</Text>
                 </TouchableOpacity>
+                <Modal
+                  animationType="slide"
+                  transparent={true}
+                  visible={visible}
+                  onRequestClose={() => {
+                    
+                    setVisible(!visible);
+                  }}
+                >
+                  <View
+                    style={{
+                      flex: 1,
+                      justifyContent: "center",
+                      alignItems: "center",
+                      marginTop: 22,
+                    }}
+                  >
+                    <View
+                      style={{
+                        margin: 20,
+                        backgroundColor: "white",
+                        borderRadius: 20,
+                        padding: 35,
+                        alignItems: "center",
+                        shadowColor: "#000",
+                        shadowOffset: {
+                          width: 0,
+                          height: 2,
+                        },
+                        shadowOpacity: 0.25,
+                        shadowRadius: 4,
+                        elevation: 5,
+                      }}
+                    >
+                      <Text
+                        style={{
+                          marginBottom: 15,
+                          textAlign: "center",
+                        }}
+                      >
+                        Are you sure you want to delete post?
+                      </Text>
+                      <View style={{ flexDirection: "row" ,justifyContent:'center',alignItems:'center'}}>
+                        <Pressable
+                          style={{
+                            borderRadius: 20,
+                            padding: 10,
+                            elevation: 2,
+                            backgroundColor: "#2196F3",
+                            flex: 1,
+                            height:40,
+                            margin:10
+                          }}
+                          onPress={() => setVisible(!visible)}
+                        >
+                          <Text
+                            style={{
+                              fontWeight: "bold",
+                              textAlign: "center",
+                            }}
+                          >
+                            Cancel
+                          </Text>
+                        </Pressable>
+                        <Pressable
+                          style={{
+                            borderRadius: 20,
+                            padding: 10,
+                            elevation: 2,
+                            backgroundColor: "#2196F3",
+                            flex: 1,
+                            height:40,
+                            margin:10
+                          }}
+                          onPress={() => {  setVisible(!visible),refRBSheet.current.close();
+                            navigation.navigate('Home')}}
+                        >
+                          <Text
+                            style={{
+                              fontWeight: "bold",
+                              textAlign: "center",
+                            }}
+                          >
+                            Yes
+                          </Text>
+                        </Pressable>
+                      </View>
+                    </View>
+                  </View>
+                </Modal>
 
-                <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :50,alignItems :'center',borderRadius:10}}>
+                <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :55,alignItems :'center',borderRadius:10}} onPress={() => {setVisible(!visible)}}>
                 <Ionicons name="trash" style={{flex :1 , fontSize: 35 ,marginLeft :10}} />
                   <Text style={{flex:5 ,fontSize:15}}>Delete Post</Text>
                 </TouchableOpacity>
 
-                 <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :55,alignItems :'center',borderRadius:10}}>
+                 <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :55,alignItems :'center',borderRadius:10}} onPress={() => {refRBSheet.current.close()}}>
                 <MaterialIcons name="report" style={{flex :1 , fontSize: 35 ,marginLeft :10 }} />
                   <Text style={{flex:5 ,fontSize:15}}>Report Post</Text>
                 </TouchableOpacity>
