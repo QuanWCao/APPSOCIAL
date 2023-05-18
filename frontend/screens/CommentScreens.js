@@ -111,12 +111,12 @@ const CommentScreens = () => {
                <View style={{ justifyContent: "center", alignContent :"center",margin: 10 }}>
         
 
-                <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :50,alignItems :'center',borderRadius:10}}>
+               <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :55,alignItems :'center',borderRadius:10}} onPress={() => {refRBSheet.current.close()}}>
                 <Entypo name="edit" style={{flex :1 , fontSize: 35 ,marginLeft :10}} />
                   <Text style={{flex:5 ,fontSize:15}}>Edit</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :50,alignItems :'center',borderRadius:10}}>
+                <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :55,alignItems :'center',borderRadius:10}} onPress={() => {refRBSheet.current.close()}}>
                 <Ionicons name="trash" style={{flex :1 , fontSize: 35 ,marginLeft :10}} />
                   <Text style={{flex:5 ,fontSize:15}}>Delete</Text>
                 </TouchableOpacity>

@@ -8,6 +8,8 @@ import {
   SafeAreaView,
   TouchableOpacity,
   ScrollView,
+  Modal,
+  Pressable,
   Animated,
 } from "react-native";
 import axios from "axios";
@@ -84,6 +86,7 @@ const Post = () => {
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState(null);
 //   const [myLike, setMyLike] = useState(null);
+
   const [likesCount, setLikesCount] = useState(10);
   
   // const [id , setId] = useState(tweet.id);
@@ -144,6 +147,15 @@ const Post = () => {
         {postInfo.map((data, index) => {
             const [myLike, setMyLike] = useState(data.isLiked);
             const refRBSheet = useRef();
+            const Edit = async (
+                postImage ,
+                postTitle ,
+            
+                ) => {
+      navigation.navigate("Edit", { postImage ,
+                postTitle  })
+    };
+    const [visible, setVisible] = useState(false);
         return (
    
         <SafeAreaView key={data.id} style={styles.container}>
@@ -189,22 +201,118 @@ const Post = () => {
                 }}
               >
                <View style={{ justifyContent: "center", alignContent :"center",margin: 10 }}>
-                <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :50,alignItems :'center',borderRadius:10}}>
+               <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :55,alignItems :'center',borderRadius:10}} onPress={() => {setVisible(!visible)}}>
                 <Ionicons name="add-circle" style={{flex :1 , fontSize: 35 ,marginLeft :10}} />
                   <Text style={{flex:5 ,fontSize:15}}>Save Post</Text>
                 </TouchableOpacity>
+                
 
-                <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :50,alignItems :'center',borderRadius:10}}>
+                <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :50,alignItems :'center',borderRadius:10}} onPress={() => {refRBSheet.current.close();
+                Edit(
+                  data.postImage ,
+                data.postTitle ,
+                )
+               }}>
                 <Entypo name="edit" style={{flex :1 , fontSize: 35 ,marginLeft :10}} />
                   <Text style={{flex:5 ,fontSize:15}}>Edit Post</Text>
                 </TouchableOpacity>
+                <Modal
+                  animationType="slide"
+                  transparent={true}
+                  visible={visible}
+                  onRequestClose={() => {
+                    
+                    setVisible(!visible);
+                  }}
+                >
+                  <View
+                    style={{
+                      flex: 1,
+                      justifyContent: "center",
+                      alignItems: "center",
+                      marginTop: 22,
+                    }}
+                  >
+                    <View
+                      style={{
+                        margin: 20,
+                        backgroundColor: "white",
+                        borderRadius: 20,
+                        padding: 35,
+                        alignItems: "center",
+                        shadowColor: "#000",
+                        shadowOffset: {
+                          width: 0,
+                          height: 2,
+                        },
+                        shadowOpacity: 0.25,
+                        shadowRadius: 4,
+                        elevation: 5,
+                      }}
+                    >
+                      <Text
+                        style={{
+                          marginBottom: 15,
+                          textAlign: "center",
+                        }}
+                      >
+                        Are you sure you want to delete post?
+                      </Text>
+                      <View style={{ flexDirection: "row" ,justifyContent:'center',alignItems:'center'}}>
+                        <Pressable
+                          style={{
+                            borderRadius: 20,
+                            padding: 10,
+                            elevation: 2,
+                            backgroundColor: "#2196F3",
+                            flex: 1,
+                            height:40,
+                            margin:10
+                          }}
+                          onPress={() => setVisible(!visible)}
+                        >
+                          <Text
+                            style={{
+                              fontWeight: "bold",
+                              textAlign: "center",
+                            }}
+                          >
+                            Cancel
+                          </Text>
+                        </Pressable>
+                        <Pressable
+                          style={{
+                            borderRadius: 20,
+                            padding: 10,
+                            elevation: 2,
+                            backgroundColor: "#2196F3",
+                            flex: 1,
+                            height:40,
+                            margin:10
+                          }}
+                          onPress={() => {  setVisible(!visible),refRBSheet.current.close();
+                            navigation.navigate('Home')}}
+                        >
+                          <Text
+                            style={{
+                              fontWeight: "bold",
+                              textAlign: "center",
+                            }}
+                          >
+                            Yes
+                          </Text>
+                        </Pressable>
+                      </View>
+                    </View>
+                  </View>
+                </Modal>
 
-                <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :50,alignItems :'center',borderRadius:10}}>
+                <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :55,alignItems :'center',borderRadius:10}} onPress={() => {setVisible(!visible)}}>
                 <Ionicons name="trash" style={{flex :1 , fontSize: 35 ,marginLeft :10}} />
                   <Text style={{flex:5 ,fontSize:15}}>Delete Post</Text>
                 </TouchableOpacity>
 
-                 <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :55,alignItems :'center',borderRadius:10}}>
+                 <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :55,alignItems :'center',borderRadius:10}} onPress={() => {refRBSheet.current.close()}}>
                 <MaterialIcons name="report" style={{flex :1 , fontSize: 35 ,marginLeft :10 }} />
                   <Text style={{flex:5 ,fontSize:15}}>Report Post</Text>
                 </TouchableOpacity>

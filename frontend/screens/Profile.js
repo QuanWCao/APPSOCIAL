@@ -40,6 +40,7 @@ const Profile = ({ name, id, prof, website, bio }) => {
             ref={refRBSheet}
             height={250}
             closeOnDragDown={true}
+            closeOnPressBack={true}
             closeOnPressMask={true}
             customStyles={{
               wrapper: {
@@ -83,7 +84,7 @@ const Profile = ({ name, id, prof, website, bio }) => {
                   alignItems: "center",
                   borderRadius: 10,
                 }}
-                onPress={() => navigation.navigate("ChangePassWord")}
+                onPress={() => {navigation.navigate("ChangePassWord");refRBSheet.current.close()}}
               >
                 <Ionicons
                   name="lock-closed"
@@ -101,9 +102,9 @@ const Profile = ({ name, id, prof, website, bio }) => {
                   alignItems: "center",
                   borderRadius: 10,
                 }}
-                onPress={() => {
-                  setVisible(true);
-                }}
+                onPress={() => {{
+                   setVisible(!visible)
+                }}}
               >
                 <Modal
                   animationType="slide"
@@ -179,8 +180,8 @@ const Profile = ({ name, id, prof, website, bio }) => {
                             height:40,
                             margin:10
                           }}
-                          onPress={() => logoutHandler() &&
-                          setVisible(!visible)}
+                          onPress={() => {  refRBSheet.current.close();
+                          setVisible(!visible);logoutHandler()}}
                         >
                           <Text
                             style={{

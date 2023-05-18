@@ -50,7 +50,7 @@ const EditProfile = () => {
         <TouchableOpacity
           onPress={() => {
             TostMessage();
-            navigation.navigate("Profile");
+            navigation.navigate("home");
           }}
         >
           <Ionic name="checkmark" style={{ fontSize: 35, color: "#3493D9" }} />

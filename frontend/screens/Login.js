@@ -18,7 +18,7 @@ import { useEffect } from "react";
 import { login ,login_admin } from "../redux/action";
 import { getUser } from "../redux/action";
 const LoginScreen = () => {
-  const [emailAddress, setEmail] = useState("caoquan2k1@gmail.com");
+  const [emailAddress, setEmail] = useState("caolienquan_t64@hus.edu.vn");
   const [password, setPassword] = useState("123456aA@");
   const [isHided, setIsHided] = useState(true);
   const navigation = useNavigation();
@@ -27,11 +27,14 @@ const LoginScreen = () => {
 
   const { err} = useSelector(state => state.auth);
   
+  
  
   const loginHandler = () => {
     if (checked==1) {
+      
       dispatch(login(emailAddress,password));
     } else {
+      
       dispatch(login_admin(emailAddress,password));
     }
   }
@@ -123,7 +126,7 @@ const LoginScreen = () => {
         style={{
           marginTop: 10,
           width: "100%",
-          // height: windowHeight / 15,
+         
 
           padding: 5,
 marginBottom:20,
@@ -151,7 +154,7 @@ marginBottom:20,
               Admin :
             </Text>
             <CheckBox
-              checked={checked === 0}
+              checked={checked == 0}
               onPress={() => setChecked(0)}
               checkedIcon="dot-circle-o"
               uncheckedIcon="circle-o"
@@ -169,7 +172,7 @@ marginBottom:20,
               User :
             </Text>
             <CheckBox
-              checked={checked === 1}
+              checked={checked == 1}
               onPress={() => setChecked(1)}
               checkedIcon="dot-circle-o"
               uncheckedIcon="circle-o"
