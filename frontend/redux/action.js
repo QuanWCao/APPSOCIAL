@@ -107,6 +107,281 @@ export const getPost =
   try {
     dispatch({ type: "loginAdminRequest" });
   
+   
+    const data = await axios
+      .get(`${serverUrl}/api/post`)
+      .then(function (response) {
+        
+        dispatch({ type: "loginAdminSuccess", payload: response.data });
+      })
+      .catch(function (err) {
+        dispatch({type: "loginAdminFailure", payload: err.response.data.msg });
+      });
+  } catch (err) {
+    console.log(err);
+  }
+};
+export const getFeedPosts =
+(emailAddress, password) => async (dispatch) => {
+  try {
+    dispatch({ type: "loginAdminRequest" });
+  
+
+    const data = await axios
+      .get(`${serverUrl}/api/post`)
+      .then(function (response) {
+        
+        dispatch({ type: "loginAdminSuccess", payload: response.data });
+      })
+      .catch(function (err) {
+        dispatch({type: "loginAdminFailure", payload: err.response.data.msg });
+      });
+  } catch (err) {
+    console.log(err);
+  }
+};
+export const getUserPosts =
+(emailAddress, password) => async (dispatch) => {
+  try {
+    dispatch({ type: "loginAdminRequest" });
+  
+    
+
+    const data = await axios
+      .get(`${serverUrl}/api/posts_user/:id`)
+      .then(function (response) {
+        
+        dispatch({ type: "loginAdminSuccess", payload: response.data });
+      })
+      .catch(function (err) {
+        dispatch({type: "loginAdminFailure", payload: err.response.data.msg });
+      });
+  } catch (err) {
+    console.log(err);
+  }
+};
+export const UpdatePost =
+(content , imageFile) => async (dispatch) => {
+  try {
+    dispatch({ type: "loginAdminRequest" });
+  
+    let form_data = new FormData();
+    form_data.append("content",content );
+    form_data.append("iimageFile", imageFile);
+
+    const data = await axios
+      .put(`${serverUrl}/api/login_admin`, form_data)
+      .then(function (response) {
+        
+        dispatch({ type: "loginAdminSuccess", payload: response.data });
+      })
+      .catch(function (err) {
+        dispatch({type: "loginAdminFailure", payload: err.response.data.msg });
+      });
+  } catch (err) {
+    console.log(err);
+  }
+};
+// export const LikePost =
+// (emailAddress, password) => async (dispatch) => {
+//   try {
+//     dispatch({ type: "loginAdminRequest" });
+  
+//     let form_data = new FormData();
+//     form_data.append("emailAddress",emailAddress );
+//     form_data.append("password", password);
+
+//     const data = await axios
+//       .post(`${serverUrl}/api/login_admin`, form_data)
+//       .then(function (response) {
+        
+//         dispatch({ type: "loginAdminSuccess", payload: response.data });
+//       })
+//       .catch(function (err) {
+//         dispatch({type: "loginAdminFailure", payload: err.response.data.msg });
+//       });
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
+export const DeletePost =
+(_id) => async (dispatch) => {
+  try {
+    dispatch({ type: "loginAdminRequest" });
+  
+    
+    const {data} = await axios
+      .delete(`${serverUrl}/api/login_admin`, {data:{_id}})
+      .then(function (response) {
+        
+        dispatch({ type: "loginAdminSuccess", payload: response.data });
+      })
+      .catch(function (err) {
+        dispatch({type: "loginAdminFailure", payload: err.response.data.msg });
+      });
+  } catch (err) {
+    console.log(err);
+  }
+};
+// export const UnlikePost =
+// (emailAddress, password) => async (dispatch) => {
+//   try {
+//     dispatch({ type: "loginAdminRequest" });
+  
+//     let form_data = new FormData();
+//     form_data.append("emailAddress",emailAddress );
+//     form_data.append("password", password);
+
+//     const data = await axios
+//       .post(`${serverUrl}/api/login_admin`, form_data)
+//       .then(function (response) {
+        
+//         dispatch({ type: "loginAdminSuccess", payload: response.data });
+//       })
+//       .catch(function (err) {
+//         dispatch({type: "loginAdminFailure", payload: err.response.data.msg });
+//       });
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
+export const CreateComment =
+(post , reply , content) => async (dispatch) => {
+  try {
+    dispatch({ type: "loginAdminRequest" });
+  
+    let form_data = new FormData();
+    form_data.append("emailAddress",emailAddress );
+    form_data.append("password", password);
+
+    const data = await axios
+      .post(`${serverUrl}/api/login_admin`, form_data)
+      .then(function (response) {
+        
+        dispatch({ type: "loginAdminSuccess", payload: response.data });
+      })
+      .catch(function (err) {
+        dispatch({type: "loginAdminFailure", payload: err.response.data.msg });
+      });
+  } catch (err) {
+    console.log(err);
+  }
+};
+export const UpdateComment =
+(emailAddress, password) => async (dispatch) => {
+  try {
+    dispatch({ type: "loginAdminRequest" });
+  
+    let form_data = new FormData();
+    form_data.append("emailAddress",emailAddress );
+    form_data.append("password", password);
+
+    const data = await axios
+      .post(`${serverUrl}/api/login_admin`, form_data)
+      .then(function (response) {
+        
+        dispatch({ type: "loginAdminSuccess", payload: response.data });
+      })
+      .catch(function (err) {
+        dispatch({type: "loginAdminFailure", payload: err.response.data.msg });
+      });
+  } catch (err) {
+    console.log(err);
+  }
+};
+// export const LikeComment =
+// (emailAddress, password) => async (dispatch) => {
+//   try {
+//     dispatch({ type: "loginAdminRequest" });
+  
+//     let form_data = new FormData();
+//     form_data.append("emailAddress",emailAddress );
+//     form_data.append("password", password);
+
+//     const data = await axios
+//       .post(`${serverUrl}/api/login_admin`, form_data)
+//       .then(function (response) {
+        
+//         dispatch({ type: "loginAdminSuccess", payload: response.data });
+//       })
+//       .catch(function (err) {
+//         dispatch({type: "loginAdminFailure", payload: err.response.data.msg });
+//       });
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
+export const DeleteComment =
+(emailAddress, password) => async (dispatch) => {
+  try {
+    dispatch({ type: "loginAdminRequest" });
+  
+    let form_data = new FormData();
+    form_data.append("emailAddress",emailAddress );
+    form_data.append("password", password);
+
+    const data = await axios
+      .post(`${serverUrl}/api/login_admin`, form_data)
+      .then(function (response) {
+        
+        dispatch({ type: "loginAdminSuccess", payload: response.data });
+      })
+      .catch(function (err) {
+        dispatch({type: "loginAdminFailure", payload: err.response.data.msg });
+      });
+  } catch (err) {
+    console.log(err);
+  }
+};
+export const UnlikeComment =
+(emailAddress, password) => async (dispatch) => {
+  try {
+    dispatch({ type: "loginAdminRequest" });
+  
+    let form_data = new FormData();
+    form_data.append("emailAddress",emailAddress );
+    form_data.append("password", password);
+
+    const data = await axios
+      .post(`${serverUrl}/api/login_admin`, form_data)
+      .then(function (response) {
+        
+        dispatch({ type: "loginAdminSuccess", payload: response.data });
+      })
+      .catch(function (err) {
+        dispatch({type: "loginAdminFailure", payload: err.response.data.msg });
+      });
+  } catch (err) {
+    console.log(err);
+  }
+};
+export const UpdateUser =
+(emailAddress, password) => async (dispatch) => {
+  try {
+    dispatch({ type: "loginAdminRequest" });
+  
+    let form_data = new FormData();
+    form_data.append("emailAddress",emailAddress );
+    form_data.append("password", password);
+
+    const data = await axios
+      .post(`${serverUrl}/api/login_admin`, form_data)
+      .then(function (response) {
+        
+        dispatch({ type: "loginAdminSuccess", payload: response.data });
+      })
+      .catch(function (err) {
+        dispatch({type: "loginAdminFailure", payload: err.response.data.msg });
+      });
+  } catch (err) {
+    console.log(err);
+  }
+};
+export const UpdateAvatar =
+(emailAddress, password) => async (dispatch) => {
+  try {
+    dispatch({ type: "loginAdminRequest" });
+  
     let form_data = new FormData();
     form_data.append("emailAddress",emailAddress );
     form_data.append("password", password);

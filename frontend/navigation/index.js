@@ -21,6 +21,7 @@ import EditProFile from '../screens/EditProFile';
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+import ListAccount from '../screens/AdminManager.js/ListAccount';
 import CommentScreens from '../screens/CommentScreens';
 import DashBoardAdmin from '../screens/AdminManager.js/AdminDashBoard';
 import CreateComment from '../screens/CreateComments';
@@ -29,6 +30,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getUser } from '../redux/action';
 import Loader from '../components/Loader';
 import EditPost from '../screens/EditPost';
+import PostAdmin from '../components/PostAdmin';
+import MainAdmin from '../screens/ListPostAdmin';
 const Tabs = () => {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }} >
@@ -107,10 +110,13 @@ const Navigation = () => {
             <Stack.Screen name="EditProfile" component={EditProFile}/>
             <Stack.Screen name="Comment" component={CommentScreens} options={{ headerShown: true }}/>
             <Stack.Screen name="Admin" component={DashBoardAdmin} options={{ headerShown: true }}/>
+            <Stack.Screen name='ListAccount' component={ListAccount} />
             <Stack.Screen name="CreateComment" component={CreateComment} options={{ headerShown: false }}/>
             <Stack.Screen name='ChangePassWord' component={ChangePassWord} options={{ headerShown: true }} />
             <Stack.Screen name="Post" component={Post} options={{ headerShown: false}}/>
             <Stack.Screen name = "Edit" component={EditPost} />
+            <Stack.Screen name ="ListPost" component={PostAdmin} options={{ headerShown: true }}/>
+            <Stack.Screen name = "List Post" component={MainAdmin} options={{ headerShown: true }}/>
         </Stack.Navigator>
 
 </NavigationContainer>

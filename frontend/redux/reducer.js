@@ -109,6 +109,17 @@ export const postReducer = createReducer
       state.loading =  false;
       state.err = action.payload;
     },
+    getFeedPostRequest: (state) => {
+      state.loading = true;
+    },
+    getFeedPostSuccess: (state, action) => {
+      state.loading =  false;
+      state.post = action.payload;
+    },
+    getFeedPostFailure: (state, action) => {
+      state.loading =  false;
+      state.err = action.payload;
+    },
     clearError: (state) => {
       state.err = null;
     },

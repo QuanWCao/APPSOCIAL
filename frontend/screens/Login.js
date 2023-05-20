@@ -18,8 +18,8 @@ import { useEffect } from "react";
 import { login ,login_admin } from "../redux/action";
 import { getUser } from "../redux/action";
 const LoginScreen = () => {
-  const [emailAddress, setEmail] = useState("caolienquan_t64@hus.edu.vn");
-  const [password, setPassword] = useState("123456aA@");
+  const [emailAddress, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [isHided, setIsHided] = useState(true);
   const navigation = useNavigation();
   const [checked, setChecked] = useState(0);
@@ -76,11 +76,10 @@ const LoginScreen = () => {
           value={emailAddress}
           style={styles.input}
           numberOfLines={1}
-          placeholder="Nhap so dien thoai"
+          placeholder="Enter your email"
           placeholderTextColor="#666"
+          secureTextEntry={!isHided}
           onChangeText={setEmail}
-          keyboardType={"number-pad"}
-          returnKeyType="done"
         />
       </View>
 
@@ -89,7 +88,6 @@ const LoginScreen = () => {
           flexDirection: "row",
           marginTop: 10,
           width: "100%",
-          // height: windowHeight / 15,
           padding: 5,
           alignItems: "center",
           justifyContent: "center",
@@ -102,12 +100,11 @@ const LoginScreen = () => {
           value={password}
           style={styles.input}
           numberOfLines={1}
-          placeholder="Dien mat khau"
+          placeholder="Enter your password"
           placeholderTextColor="#666"
           secureTextEntry={isHided}
           onChangeText={setPassword}
         />
-
         <TouchableOpacity
           onPressIn={() => setIsHided(false)}
           onPressOut={() => setIsHided(true)}
