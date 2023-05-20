@@ -21,7 +21,7 @@ const data_1 = [
 ];
 
 
-const SignUpScreen = () => {
+const SignUpAdminScreen = () => {
   const [emailAddress, setEmailAddress] = useState("");
   const [fullname , setFullName] = useState("")
   const [phoneNumber, setphoneNumber] = useState("")
@@ -157,25 +157,37 @@ const SignUpScreen = () => {
     </View>
 
     <View style={{marginBottom: 20}}>
-         
           <Text style={styles.label}>Role</Text>
-          <View
-        style={styles.inputContainer}>
-        <Icon
-          name="account-outline"
-          style={{color: '#7978B5', fontSize: 22, marginRight: 10,}}
-        />
-        <Text
-          
-          style={{color: '#7978B5', flex: 1}}>
-            User
-          </Text>
-         
-        
-        
-      </View>
+          <Dropdown
+            style={styles.inputContainer_1}
+            placeholderStyle={styles.placeholderStyle}
+            selectedTextStyle={styles.selectedTextStyle}
+            inputSearchStyle={styles.inputSearchStyle}
+            iconStyle={styles.iconStyle}
+            data={data_1}
+            
+            maxHeight={300}
+            labelField="label"
+            valueField="value"
+            placeholder="Role"
+            
+            onFocus={() => setIsFocus_1(true)}
+            onBlur={() => setIsFocus_1(false)}
+            value={value_1}
+            onChange={(item) => {
+              setValue_1(item.value);
+              setIsFocus_1(false);
+            }}
+            renderRightIcon={() => (
+              <AntDesign
+                style={styles.icon}
+               
+                name={isFocus_1 ? "up" : "down"}
+                size={20}
+              />
+            )}
+          />
     </View>
-    
     <View style={{flexDirection :'row',justifyContent:"space-between"}}>
 
     <View style={{marginBottom: 20}}>
@@ -244,7 +256,7 @@ const SignUpScreen = () => {
 
 
     <TouchableOpacity
-    onPress={() => navigation.navigate('LogIn')}
+    onPress={() => navigation.navigate('Admin')}
       activeOpacity={0.7}
       style={{
         height: 55,
@@ -259,18 +271,7 @@ const SignUpScreen = () => {
       </Text>
 
       </TouchableOpacity>
-          <Text
-            onPress={() => navigation.navigate('LogIn')}
-            style={{
-              color: '#000',
-              fontWeight: 'bold',
-              textAlign: 'center',
-              fontSize: 16,
-            }}>
-            Already have account ? Login
-          </Text>
-
-
+        
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -373,6 +374,6 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
 })
-export default SignUpScreen
+export default SignUpAdminScreen
 
 

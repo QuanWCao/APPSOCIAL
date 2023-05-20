@@ -32,6 +32,7 @@ import Loader from '../components/Loader';
 import EditPost from '../screens/EditPost';
 import PostAdmin from '../components/PostAdmin';
 import MainAdmin from '../screens/ListPostAdmin';
+import SignUpAdminScreen from '../screens/SignUpAdmin';
 const Tabs = () => {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }} >
@@ -117,6 +118,7 @@ const Navigation = () => {
             <Stack.Screen name = "Edit" component={EditPost} />
             <Stack.Screen name ="ListPost" component={PostAdmin} options={{ headerShown: true }}/>
             <Stack.Screen name = "List Post" component={MainAdmin} options={{ headerShown: true }}/>
+            <Stack.Screen name = "SignUp Admin" component={SignUpAdminScreen} options={{ headerShown: true }}/>
         </Stack.Navigator>
 
 </NavigationContainer>
