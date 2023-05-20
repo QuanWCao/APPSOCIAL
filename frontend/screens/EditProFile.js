@@ -12,11 +12,31 @@ import Ionic from "react-native-vector-icons/Ionicons";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import { Dropdown } from "react-native-element-dropdown";
 import { AntDesign } from "@expo/vector-icons";
+import * as ImagePicker from "expo-image-picker";
 const EditProfile = () => {
+
+  const pickImage = async () => {
+    try {
+      let result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.All,
+        allowsEditing: true,
+        aspect: [4, 3],
+        quality: 1,
+      });
+      if (!result.canceled) {
+        setImage(result.uri);
+      }
+
+      
+    } catch (E) {
+      console.log(E);
+    }
+  };
   const navigation = useNavigation();
   const TostMessage = () => {
     ToastAndroid.show("Edited Sucessfully !", ToastAndroid.SHORT);
   };
+  const [image , setImage] = useState("https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/280727990_1379564759214526_3554061026221242893_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFfynfrejHHJNPpkIQ49N1sISRcgeGi-NMhJFyB4aL40_kp2nPl2fOw8munXp_Oeg2QI_ybyaeyBjH_lgXrYRBW&_nc_ohc=CSmkVXjnbcYAX8PUdAl&_nc_ht=scontent.fhan2-4.fna&oh=00_AfAP_5cm7wUknuOe2xfS1ursOHZw0rmNZj-9sigsBp2UzQ&oe=645E7A20");
   const [fullname, setFullName] = useState("");
   const [birth , setBirth] = useState("");
   const [address , setAddress] = useState("");
@@ -59,10 +79,14 @@ const EditProfile = () => {
       <View style={{ padding: 20, alignItems: "center" }}>
         <Image
           source={{
-            uri: "https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/280727990_1379564759214526_3554061026221242893_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFfynfrejHHJNPpkIQ49N1sISRcgeGi-NMhJFyB4aL40_kp2nPl2fOw8munXp_Oeg2QI_ybyaeyBjH_lgXrYRBW&_nc_ohc=CSmkVXjnbcYAX8PUdAl&_nc_ht=scontent.fhan2-4.fna&oh=00_AfAP_5cm7wUknuOe2xfS1ursOHZw0rmNZj-9sigsBp2UzQ&oe=645E7A20",
+            uri: image,
           }}
           style={{ width: 80, height: 80, borderRadius: 100, marginBottom: 20 }}
         />
+        <TouchableOpacity  onPress={() => {
+            
+           pickImage()
+          }}>
         <Text
           style={{
             color: "#3493D9",
@@ -70,6 +94,7 @@ const EditProfile = () => {
         >
           Change profile photo
         </Text>
+        </TouchableOpacity>
       </View>
       <View style={{ marginBottom: 10 ,marginHorizontal:10 }}>
         <View

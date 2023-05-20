@@ -18,8 +18,8 @@ import { useEffect } from "react";
 import { login ,login_admin } from "../redux/action";
 import { getUser } from "../redux/action";
 const LoginScreen = () => {
-  const [emailAddress, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [emailAddress, setEmail] = useState("caoquan2k1@gmail.com");
+  const [password, setPassword] = useState("123456aA@");
   const [isHided, setIsHided] = useState(true);
   const navigation = useNavigation();
   const [checked, setChecked] = useState(0);
@@ -78,7 +78,7 @@ const LoginScreen = () => {
           numberOfLines={1}
           placeholder="Enter your email"
           placeholderTextColor="#666"
-          secureTextEntry={!isHided}
+          secureTextEntry={false}
           onChangeText={setEmail}
         />
       </View>

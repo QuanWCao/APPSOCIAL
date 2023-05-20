@@ -102,7 +102,7 @@ const navigation = useNavigation();
           name="plus-circle"
           size={40}
           color="#4D9FEC"
-          // onPress={{}}
+          onPress={() => {navigation.navigate("SignUp Admin")}}
         />
       </View>
     </View>
