@@ -78,7 +78,7 @@ const LoginScreen = () => {
           numberOfLines={1}
           placeholder="Enter your email"
           placeholderTextColor="#666"
-          secureTextEntry={!isHided}
+          secureTextEntry={false}
           onChangeText={setEmail}
         />
       </View>
