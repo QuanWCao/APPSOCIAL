@@ -233,13 +233,13 @@ const Profile = ({ name, id, prof, website, bio }) => {
             Liên Quân
           </Text>
           <Text style={[styles.text, { color: "grey", fontSize: 14 }]}>
-            @LienQuan
+            @caolienquan_t64@hus.edu.vn
           </Text>
         </View>
         <View style={styles.bioContainer}>
           <Ionicons style={styles.bioIcon} name="mail-outline" size={20} />
           <Text style={{ color: "black", fontSize: 14, fontWeight: 600 }}>
-          lienquanhus@gmail.com
+          caolienquan_t64@hus.edu.vn
           </Text>
         </View>
         {/* <View style={styles.bioContainer}>
@@ -265,12 +265,12 @@ const Profile = ({ name, id, prof, website, bio }) => {
               },
             ]}
           >
-            <Text style={[styles.text, { fontSize: 20 }]}>302</Text>
+            <Text style={[styles.text, { fontSize: 20 }]}>2</Text>
             <Text style={[styles.text, styles.subtext]}>Likes</Text>
           </View>
 
           <View style={styles.startsBox}>
-            <Text style={[styles.text, { fontSize: 20 }]}>136</Text>
+            <Text style={[styles.text, { fontSize: 20 }]}>6</Text>
             <Text style={[styles.text, styles.subtext]}>Comments</Text>
           </View>
         </View>

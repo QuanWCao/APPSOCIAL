@@ -163,11 +163,12 @@ const styles = StyleSheet.create({
   },
   inputsContainer: {
     marginLeft: 10,
+    marginRight: 50,
   },
   tweetInput: {
     height: 100,
     maxHeight: 300,
-    fontSize: 20,
+    fontSize: 16,
   },
   pickImage: {
     fontSize: 18,

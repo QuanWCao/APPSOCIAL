@@ -75,7 +75,6 @@ export default function NewTweetScreen() {
           size={50}
               rounded
               source={{uri:'https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/280727990_1379564759214526_3554061026221242893_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFfynfrejHHJNPpkIQ49N1sISRcgeGi-NMhJFyB4aL40_kp2nPl2fOw8munXp_Oeg2QI_ybyaeyBjH_lgXrYRBW&_nc_ohc=CSmkVXjnbcYAX8PUdAl&_nc_ht=scontent.fhan2-4.fna&oh=00_AfAP_5cm7wUknuOe2xfS1ursOHZw0rmNZj-9sigsBp2UzQ&oe=645E7A20' }}
-            containerStyle={{ backgroundColor: "orange" }}
              />
         <View style={styles.inputsContainer}>
           <TextInput
@@ -86,9 +85,7 @@ export default function NewTweetScreen() {
             style={styles.tweetInput}
             placeholder={"What's happening?"}
           />
-          {/* <TouchableOpacity onPress={pickImage}>
-            <Text style={styles.pickImage}>Pick a image</Text>
-          </TouchableOpacity> */}
+          
          
         </View>
 
@@ -143,14 +140,16 @@ const styles = StyleSheet.create({
   newTweetContainer: {
     flexDirection: 'row',
     padding: 15,
+    
   },
   inputsContainer: {
     marginLeft: 10,
+    marginRight:40,
   },
   tweetInput: {
     height: 100,
     maxHeight: 300,
-    fontSize: 20,
+    fontSize: 18,
   },
   pickImage: {
     fontSize: 18,

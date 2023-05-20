@@ -59,10 +59,11 @@ const DashBoardAdmin = () => {
 	
 
 	        <TouchableOpacity
+          onPress={() => navigation.navigate("List Post")}
 	          style={styles.Touch1}
 	          
 	        >
-	          <View style={{ alignContent: "center" ,flexDirection :"column",margin:10,width:"80%"}}>
+	          <View style={{ alignContent: "center" ,flexDirection :"column",margin:10,width:"80%"}} >
 	            <Icon1 name="newspaper-o" color="#0A4D68" size={40} style={{marginLeft :5, marginBottom :10}}/>
 	          
 	          

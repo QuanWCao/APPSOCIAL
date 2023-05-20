@@ -24,7 +24,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import RBSheet from "react-native-raw-bottom-sheet";
 
-const Post = () => {
+const PostAdmin = () => {
     const postInfo = [
         {
           id :1,
@@ -32,7 +32,8 @@ const Post = () => {
           postTitle: '30/4 - 1/5 công ty mình nghỉ 5 ngày nhé! \nChúc các bạn có kì nghỉ vui vẻ'
           ,email : "caoquan2k1@gmail.com",
           time : "2023-04-30T12:00:00.000Z",
-        postPersonImage: "https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/280727990_1379564759214526_3554061026221242893_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFfynfrejHHJNPpkIQ49N1sISRcgeGi-NMhJFyB4aL40_kp2nPl2fOw8munXp_Oeg2QI_ybyaeyBjH_lgXrYRBW&_nc_ohc=CSmkVXjnbcYAX8PUdAl&_nc_ht=scontent.fhan2-4.fna&oh=00_AfAP_5cm7wUknuOe2xfS1ursOHZw0rmNZj-9sigsBp2UzQ&oe=645E7A20",
+          postPersonImage: "https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/280727990_1379564759214526_3554061026221242893_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFfynfrejHHJNPpkIQ49N1sISRcgeGi-NMhJFyB4aL40_kp2nPl2fOw8munXp_Oeg2QI_ybyaeyBjH_lgXrYRBW&_nc_ohc=CSmkVXjnbcYAX8PUdAl&_nc_ht=scontent.fhan2-4.fna&oh=00_AfAP_5cm7wUknuOe2xfS1ursOHZw0rmNZj-9sigsBp2UzQ&oe=645E7A20",
+
          postImage:"https://cdn.tgdd.vn/Files/2022/02/12/1415152/lich-nghi-le-30-4-1-5-nam-2023-nghi-5-ngay-lien-tiep-202304180830209689.jpg",
         
           likes: 3,
@@ -146,17 +147,7 @@ const Post = () => {
         <View>
         {postInfo.map((data, index) => {
             const [myLike, setMyLike] = useState(data.isLiked);
-            const refRBSheet = useRef();
-            const Edit = async (
-                postImage ,
-                postTitle ,
-                postPersonImage,
-            
-                ) => {
-      navigation.navigate("Edit", { postImage ,
-                postTitle ,postPersonImage })
-    };
-    const [visible, setVisible] = useState(false);
+            const [visible, setVisible] = useState(false);
         return (
    
         <SafeAreaView key={data.id} style={styles.container}>
@@ -183,42 +174,11 @@ const Post = () => {
                 name={"navicon"}
                 size={16}
                 color={"grey"}
-                onPress={() => refRBSheet.current.open()
-                }
-              />
-              <RBSheet
-                ref={refRBSheet}
-                height={300}
-                closeOnDragDown={true}
-                closeOnPressMask={true}
-                customStyles={{
-                  wrapper: {
-                    backgroundColor: "transparent",
-                  },
-                 container:{
-                  backgroundColor :"#F6F1F1"
-                 }
-                  
-                }}
-              >
-               <View style={{ justifyContent: "center", alignContent :"center",margin: 10 }}>
-               <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :55,alignItems :'center',borderRadius:10}} onPress={() => {setVisible(!visible)}}>
-                <Ionicons name="add-circle" style={{flex :1 , fontSize: 35 ,marginLeft :10}} />
-                  <Text style={{flex:5 ,fontSize:15}}>Save Post</Text>
-                </TouchableOpacity>
                 
-
-                <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :50,alignItems :'center',borderRadius:10}} onPress={() => {refRBSheet.current.close();
-                Edit(
-                  data.postImage ,
-                data.postTitle ,
-                data.postPersonImage,
-                )
-               }}>
-                <Entypo name="edit" style={{flex :1 , fontSize: 35 ,marginLeft :10}} />
-                  <Text style={{flex:5 ,fontSize:15}}>Edit Post</Text>
-                </TouchableOpacity>
-                <Modal
+                
+                onPress={() => {setVisible(!visible)}}
+              />
+              <Modal
                   animationType="slide"
                   transparent={true}
                   visible={visible}
@@ -292,8 +252,8 @@ const Post = () => {
                             height:40,
                             margin:10
                           }}
-                          onPress={() => {  setVisible(!visible),refRBSheet.current.close();
-                            navigation.navigate('Home')}}
+                          onPress={() =>   setVisible(!visible)
+                           }
                         >
                           <Text
                             style={{
@@ -308,24 +268,11 @@ const Post = () => {
                     </View>
                   </View>
                 </Modal>
-
-                <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :55,alignItems :'center',borderRadius:10}} onPress={() => {setVisible(!visible)}}>
-                <Ionicons name="trash" style={{flex :1 , fontSize: 35 ,marginLeft :10}} />
-                  <Text style={{flex:5 ,fontSize:15}}>Delete Post</Text>
-                </TouchableOpacity>
-
-                 <TouchableOpacity style={{backgroundColor:"#ffffff" ,flexDirection : "row",marginBottom:5,height :55,alignItems :'center',borderRadius:10}} onPress={() => {refRBSheet.current.close()}}>
-                <MaterialIcons name="report" style={{flex :1 , fontSize: 35 ,marginLeft :10 }} />
-                  <Text style={{flex:5 ,fontSize:15}}>Report Post</Text>
-                </TouchableOpacity>
-                
-               </View>
-              </RBSheet>
             </View>
             <Text style={styles.createdAt}>
                   @{data.email}
                 </Text>
-            <TouchableOpacity onPress={()=> navigation.navigate('Comment') }>
+            <TouchableOpacity onPress={()=> navigation.navigate('Comment')}>
               <Text style={styles.content}>
                 {
                  data.postTitle
@@ -497,4 +444,4 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
 });
-export default Post;
+export default PostAdmin;
