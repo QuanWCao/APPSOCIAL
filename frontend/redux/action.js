@@ -26,6 +26,26 @@ export const login =
     }
   };
 
+  export const logout =() => async (dispatch) => {
+    try {
+      dispatch({ type: "logoutRequest" });
+      
+      
+
+      const data = await axios
+        .post(`${serverUrl}/api/logout`)
+        .then(function (response) {
+          
+          dispatch({ type: "logoutSuccess", payload: response.data });
+        
+        })
+        .catch(function (err) {
+          dispatch({type: "logoutFailure", payload: err.response.data.msg });
+        });
+    } catch (err) {
+      console.log(err);
+    }
+  };
 export const login_admin =
 (emailAddress, password) => async (dispatch) => {
   try {
@@ -101,15 +121,36 @@ export const getUser = () => async (dispatch) => {
     dispatch({ type: "getUserFailure", payload: err.response.data.msg });
   }
 };
-
+export const CreatePost =
+(content , imageFile) => async (dispatch) => {
+  try {
+    dispatch({ type: "createPostRequest" });
+  
+    let form_data = new FormData();
+    form_data.append("content",content );
+    form_data.append("iimageFile", imageFile);
+//bật hộ postman
+    const data = await axios
+      .post(`${serverUrl}/api/post`, form_data)
+      .then(function (response) {
+        
+        dispatch({ type: "createPostSuccess", payload: response.data });
+      })
+      .catch(function (err) {
+        dispatch({type: "createPostFailure", payload: err.response.data.msg });
+      });
+  } catch (err) {
+    console.log(err);
+  }
+};
 export const getPost =
-(emailAddress, password) => async (dispatch) => {
+() => async (dispatch) => {
   try {
     dispatch({ type: "loginAdminRequest" });
   
    
     const data = await axios
-      .get(`${serverUrl}/api/post`)
+      .get(`${serverUrl}/api/post/:id`)
       .then(function (response) {
         
         dispatch({ type: "loginAdminSuccess", payload: response.data });
@@ -122,19 +163,19 @@ export const getPost =
   }
 };
 export const getFeedPosts =
-(emailAddress, password) => async (dispatch) => {
+() => async (dispatch) => {
   try {
-    dispatch({ type: "loginAdminRequest" });
+    dispatch({ type: "getFeedPostRequest" });
   
 
     const data = await axios
       .get(`${serverUrl}/api/post`)
       .then(function (response) {
         
-        dispatch({ type: "loginAdminSuccess", payload: response.data });
+        dispatch({ type: "getFeedPostSuccess", payload: response.data });
       })
       .catch(function (err) {
-        dispatch({type: "loginAdminFailure", payload: err.response.data.msg });
+        dispatch({type: "getFeedPostFailure", payload: err.response.data.msg });
       });
   } catch (err) {
     console.log(err);
@@ -143,7 +184,7 @@ export const getFeedPosts =
 export const getUserPosts =
 (emailAddress, password) => async (dispatch) => {
   try {
-    dispatch({ type: "loginAdminRequest" });
+    dispatch({ type: "getUserPostsRequest" });
   
     
 
@@ -151,10 +192,10 @@ export const getUserPosts =
       .get(`${serverUrl}/api/posts_user/:id`)
       .then(function (response) {
         
-        dispatch({ type: "loginAdminSuccess", payload: response.data });
+        dispatch({ type: "getUserPostsSuccess", payload: response.data });
       })
       .catch(function (err) {
-        dispatch({type: "loginAdminFailure", payload: err.response.data.msg });
+        dispatch({type: "getUserPostsFailure", payload: err.response.data.msg });
       });
   } catch (err) {
     console.log(err);
@@ -163,20 +204,20 @@ export const getUserPosts =
 export const UpdatePost =
 (content , imageFile) => async (dispatch) => {
   try {
-    dispatch({ type: "loginAdminRequest" });
+    dispatch({ type: "UpdatePostRequest" });
   
     let form_data = new FormData();
     form_data.append("content",content );
     form_data.append("iimageFile", imageFile);
 
     const data = await axios
-      .put(`${serverUrl}/api/login_admin`, form_data)
+      .patch(`${serverUrl}/api/post/:id`, form_data)
       .then(function (response) {
         
-        dispatch({ type: "loginAdminSuccess", payload: response.data });
+        dispatch({ type: "UpdatePostSuccess", payload: response.data });
       })
       .catch(function (err) {
-        dispatch({type: "loginAdminFailure", payload: err.response.data.msg });
+        dispatch({type: "UpdatePostFailure", payload: err.response.data.msg });
       });
   } catch (err) {
     console.log(err);
@@ -207,17 +248,17 @@ export const UpdatePost =
 export const DeletePost =
 (_id) => async (dispatch) => {
   try {
-    dispatch({ type: "loginAdminRequest" });
+    dispatch({ type: "DeletePostRequest" });
   
     
     const {data} = await axios
-      .delete(`${serverUrl}/api/login_admin`, {data:{_id}})
+      .delete(`${serverUrl}/api/post/:id`, {data:{_id}})
       .then(function (response) {
         
-        dispatch({ type: "loginAdminSuccess", payload: response.data });
+        dispatch({ type: "DeletePostSuccess", payload: response.data });
       })
       .catch(function (err) {
-        dispatch({type: "loginAdminFailure", payload: err.response.data.msg });
+        dispatch({type: "DeletePostFailure", payload: err.response.data.msg });
       });
   } catch (err) {
     console.log(err);
@@ -246,44 +287,40 @@ export const DeletePost =
 //   }
 // };
 export const CreateComment =
-(post , reply , content) => async (dispatch) => {
+(form_data) => async (dispatch) => {
   try {
-    dispatch({ type: "loginAdminRequest" });
+    dispatch({ type: "CreateCommentRequest" });
   
-    let form_data = new FormData();
-    form_data.append("emailAddress",emailAddress );
-    form_data.append("password", password);
+   
 
     const data = await axios
-      .post(`${serverUrl}/api/login_admin`, form_data)
+      .post(`${serverUrl}/api/comment`, form_data)
       .then(function (response) {
         
-        dispatch({ type: "loginAdminSuccess", payload: response.data });
+        dispatch({ type: "CreateCommentSuccess", payload: response.data });
       })
       .catch(function (err) {
-        dispatch({type: "loginAdminFailure", payload: err.response.data.msg });
+        dispatch({type: "CreateCommentFailure", payload: err.response.data.msg });
       });
   } catch (err) {
     console.log(err);
   }
 };
 export const UpdateComment =
-(emailAddress, password) => async (dispatch) => {
+(form_data) => async (dispatch) => {
   try {
-    dispatch({ type: "loginAdminRequest" });
+    dispatch({ type: "UpdateCommentRequest" });
   
-    let form_data = new FormData();
-    form_data.append("emailAddress",emailAddress );
-    form_data.append("password", password);
+    
 
     const data = await axios
-      .post(`${serverUrl}/api/login_admin`, form_data)
+      .post(`${serverUrl}/api//comment/:id`, form_data)
       .then(function (response) {
         
-        dispatch({ type: "loginAdminSuccess", payload: response.data });
+        dispatch({ type: "UpdateCommentSuccess", payload: response.data });
       })
       .catch(function (err) {
-        dispatch({type: "loginAdminFailure", payload: err.response.data.msg });
+        dispatch({type: "UpdateCommentFailure", payload: err.response.data.msg });
       });
   } catch (err) {
     console.log(err);
@@ -312,22 +349,20 @@ export const UpdateComment =
 //   }
 // };
 export const DeleteComment =
-(emailAddress, password) => async (dispatch) => {
+() => async (dispatch) => {
   try {
-    dispatch({ type: "loginAdminRequest" });
+    dispatch({ type: "DeleteCommentRequest" });
   
-    let form_data = new FormData();
-    form_data.append("emailAddress",emailAddress );
-    form_data.append("password", password);
+    
 
     const data = await axios
-      .post(`${serverUrl}/api/login_admin`, form_data)
+      .delete(`${serverUrl}/api/comment/:id`,)
       .then(function (response) {
         
-        dispatch({ type: "loginAdminSuccess", payload: response.data });
+        dispatch({ type: "DeleteCommentSuccess", payload: response.data });
       })
       .catch(function (err) {
-        dispatch({type: "loginAdminFailure", payload: err.response.data.msg });
+        dispatch({type: "DeleteCommentFailure", payload: err.response.data.msg });
       });
   } catch (err) {
     console.log(err);

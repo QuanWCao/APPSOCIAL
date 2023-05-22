@@ -33,14 +33,14 @@ const InputNumber = () => {
               style={{color: '#7978B5', fontSize: 22, marginRight: 10,}}
             /> */}
             <TextInput
-              onChangeText={password}
-              placeholder="email"
+              onChangeText={email}
+              placeholder="Enter your email"
               // onFocus={() => {
               //   onFocus();
               //   setIsFocused(true);
               // }}
               // onBlur={() => setIsFocused(false)}
-              secureTextEntry={true}
+              secureTextEntry={false}
               style={{color: '#7978B5', flex: 1}}
               
             />
