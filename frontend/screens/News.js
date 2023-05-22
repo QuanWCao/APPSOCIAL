@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import {
   Share,
+  RefreshControl,
   View,
   Text,
   Image,
@@ -22,9 +23,13 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import RBSheet from "react-native-raw-bottom-sheet";
 import Post from "../components/Post";
 import { useDispatch, useSelector } from 'react-redux'
+const wait = (timeout) => {
+  return new Promise((resolve) => setTimeout(resolve, timeout));
+};
 const MainContainer = () => {
   const navigation = useNavigation();
-  const {user} = useSelector((state)=>state.auth)
+  const [refreshing, setRefreshing] = React.useState(false);
+ 
   // const refRBSheet = useRef();
   // // const [tweets, setTweets] = useState([]);
   // const [loading, setLoading] = useState(false);
@@ -70,6 +75,14 @@ const MainContainer = () => {
   const onLike = () => {
     console.log(user);
   };
+  const onRefresh = React.useCallback(() => {
+    setRefreshing(true);
+    wait(500).then(() => {
+      
+      setRefreshing(false);
+      
+    });
+  }, []);
 
   const removeLike = () => {
     Alert.Alert("ha");
@@ -117,7 +130,15 @@ const MainContainer = () => {
         </TouchableOpacity>  
         </View>
       </View>
-      <ScrollView>
+      <ScrollView 
+      refreshControl={
+          <RefreshControl
+            colors={["#8f73f6", "#8f73f6"]}
+            refreshing={refreshing}
+            onRefresh={onRefresh}
+          />
+        }
+      >
        <Post />
       </ScrollView>
       {/* <TouchableOpacity

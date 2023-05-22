@@ -36,7 +36,8 @@ export default function App() {
   return (
     <Provider store={store}>
     <SafeAreaView style={styles.container}>
-      <Navigation/>
+    <Navigation/>
+      
      
      
      

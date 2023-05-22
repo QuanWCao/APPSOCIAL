@@ -3,9 +3,11 @@ import {
   Text,
   ScrollView,
   Alert,
+  Modal,
   SafeAreaView,
   FlatList,
   Platform,
+  Pressable,
   Linking,
   StyleSheet,
   TouchableOpacity
@@ -107,7 +109,7 @@ const navigation = useNavigation();
       </View>
     </View>
     {account.map((data, index) => {
-        
+      const [visible, setVisible] = useState(false);
     return (
         
       <SafeAreaView key={index} style={{ padding: 10, backgroundColor: "#f2f2f2" }}>
@@ -133,8 +135,101 @@ const navigation = useNavigation();
             name="trash"
             size={25}
             style={styles.iconPhone1}    
-            onPress={{}}        
+            onPress={() => {
+                  setVisible(true);
+                }}   
           />
+
+<Modal
+                  animationType="slide"
+                  transparent={true}
+                  visible={visible}
+                  onRequestClose={() => {
+                    
+                    setVisible(!visible);
+                  }}
+                >
+                  <View
+                    style={{
+                      flex: 1,
+                      justifyContent: "center",
+                      alignItems: "center",
+                      marginTop: 22,
+                    }}
+                  >
+                    <View
+                      style={{
+                        margin: 20,
+                        backgroundColor: "white",
+                        borderRadius: 20,
+                        padding: 35,
+                        alignItems: "center",
+                        shadowColor: "#000",
+                        shadowOffset: {
+                          width: 0,
+                          height: 2,
+                        },
+                        shadowOpacity: 0.25,
+                        shadowRadius: 4,
+                        elevation: 5,
+                      }}
+                    >
+                      <Text
+                        style={{
+                          marginBottom: 15,
+                          textAlign: "center",
+                        }}
+                      >
+                        Are you sure you want to delete your account?
+                      </Text>
+                      <View style={{ flexDirection: "row" ,justifyContent:'center',alignItems:'center'}}>
+                        <Pressable
+                          style={{
+                            borderRadius: 20,
+                            padding: 10,
+                            elevation: 2,
+                            backgroundColor: "#2196F3",
+                            flex: 1,
+                            height:40,
+                            margin:10
+                          }}
+                          onPress={() => setVisible(!visible)}
+                        >
+                          <Text
+                            style={{
+                              fontWeight: "bold",
+                              textAlign: "center",
+                            }}
+                          >
+                            Cancel
+                          </Text>
+                        </Pressable>
+                        <Pressable
+                          style={{
+                            borderRadius: 20,
+                            padding: 10,
+                            elevation: 2,
+                            backgroundColor: "#2196F3",
+                            flex: 1,
+                            height:40,
+                            margin:10
+                          }}
+                          onPress={() => { setVisible(false) 
+                          }
+                          }>
+                          <Text
+                            style={{
+                              fontWeight: "bold",
+                              textAlign: "center",
+                            }}
+                          >
+                            Sure
+                          </Text>
+                        </Pressable>
+                      </View>
+                    </View>
+                  </View>
+                </Modal>
           </View>
         </View>
         <View style={styles.kengang}/>

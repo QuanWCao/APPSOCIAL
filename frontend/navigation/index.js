@@ -103,7 +103,7 @@ const Navigation = () => {
             <Stack.Screen name="Post Create" component={NewTweetScreen} />
             <Stack.Screen name="SignUp" component={SignUpScreen} options={{ headerShown: true }}/>
             <Stack.Screen name="ResetPassword" component={ResetPassWord} options={{ headerShown: true }} />
-            <Stack.Screen name="EnterNumber" component={InputNumber} options={{ headerShown: true }}/>
+            <Stack.Screen name="EnterEmail" component={InputNumber} options={{ headerShown: true }}/>
             <Stack.Screen name="SendOTP" component={OTP} options={{ headerShown: true }}/>
             <Stack.Screen name="Search" component={Search} />
             <Stack.Screen name="Notification" component={Notification}/>

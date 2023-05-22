@@ -196,7 +196,7 @@ marginBottom:20,
       <TouchableOpacity
         style={styles.forgotButton}
         onPress={() => {
-          navigation.navigate("EnterNumber");
+          navigation.navigate("EnterEmail");
         }}
       >
         <Text style={styles.navButtonText}>Forgot Password?</Text>
